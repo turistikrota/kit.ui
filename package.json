@@ -1,0 +1,60 @@
+{
+  "name": "@turistikrota/ui",
+  "version": "0.0.1",
+  "description": "the turistikrota ui library for React",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "scripts": {
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
+    "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run prettier && npm run lint"
+  },
+  "author": "Sami Salih İbrahimbaş <info@ssibrahimbas.com> (ssibrahimbas)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^18.2.6",
+    "@types/react-circular-progressbar": "^1.1.0",
+    "@types/react-transition-group": "^4.4.6",
+    "@typescript-eslint/eslint-plugin": "^5.59.6",
+    "@typescript-eslint/parser": "^5.59.6",
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.8.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.3.2",
+    "typescript": "^5.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/turistikrota/kit.ui.git"
+  },
+  "peerDependencies": {
+    "react": ">=16",
+    "react-circular-progressbar": "^2.1.0",
+    "react-transition-group": "^4.4.5"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [
+    "react",
+    "react-ui",
+    "ui",
+    "ui-library",
+    "turistikrota"
+  ],
+  "dependencies": {
+    "sspin": "^1.0.8"
+  }
+}
