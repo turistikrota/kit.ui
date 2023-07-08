@@ -2,9 +2,7 @@
   "name": "@turistikrota/ui",
   "version": "0.0.1",
   "description": "the turistikrota ui library for React",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./dist/esm/index.d.ts",
+  "types": "./dist/esm/**/*.d.ts",
   "scripts": {
     "build": "npm run build:esm && npm run build:cjs",
     "build:esm": "tsc",
