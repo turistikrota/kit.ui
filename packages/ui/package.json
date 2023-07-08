@@ -1,9 +1,10 @@
 {
   "name": "@turistikrota/ui",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "the turistikrota ui library for React",
   "main": "./cjs/index.js",
   "module": "./index.js",
+  "prettier": "@turistikrota/prettier-config",
   "files": [
     "./*"
   ],
@@ -19,16 +20,12 @@
   "author": "Sami Salih İbrahimbaş <info@ssibrahimbas.com> (ssibrahimbas)",
   "license": "MIT",
   "devDependencies": {
+    "@turistikrota/prettier-config": "^0.0.2",
     "@types/react": "^18.2.6",
     "@types/react-circular-progressbar": "^1.1.0",
     "@types/react-transition-group": "^4.4.6",
-    "@typescript-eslint/eslint-plugin": "^5.59.6",
-    "@typescript-eslint/parser": "^5.59.6",
     "eslint": "^8.40.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-config-turistikrota": "^0.0.1",
     "prettier": "^2.8.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -44,7 +41,8 @@
   "peerDependencies": {
     "react": ">=16",
     "react-circular-progressbar": "^2.1.0",
-    "react-transition-group": "^4.4.5"
+    "react-transition-group": "^4.4.5",
+    "sspin": "^1.0.8"
   },
   "keywords": [
     "react",
@@ -52,8 +50,5 @@
     "ui",
     "ui-library",
     "turistikrota"
-  ],
-  "dependencies": {
-    "sspin": "^1.0.8"
-  }
+  ]
 }

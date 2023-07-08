@@ -121,6 +121,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@turistikrota/prettier-config@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@turistikrota/prettier-config/-/prettier-config-0.0.2.tgz#5e7b1dc3bd833382ec02686b0884f61e84221d09"
+  integrity sha512-hv8cy4VfMnG3liU1aH9xnBoaSC34DdrAn5deaUV1Q45VRNd1YiE5pK9lz9xlH3Iry922pglIkcsmW2AqWRZMsg==
+
 "@types/json-schema@^7.0.9":
   version "7.0.12"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.12.tgz#d70faba7039d5fca54c83c7dbab41051d2b6f6cb"
@@ -595,6 +600,18 @@ eslint-config-prettier@^8.8.0:
   version "8.8.0"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.8.0.tgz#bfda738d412adc917fd7b038857110efe98c9348"
   integrity sha512-wLbQiFre3tdGgpDv67NQKnJuTlcUVYHas3k+DZCc2U2BadthoEY4B7hLPvAxaqdyOGCzuLfii2fqGph10va7oA==
+
+eslint-config-turistikrota@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-turistikrota/-/eslint-config-turistikrota-0.0.1.tgz#5f903fe30aec2e2ce49b452778197406f247f137"
+  integrity sha512-p4Pcpsl1UR6W9wDxASRbWEHWG4j7gwhJNZIXWl8yTtc6R6CDaqRma4YynkupzUzqsw1Rh4E9vq/Bl9J51qvVkw==
+  dependencies:
+    "@typescript-eslint/eslint-plugin" "^5.59.6"
+    "@typescript-eslint/parser" "^5.59.6"
+    eslint-config-prettier "^8.8.0"
+    eslint-plugin-prettier "^4.2.1"
+    eslint-plugin-react "^7.32.2"
+    eslint-plugin-react-hooks "^4.6.0"
 
 eslint-plugin-prettier@^4.2.1:
   version "4.2.1"
