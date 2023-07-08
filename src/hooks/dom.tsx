@@ -1,5 +1,3 @@
-'use client'
-
 import { useEffect, useState } from 'react'
 
 export const useListener = <T extends HTMLElement = HTMLElement>(

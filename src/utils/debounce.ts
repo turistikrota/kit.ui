@@ -11,7 +11,6 @@ function debounce<T extends (...args: any[]) => any>(func: T, delay: number): (.
 
     timer = setTimeout(() => {
       if (currentCount === count) {
-        console.log('debouncedFn')
         func(...args)
       }
     }, delay)
