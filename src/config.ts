@@ -8,7 +8,11 @@ const deepMerge = (target: any, source: any): any => {
   const merged = { ...target }
   for (const key in source) {
     if (typeof source[key] === 'object' && source[key] !== null) {
-      merged[key] = deepMerge(merged[key], source[key])
+      if (Array.isArray(source[key])) {
+        merged[key] = [...source[key]]
+      } else {
+        merged[key] = deepMerge(merged[key], source[key])
+      }
     } else {
       merged[key] = source[key]
     }
@@ -18,5 +22,5 @@ const deepMerge = (target: any, source: any): any => {
 }
 
 export const withTouristicUI = (config: Config): Config => {
-  return deepMerge(config, TailwindConfiguration)
+  return deepMerge(TailwindConfiguration, config)
 }

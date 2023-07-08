@@ -1,16 +1,20 @@
 {
   "name": "@turistikrota/ui",
-  "version": "0.0.1",
+  "version": "0.0.14",
   "description": "the turistikrota ui library for React",
-  "types": "./dist/esm/**/*.d.ts",
+  "main": "./cjs/index.js",
+  "module": "./index.js",
+  "files": [
+    "./*"
+  ],
   "scripts": {
-    "build": "npm run build:esm && npm run build:cjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "build": "npm run build:esm && npm run build:cjs",
     "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
     "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm run prettier && npm run lint"
+    "beforepub": "npm run build && npm run prettier && npm run lint && cp package.json dist && cp README.md dist && cp LICENSE dist",
+    "beforepub:win": "npm run build && npm run prettier && npm run lint && wsl cp package.json dist && wsl cp README.md dist && wsl cp LICENSE dist"
   },
   "author": "Sami Salih İbrahimbaş <info@ssibrahimbas.com> (ssibrahimbas)",
   "license": "MIT",
@@ -31,20 +35,17 @@
     "tailwindcss": "^3.3.2",
     "typescript": "^5.0.4"
   },
+  "bugs": "https://github.com/turistikrota/kit.ui/issues",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/turistikrota/kit.ui.git"
   },
+  "homepage": "https://github.com/turistikrota/kit.ui",
   "peerDependencies": {
     "react": ">=16",
     "react-circular-progressbar": "^2.1.0",
     "react-transition-group": "^4.4.5"
   },
-  "files": [
-    "dist",
-    "LICENSE",
-    "README.md"
-  ],
   "keywords": [
     "react",
     "react-ui",
