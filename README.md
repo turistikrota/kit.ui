@@ -1,1 +1,1 @@
-# kit.ui
+# Turistikrota UI Kit
