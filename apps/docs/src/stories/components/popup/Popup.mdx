@@ -1,0 +1,19 @@
+import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
+import * as PopupStories from './Popup.stories'
+import Alert from '@turistikrota/ui/alert'
+
+<Meta of={PopupStories} />
+
+# Popup
+
+Popup component is used to display a popup.
+
+<Alert type='warning'>
+  You can turn the popup you have customized on or off by changing the open value in the field below.
+</Alert>
+
+<Canvas>
+  <Story of={PopupStories.Playground} />
+</Canvas>
+
+<Controls />
