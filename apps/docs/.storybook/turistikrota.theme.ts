@@ -1,6 +1,7 @@
 import { create } from '@storybook/theming'
 
-export const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+export const isDark =
+  typeof window !== undefined && !!window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false
 
 export default create({
   base: isDark ? 'dark' : 'light',
