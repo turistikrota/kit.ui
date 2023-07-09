@@ -1,0 +1,127 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title='Hooks/DOM' />
+
+# DOM Hooks
+
+DOM Hooks is a collection of React hooks that are useful for DOM manipulation.
+
+## useListener()
+
+`useListener` is a hook that allows you to add event listeners to a DOM element.
+
+```jsx
+import { useListener } from '@turistikrota/ui/hooks/dom'
+
+const Component = () => {
+  const [count, setCount] = useState(0)
+
+  // add a click listener to the document
+  useListener('click', () => setCount(count + 1))
+
+  return <div>{count}</div>
+}
+```
+
+or with an element:
+
+```jsx
+import { useListener } from '@turistikrota/ui/hooks/dom'
+
+const Component = () => {
+  const [count, setCount] = useState(0)
+  const ref = useRef()
+
+  useListener('click', () => setCount(count + 1), ref.current)
+
+  return <div ref={ref}>{count}</div>
+}
+```
+
+you can listen scroll events too:
+
+```jsx
+import { useListener } from '@turistikrota/ui/hooks/dom'
+
+const Component = () => {
+  const [count, setCount] = useState(0)
+
+  useListener('scroll', () => setCount(count + 1))
+
+  return <div>{count}</div>
+}
+```
+
+## useWindowSize()
+
+`useWindowSize` is a hook that allows you to get the current window size.
+
+```jsx
+import { useWindowSize } from '@turistikrota/ui/hooks/dom'
+
+const Component = () => {
+  const { width, height } = useWindowSize()
+
+  return (
+    <div>
+      {width} x {height}
+    </div>
+  )
+}
+```
+
+## useIsSmallMobile()
+
+`useIsSmallMobile` is a hook that allows you to get if the current device is a small mobile device.
+
+```jsx
+import { useIsSmallMobile } from '@turistikrota/ui/hooks/dom'
+
+const Component = () => {
+  const isSmallMobile = useIsSmallMobile()
+
+  return <div>{isSmallMobile ? 'Small Mobile' : 'Not Small Mobile'}</div>
+}
+```
+
+## useIsMobile()
+
+`useIsMobile` is a hook that allows you to get if the current device is a mobile device.
+
+```jsx
+import { useIsMobile } from '@turistikrota/ui/hooks/dom'
+
+const Component = () => {
+  const isMobile = useIsMobile()
+
+  return <div>{isMobile ? 'Mobile' : 'Desktop'}</div>
+}
+```
+
+## useIsTablet()
+
+`useIsTablet` is a hook that allows you to get if the current device is a tablet device.
+
+```jsx
+import { useIsTablet } from '@turistikrota/ui/hooks/dom'
+
+const Component = () => {
+  const isTablet = useIsTablet()
+
+  return <div>{isTablet ? 'Tablet' : 'Not Tablet'}</div>
+}
+```
+
+## useIsDesktop()
+
+`useIsDesktop` is a hook that allows you to get if the current device is a desktop device.
+
+```jsx
+import { useIsDesktop } from '@turistikrota/ui/hooks/dom'
+
+const Component = () => {
+  const isDesktop = useIsDesktop()
+
+  return <div>{isDesktop ? 'Desktop' : 'Not Desktop'}</div>
+}
+```
