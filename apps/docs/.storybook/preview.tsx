@@ -1,6 +1,5 @@
 import type { Preview } from '@storybook/react'
-import '../src/tailwind.css'
-import theme from './turistikrota.theme'
+import '@turistikrota/ui/assets/config.css'
 
 const preview: Preview = {
   parameters: {
@@ -11,8 +10,21 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
-    docs: {
-      theme,
+    themes: {
+      clearable: false,
+      list: [
+        {
+          name: 'Light',
+          class: [],
+          color: '#ffffff',
+          default: true,
+        },
+        {
+          name: 'Dark',
+          class: ['dark'],
+          color: '#000000',
+        },
+      ],
     },
     options: {
       storySort: {
@@ -22,6 +34,7 @@ const preview: Preview = {
       },
       controls: {
         matchers: {
+          color: /(background|color)$/i,
           date: /Date$/,
         },
       },

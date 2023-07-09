@@ -31,7 +31,7 @@ type Story = StoryObj<typeof meta>
 export const Primary: Story = {
   args: {
     type: 'primary',
-    children: 'Primary Alert',
+    children: <>Primary Alert</>,
   },
   render: (args) => <Alert {...args} />,
 }

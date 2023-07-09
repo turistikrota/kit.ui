@@ -7,11 +7,15 @@ const config: StorybookConfig = {
     '@storybook/addon-interactions',
     '@storybook/addon-styling',
     '@storybook/addon-docs',
+    'storybook-addon-themes',
   ],
   staticDirs: ['../public'],
   framework: {
     name: '@storybook/react-vite',
     options: {},
+  },
+  core: {
+    builder: '@storybook/builder-vite',
   },
   features: {
     storyStoreV7: true,
@@ -20,4 +24,5 @@ const config: StorybookConfig = {
     autodocs: 'tag',
   },
 }
+
 export default config

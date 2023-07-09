@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'styles/scrollbar.css';
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-color-start: rgb(239, 244, 245);

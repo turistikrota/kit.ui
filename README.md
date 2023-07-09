@@ -5,10 +5,10 @@
 <h1 align='center'>@turistikrota/ui</h1>
 
 <p align='center'>
-  <a href='https://www.npmjs.com/package/@turistikrota/ui' style={{ marginRight: '5px' }}>
+  <a href='https://www.npmjs.com/package/@turistikrota/ui'>
     <img src='https://img.shields.io/npm/v/@turistikrota/ui.svg' alt='NPM Package Stable' />
   </a>
-  <a href='https://github.com/turistikrota/kit.ui/LICENSE' style={{ marginRight: '5px' }}>
+  <a href='https://github.com/turistikrota/kit.ui/LICENSE'>
     <img src='https://img.shields.io/github/license/turistikrota/kit.ui' alt='License' />
   </a>
   <a href='https://www.jsdelivr.com/package/npm/@turistikrota/ui'>

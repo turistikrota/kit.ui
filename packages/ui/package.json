@@ -1,10 +1,9 @@
 {
   "name": "@turistikrota/ui",
-  "version": "0.0.19",
+  "version": "0.0.22",
   "description": "the turistikrota ui library for React",
   "main": "./cjs/index.js",
   "module": "./index.js",
-  "prettier": "@turistikrota/prettier-config",
   "files": [
     "./*"
   ],
@@ -14,8 +13,10 @@
     "build": "npm run build:esm && npm run build:cjs",
     "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
     "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
-    "beforepub": "npm run build && npm run prettier && npm run lint && cp package.json dist && cp README.md dist && cp LICENSE dist && cp ./src/assets/*.css dist/assets && cp ./src/assets/*.cjs dist/assets",
-    "beforepub:win": "npm run build && npm run prettier && npm run lint && wsl cp package.json dist && wsl cp README.md dist && wsl cp LICENSE dist && wsl cp ./src/assets/*.css dist/assets && wsl cp ./src/assets/*.cjs dist/assets"
+    "copy:assets": "cp package.json dist && cp README.md dist && cp LICENSE dist && cp ./src/assets/*.css dist/assets && cp ./src/assets/*.cjs dist/assets",
+    "copy:assets:win": "wsl cp package.json dist && wsl cp README.md dist && wsl cp LICENSE dist && wsl cp ./src/assets/*.css dist/assets && wsl cp ./src/assets/*.cjs dist/assets",
+    "beforepub": "npm run build && npm run prettier && npm run lint && npm run copy:assets",
+    "beforepub:win": "npm run build && npm run prettier && npm run lint && npm run copy:assets:win"
   },
   "author": "Sami Salih İbrahimbaş <info@ssibrahimbas.com> (ssibrahimbas)",
   "license": "MIT",
@@ -55,5 +56,6 @@
     "react-transition-group": "^4.4.5",
     "sspin": "^1.0.8",
     "tailwindcss": "^3.3.2"
-  }
+  },
+  "prettier": "@turistikrota/prettier-config"
 }

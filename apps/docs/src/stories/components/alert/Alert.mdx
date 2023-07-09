@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/blocks'
+import { Canvas, Meta, Story } from '@storybook/blocks'
 import * as AlertStories from './Alert.stories'
 
 <Meta of={AlertStories} />
@@ -6,3 +6,7 @@ import * as AlertStories from './Alert.stories'
 # Alert
 
 A alert component.
+
+<Story of={AlertStories.Primary} />
+
+<div className='dark:bg-secondary'>sa</div>
