@@ -2,7 +2,7 @@ import type { Preview } from '@storybook/react'
 import '@turistikrota/ui/assets/config.css'
 import 'boxicons/css/boxicons.min.css'
 import '../src/tailwind.css'
-import { isDark } from './turistikrota.theme'
+import theme, { isDark } from './turistikrota.theme'
 
 const preview: Preview = {
   parameters: {
@@ -12,6 +12,9 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/,
       },
+    },
+    docs: {
+      theme,
     },
     themes: {
       clearable: false,
