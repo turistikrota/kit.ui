@@ -1,5 +1,6 @@
 import type { Preview } from '@storybook/react'
 import '@turistikrota/ui/assets/config.css'
+import 'boxicons/css/boxicons.min.css'
 
 const preview: Preview = {
   parameters: {

@@ -1,12 +1,55 @@
-import { Canvas, Meta, Story } from '@storybook/blocks'
+import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
+import Alert from '@turistikrota/ui/alert'
 import * as AlertStories from './Alert.stories'
 
 <Meta of={AlertStories} />
 
 # Alert
 
-A alert component.
+Alert component is used to display a short, important message in a way that attracts the user's attention without interrupting the user's task.
 
-<Story of={AlertStories.Primary} />
+## Alert Variants
 
-<div className='dark:bg-secondary'>sa</div>
+Alerts are available in six variants: primary, secondary, success, error, info and warning.
+
+<Canvas>
+  <Story of={AlertStories.Primary} />
+</Canvas>
+
+<Controls />
+
+## Alert with icon
+
+<Canvas>
+  <Story of={AlertStories.ShowIcon} />
+</Canvas>
+
+## Alert with close button
+
+<Canvas>
+  <Story of={AlertStories.Closable} />
+</Canvas>
+
+## Alert with description
+
+<Canvas>
+  <Story of={AlertStories.Description} />
+</Canvas>
+
+## Alert with title
+
+<Canvas>
+  <Story of={AlertStories.Title} />
+</Canvas>
+
+## Alert with title and description
+
+<Canvas>
+  <Story of={AlertStories.TitleAndDescription} />
+</Canvas>
+
+## Alert with full options
+
+<Canvas>
+  <Story of={AlertStories.Full} />
+</Canvas>
