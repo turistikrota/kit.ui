@@ -20,14 +20,15 @@ const meta = {
       options: ['success', 'error', 'info', 'warning', 'primary', 'secondary'],
       control: { type: 'select' },
       required: true,
+      description: 'The type of the alert',
     },
 
     // the rest of the props
-    onClose: { action: 'onClose' },
-    show: { control: { type: 'boolean' }, default: true },
-    showIcon: { control: { type: 'boolean' }, default: false },
-    closable: { control: { type: 'boolean' }, default: false },
-    children: { control: { type: 'text' }, default: 'Alert' },
+    onClose: { action: 'onClose', description: 'The close event of the alert' },
+    show: { control: { type: 'boolean' }, default: true, description: 'Show or hide the alert' },
+    showIcon: { control: { type: 'boolean' }, default: false, description: 'Show or hide the icon' },
+    closable: { control: { type: 'boolean' }, default: false, description: 'Show or hide the close button' },
+    children: { control: { type: 'text' }, default: 'Alert', description: 'The content of the alert' },
   },
 } satisfies Meta<Alert>
 
