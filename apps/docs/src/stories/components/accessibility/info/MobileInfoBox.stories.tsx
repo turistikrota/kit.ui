@@ -6,7 +6,7 @@ const meta = {
   component: MobileInfoBox,
   tags: [],
   argTypes: {
-    children: { control: { type: 'text' }, default: 'Default Text' },
+    children: { control: { type: 'text' }, default: 'Default Text', description: 'The content of the info box' },
   },
 } satisfies Meta<typeof MobileInfoBox>
 
