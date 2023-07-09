@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/react'
-import '../src/index.css'
+import '../src/tailwind.css'
 import theme from './turistikrota.theme'
 
 const preview: Preview = {
@@ -12,11 +12,6 @@ const preview: Preview = {
       },
     },
     docs: {
-      transformSource: (source: any) =>
-        source
-          .replace(/<!--\?lit\$[0-9]+\$-->|<!--\??-->/g, '')
-          .replace(/=\"\"/g, '')
-          .replace(/ class=\"__ONLY_FOR_STORYBOOK_DEMONSTRATION_HOVER__\"/g, ''),
       theme,
     },
     options: {
