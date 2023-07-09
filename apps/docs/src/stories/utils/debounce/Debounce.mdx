@@ -1,0 +1,21 @@
+import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
+
+<Meta title='Utils/Debounce' />
+
+# Debounce
+
+Debounce utils is a simple utility to debounce a function call.
+
+## debounce(fn, delay)
+
+```js
+import debounce from '@turistikrota/ui/utils/debounce'
+
+const debouncedFn = debounce(() => {
+  console.log('debounced')
+}, 1000)
+
+debouncedFn()
+// after 500ms
+debouncedFn() // only this call will be executed
+```

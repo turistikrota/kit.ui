@@ -1,7 +1,6 @@
-import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
-import * as TransformStories from './Transform.stories'
+import { Meta } from '@storybook/blocks'
 
-<Meta of={TransformStories} />
+<Meta title='Utils/transform' />
 
 # Transform
 
@@ -19,7 +18,3 @@ const formData = toFormData({
   email: '',
 })
 ```
-
-<Canvas>
-  <Story of={TransformStories.Default} />
-</Canvas>
