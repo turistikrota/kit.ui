@@ -1,0 +1,14 @@
+import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
+import * as UsernameStories from './Username.stories'
+
+<Meta of={UsernameStories} />
+
+# Username
+
+Username component is used to display a user's name.
+
+<Canvas>
+  <Story of={UsernameStories.Playground} />
+</Canvas>
+
+<Controls />
