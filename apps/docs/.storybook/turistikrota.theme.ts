@@ -9,7 +9,7 @@ export default create({
   brandTitle: 'Turistikrota Tech',
   brandUrl: 'https://turistikrota.com',
   brandImage: '/logo.png',
-  brandTarget: '_blank',
+  brandTarget: '_self',
 
   //
   colorPrimary: '#3397e6',
