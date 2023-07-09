@@ -1,0 +1,66 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title='Utils/Response' />
+
+# Response
+
+Response utils is a simple utility to handle responses from the server and display them in a toast or do anything.
+
+## parseApiError({})
+
+This function will parse the error object from the server and display it in a toast or do anything you want.
+
+### Arguments
+
+<table>
+  <thead>
+    <tr>
+      <th>Argument</th>
+      <th>Type</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>error</td>
+      <td>Array</td>
+      <td>Yes</td>
+      <td>The error object from the server</td>
+    </tr>
+    <tr>
+      <td>form</td>
+      <td>Formik</td>
+      <td>Yes</td>
+      <td>The formik form to display the error</td>
+    </tr>
+    <tr>
+      <td>toast</td>
+      <td>Toast</td>
+      <td>Yes</td>
+      <td>The toast object to display the error</td>
+    </tr>
+  </tbody>
+</table>
+
+```js
+import { parseApiError } from '@turistikrota/ui/utils/response'
+import { useToast } from '@turistikrota/ui/toast'
+import { useFormik } from 'formik'
+
+const toast = useToast()
+const form = useFormik()
+
+const error = [
+  {
+    field: 'email',
+    message: 'Email is required',
+  },
+  {
+    field: 'password',
+    message: 'Password is required',
+  },
+]
+
+parseApiError({ error, form, toast }) // Will display the error in a form or toast
+```
