@@ -1,0 +1,24 @@
+import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
+import * as SortStories from './Sort.stories'
+
+<Meta of={SortStories} />
+
+# Sort
+
+Sort util is have a functions for work with sort data.
+
+## sort (array, lang)
+
+This function is sort array by lang.
+
+```js
+import { sort } from '@turistikrota/ui/utils/sort'
+
+const sorted = sort(['a', 'b', 'c'], 'en')
+const trSorted = sort(['a', 'b', 'c'], 'tr')
+```
+
+<Canvas>
+  <Story of={SortStories.Default} />
+</Canvas>
+```
