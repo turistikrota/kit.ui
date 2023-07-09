@@ -1,11 +1,14 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { DesktopInfoBox } from '@turistikrota/ui/accessibility/info'
+import { DesktopInfoBox, MobileInfoBox } from '@turistikrota/ui/accessibility/info'
+import { TooltipProvider } from '@turistikrota/ui/tooltip'
 
 const meta = {
   title: 'Components/Accessibility/DesktopInfoBox',
   component: DesktopInfoBox,
   tags: [],
-  argTypes: {},
+  argTypes: {
+    children: { control: { type: 'text' }, default: 'Default Text' },
+  },
 } satisfies Meta<typeof DesktopInfoBox>
 
 export default meta
@@ -17,6 +20,16 @@ type Story = StoryObj<typeof meta>
  * See https://storybook.js.org/docs/react/api/csf
  * to learn how to use render functions.
  */
-export const Primary: Story = {
-  render: () => <DesktopInfoBox>primary</DesktopInfoBox>,
+export const Default: Story = {
+  args: {
+    children: 'Default Text',
+  },
+  render: ({ children }) => (
+    <TooltipProvider>
+      <MobileInfoBox>If you are on a mobile device, you can see this text.</MobileInfoBox>
+      <DesktopInfoBox>
+        <span className='text-gray-200'>{children}</span>
+      </DesktopInfoBox>
+    </TooltipProvider>
+  ),
 }
