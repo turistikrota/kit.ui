@@ -1,12 +1,12 @@
 import { Meta, StoryObj } from '@storybook/react'
-import Button from '@turistikrota/ui/button'
+import { MobileInfoBox } from '@turistikrota/ui/accessibility/info'
 
 const meta = {
-  title: 'Components/Button',
-  component: Button,
+  title: 'Components/Accessibility/MobileInfoBox',
+  component: MobileInfoBox,
   tags: [],
   argTypes: {},
-} satisfies Meta<typeof Button>
+} satisfies Meta<typeof MobileInfoBox>
 
 export default meta
 
@@ -18,5 +18,5 @@ type Story = StoryObj<typeof meta>
  * to learn how to use render functions.
  */
 export const Primary: Story = {
-  render: () => <Button>primary</Button>,
+  render: () => <MobileInfoBox>primary</MobileInfoBox>,
 }

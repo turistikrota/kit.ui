@@ -1,6 +1,6 @@
 {
   "name": "@turistikrota/ui",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "the turistikrota ui library for React",
   "main": "./cjs/index.js",
   "module": "./index.js",
@@ -32,7 +32,6 @@
     "prettier": "^3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sspin": "^1.0.8",
     "typescript": "^5.0.4"
   },
   "bugs": "https://github.com/turistikrota/kit.ui/issues",
@@ -42,10 +41,7 @@
   },
   "homepage": "https://github.com/turistikrota/kit.ui",
   "peerDependencies": {
-    "react": ">=16",
-    "react-circular-progressbar": "^2.1.0",
-    "react-transition-group": "^4.4.5",
-    "sspin": "^1.0.8"
+    "react": ">=16"
   },
   "keywords": [
     "react",
@@ -55,6 +51,9 @@
     "turistikrota"
   ],
   "dependencies": {
+    "react-circular-progressbar": "^2.1.0",
+    "react-transition-group": "^4.4.5",
+    "sspin": "^1.0.8",
     "tailwindcss": "^3.3.2"
   }
 }
