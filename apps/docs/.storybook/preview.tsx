@@ -1,7 +1,7 @@
 import type { Preview } from '@storybook/react'
 import '@turistikrota/ui/assets/config.css'
 import 'boxicons/css/boxicons.min.css'
-import '../src/tailwind.css'
+import './tailwind.css'
 import theme, { isDark } from './turistikrota.theme'
 
 const preview: Preview = {

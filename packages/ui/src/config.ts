@@ -22,5 +22,7 @@ const deepMerge = (target: any, source: any): any => {
 }
 
 export const withTouristicUI = (config: Config): Config => {
-  return deepMerge(TailwindConfiguration, config)
+  const opts = deepMerge(TailwindConfiguration, config)
+  opts.content.push('./node_modules/@turistikrota/ui/**/*.{js,jsx,ts,tsx}')
+  return opts
 }
