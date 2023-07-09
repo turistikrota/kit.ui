@@ -1,10 +1,14 @@
-import { Meta } from '@storybook/blocks'
+import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
 import * as ButtonStories from './Button.stories'
 
 <Meta of={ButtonStories} />
 
 # Button
 
-A button component.
+Button component with different variants and sizes. It can be used for actions, like in this example, or for toggling states.
 
-<div className='text-gray-500'>sa</div>
+<Canvas>
+  <Story of={ButtonStories.ControlButton} />
+</Canvas>
+
+<Controls />
