@@ -1,0 +1,50 @@
+import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
+import * as DropdownStories from './Dropdown.stories'
+import Dropdown from '@turistikrota/ui/dropdown'
+import { MobileInfoBox } from '@turistikrota/ui/accessibility/info'
+
+<Meta title='Components/Dropdown' />
+
+# Dropdown
+
+Dropdown component is used to display a list of options, typically in a dropdown menu, and allow user to select one option.
+
+## Basic Usage
+
+<MobileInfoBox>
+  <span>
+    Dropdown component is not accessible by mobile and tablet devices. Please use an desktop device or use select
+    component.
+  </span>
+</MobileInfoBox>
+
+<Canvas of={DropdownStories.Basic}>
+  <div className='flex justify-center min-h-full h-40'>
+    <Dropdown>
+      <Dropdown.Button>Open me</Dropdown.Button>
+      <Dropdown.Overlay>Content</Dropdown.Overlay>
+    </Dropdown>
+  </div>
+</Canvas>
+
+## Full Example
+
+<MobileInfoBox>
+  <span>
+    Dropdown component is not accessible by mobile and tablet devices. Please use an desktop device or use select
+    component.
+  </span>
+</MobileInfoBox>
+
+<Canvas of={DropdownStories.Full}>
+  <div className='flex justify-center min-h-full h-40'>
+    <Dropdown>
+      <Dropdown.Button>Open me</Dropdown.Button>
+      <Dropdown.Overlay>
+        <Dropdown.OverlayItem>Item 1</Dropdown.OverlayItem>
+        <Dropdown.OverlayItem active>Item 2</Dropdown.OverlayItem>
+        <Dropdown.OverlayItem>Item 3</Dropdown.OverlayItem>
+      </Dropdown.Overlay>
+    </Dropdown>
+  </div>
+</Canvas>
