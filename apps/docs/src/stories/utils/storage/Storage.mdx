@@ -1,0 +1,24 @@
+import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
+import * as StorageStories from './Storage.stories'
+
+<Meta of={StorageStories} />
+
+# Storage
+
+Storage util is have a functions for work with localStorage and sessionStorage.
+
+## safeStorageParse
+
+This function is safe parse JSON string from storage. If JSON string is not valid, not throw error and not call callback function.
+
+```js
+import { safeStorageParse } from '@turistikrota/ui/utils/storage'
+
+safeStorageParse(localStorage.getItem('user'), (user) => {
+  console.log(user)
+})
+```
+
+<Canvas>
+  <Story of={StorageStories.Default} />
+</Canvas>
