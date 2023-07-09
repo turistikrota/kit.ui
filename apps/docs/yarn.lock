@@ -2853,10 +2853,10 @@
   resolved "https://registry.yarnpkg.com/@turistikrota/prettier-config/-/prettier-config-0.0.3.tgz#d5fbb50af69c834a3abbc1a7d07a4107eaf6ef94"
   integrity sha512-h71detp3pTptYayBDZ0XC61JOQH5HF99YvVDZTiAKuQqqkFaqP9hY9k4odoAsxzYk7VgnaGkIF7HomxOOGqPIg==
 
-"@turistikrota/ui@0.0.22":
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/@turistikrota/ui/-/ui-0.0.22.tgz#122e26d03767630379c05f71bae8a9bbc8122b23"
-  integrity sha512-j42TL/agXRmwMJUWW8l7eLQ+E4fVSNBT3saDayk5SHsw4YbShhk/4TLy9u29s+WqPRsTx8foQ+H6qhGugZQ4jw==
+"@turistikrota/ui@0.0.23":
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/@turistikrota/ui/-/ui-0.0.23.tgz#bab619cff89260b721730d745c2d114d97086b78"
+  integrity sha512-DdSbH3WMKAzNyX/T9F4neiIUp8C7rXOZF0bcPC/VTkXyM2142NzFcajde0vniVjnMGq1u+v1O/Pyb/1DhYK1Hg==
   dependencies:
     cssnano "^6.0.1"
     react-circular-progressbar "^2.1.0"

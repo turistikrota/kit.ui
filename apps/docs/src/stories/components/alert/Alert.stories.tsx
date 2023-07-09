@@ -1,29 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import Alert from '@turistikrota/ui/alert'
 
-type AlertType = 'success' | 'error' | 'info' | 'warning' | 'primary' | 'secondary'
-
-type Props = {
-  /**
-   * @description The type of the alert
-   * @type {('success' | 'error' | 'info' | 'warning' | 'primary' | 'secondary')}
-   * @default 'primary'
-   * @control Select
-   * @required
-   * @group Alert
-   * @section Appearance
-   * @satisfies Meta<typeof Alert>
-   */
-  type: AlertType
-  onClose?: () => void
-  // show is required
-  show?: boolean
-  showIcon?: boolean
-  closable?: boolean
-  className?: string
-  children: React.ReactNode
-}
-
 const meta = {
   title: 'Components/Alert',
   component: Alert,
@@ -52,7 +29,7 @@ const meta = {
     closable: { control: { type: 'boolean' }, default: false },
     children: { control: { type: 'text' }, default: 'Alert' },
   },
-} satisfies Meta<Props>
+} satisfies Meta<Alert>
 
 export default meta
 

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 
 import { TooltipPosition } from './positions'
-import { TooltipContext } from './provider'
+import { TooltipContext, TooltipProvider } from './provider'
 
 type Props = {
   content: React.ReactNode
@@ -48,4 +48,4 @@ const Tooltip: React.FC<React.PropsWithChildren<Props>> = ({ content, position =
   )
 }
 export default Tooltip
-export { TooltipContext }
+export { TooltipProvider }
