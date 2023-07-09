@@ -1,0 +1,16 @@
+import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
+import * as DisabledSectionStories from './DisabledSection.stories'
+
+<Meta of={DisabledSectionStories} />
+
+# Disabled Section
+
+DisabledSection component is used to disable a section of the story.
+
+<Canvas>
+  <div className='min-h-full h-60'>
+    <Story of={DisabledSectionStories.Playground} />
+  </div>
+</Canvas>
+
+<Controls />
