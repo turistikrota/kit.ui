@@ -53,9 +53,7 @@ type SetFormErrorProps = {
 
 const setFormError = ({ form, msg, callback, field }: SetFormErrorProps) => {
   if (form && form.setFieldError) {
-    form.setErrors({
-      [field || '']: msg,
-    })
+    form.setFieldError(field || 'base', msg)
     form.setSubmitting(false)
   } else {
     callback()
