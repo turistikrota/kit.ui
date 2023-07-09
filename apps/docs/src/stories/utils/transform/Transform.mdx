@@ -1,0 +1,25 @@
+import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
+import * as TransformStories from './Transform.stories'
+
+<Meta of={TransformStories} />
+
+# Transform
+
+Transform util is have a functions for transform data.
+
+## toFormData (object)
+
+Transform object to FormData.
+
+```js
+import { toFormData } from '@turistikrota/ui/utils/transform'
+
+const formData = toFormData({
+  name: 'John Doe',
+  email: '',
+})
+```
+
+<Canvas>
+  <Story of={TransformStories.Default} />
+</Canvas>
