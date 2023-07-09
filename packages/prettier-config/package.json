@@ -1,6 +1,6 @@
 {
   "name": "@turistikrota/prettier-config",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The Turistikrota Prettier config",
   "main": "index.json",
   "repository": "git@github.com:turistikrota/kit.ui.git",
