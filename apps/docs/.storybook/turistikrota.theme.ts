@@ -1,8 +1,8 @@
 import { create } from '@storybook/theming'
 
+const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
 export default create({
-  base: 'dark',
-
+  base: isDark ? 'dark' : 'light',
   fontBase: 'Arimo, sans-serif',
   fontCode: 'monospace',
 
@@ -10,29 +10,8 @@ export default create({
   brandUrl: 'https://turistikrota.com',
   brandImage: '/logo.png',
   brandTarget: '_self',
-
-  //
   colorPrimary: '#3397e6',
   colorSecondary: '#ffa500',
-
-  // UI
-  appBg: '#161616',
-  appContentBg: '#0f0e0e',
-  appBorderColor: '#252525',
   appBorderRadius: 10,
-
-  // Text colors
-  textColor: 'rgb(229 231 235)',
-  textInverseColor: 'rgb(209 213 219)',
-
-  // Toolbar default and active colors
-  barTextColor: 'rgb(229 231 235)',
-  barSelectedColor: '#ffffff',
-  barBg: '#161616',
-
-  // Form colors
-  inputBg: '#161616',
-  inputBorder: '#252525',
-  inputTextColor: 'rgb(229 231 235)',
   inputBorderRadius: 10,
 })
