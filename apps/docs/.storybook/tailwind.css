@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+iframe,
+#storybook-preview-wrapper iframe,
+#storybook-preview-iframe {
+  background-color: var(--default-background) !important;
+}

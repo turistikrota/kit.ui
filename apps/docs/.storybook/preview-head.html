@@ -1,0 +1,32 @@
+<style>
+  :root {
+    --default-background: rgb(239, 244, 245);
+    --second-background: #e7edef;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --default-background: #0f0e0e;
+      --second-background: #161616;
+    }
+  }
+
+  html,
+  body,
+  body > .sb-preparing-story,
+  body > .sb-preparing-docs,
+  body > .sub-frame-error,
+  body .sb-previewBlock_icon {
+    background-color: var(--default-background) !important;
+  }
+
+  body .sb-previewBlock,
+  body .sb-argstableBlock,
+  body .sb-argstableBlock-body td {
+    background: var(--second-background) !important;
+    background-color: var(--second-background) !important;
+  }
+  body .sb-argstableBlock-body tr:not(:first-child) {
+    border-color: var(--default-background) !important;
+  }
+</style>
