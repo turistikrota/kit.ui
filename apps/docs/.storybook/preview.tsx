@@ -1,5 +1,6 @@
 import type { Preview } from '@storybook/react'
 import '../src/index.css'
+import theme from './turistikrota.theme'
 
 const preview: Preview = {
   parameters: {
@@ -9,6 +10,9 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/,
       },
+    },
+    docs: {
+      theme,
     },
   },
 }

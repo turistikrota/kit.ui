@@ -2419,7 +2419,7 @@
     "@storybook/global" "^5.0.0"
     "@storybook/preview-api" "7.0.26"
 
-"@storybook/manager-api@7.0.26", "@storybook/manager-api@^7.0.12":
+"@storybook/manager-api@7.0.26", "@storybook/manager-api@^7.0.12", "@storybook/manager-api@^7.0.26":
   version "7.0.26"
   resolved "https://registry.yarnpkg.com/@storybook/manager-api/-/manager-api-7.0.26.tgz#28b5528726d918d13c5138c002f1966bfb6eb84b"
   integrity sha512-/2p6lU7r30qMXob/UnzRL9yq7XjoE+YQXv1KhrcePfMBARbelYw9RYhYT/AkXGtb9/Fa95uG3lNvoDLC1IQfMQ==
@@ -2579,7 +2579,7 @@
   dependencies:
     "@storybook/csf" "^0.1.0"
 
-"@storybook/theming@7.0.26", "@storybook/theming@^7.0.12":
+"@storybook/theming@7.0.26", "@storybook/theming@^7.0.12", "@storybook/theming@^7.0.26":
   version "7.0.26"
   resolved "https://registry.yarnpkg.com/@storybook/theming/-/theming-7.0.26.tgz#b537f92f6168d1228bd4ccc1c3c38dac1c6a02d3"
   integrity sha512-7hxpT2yq+xZonSsEZHOF+HDHx6GE0qlys3EQ63K9XCJ8VeBnq9M5zHvMK9iXl90093ufxpvWsfDWgtja2zvmTw==
