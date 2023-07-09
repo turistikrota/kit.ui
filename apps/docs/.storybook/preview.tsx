@@ -2,6 +2,7 @@ import type { Preview } from '@storybook/react'
 import '@turistikrota/ui/assets/config.css'
 import 'boxicons/css/boxicons.min.css'
 import '../src/tailwind.css'
+import { isDark } from './turistikrota.theme'
 
 const preview: Preview = {
   parameters: {
@@ -19,12 +20,13 @@ const preview: Preview = {
           name: 'Light',
           class: [],
           color: '#ffffff',
-          default: true,
+          default: !isDark,
         },
         {
           name: 'Dark',
           class: ['dark'],
           color: '#000000',
+          default: isDark,
         },
       ],
     },
