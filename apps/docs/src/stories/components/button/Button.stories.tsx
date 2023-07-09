@@ -75,7 +75,7 @@ type Story = StoryObj<typeof meta>
  * See https://storybook.js.org/docs/react/api/csf
  * to learn how to use render functions.
  */
-export const ControlButton: Story = {
+export const Playground: Story = {
   args: {
     variant: 'primary',
     size: 'md',
