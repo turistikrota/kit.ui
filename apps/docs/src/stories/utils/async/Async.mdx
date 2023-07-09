@@ -1,0 +1,18 @@
+import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
+
+<Meta title='Utils/Async' />
+
+# Async
+
+Async utils is a simple utility to help you with async operations.
+
+## wait(ms)
+
+```js
+import { wait } from '@turistikrota/ui/utils/async'
+
+const waitOneSecond = async () => {
+  await wait(1000)
+  console.log('1 second has passed')
+}
+```
