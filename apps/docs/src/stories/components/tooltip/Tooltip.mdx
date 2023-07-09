@@ -1,0 +1,83 @@
+import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
+import * as TooltipStories from './Tooltip.stories'
+import Alert from '@turistikrota/ui/alert'
+
+<Meta of={TooltipStories} />
+
+# Tooltip
+
+Tooltip component is used to display additional information when hovering over a target element.
+
+<Alert type='warning'>The Position value is only used on the first render. It cannot be changed later.</Alert>
+
+<Canvas>
+  <div className='flex justify-center items-center min-h-full h-16'>
+    <Story of={TooltipStories.Playground} />
+  </div>
+</Canvas>
+
+<Controls />
+
+## Top position
+
+<Canvas>
+  <div className='flex justify-center items-center min-h-full h-16'>
+    <Story of={TooltipStories.Top} />
+  </div>
+</Canvas>
+
+## Right position
+
+<Canvas>
+  <div className='flex justify-center items-center min-h-full h-16'>
+    <Story of={TooltipStories.Right} />
+  </div>
+</Canvas>
+
+## Bottom position
+
+<Canvas>
+  <div className='flex justify-center items-center min-h-full h-16'>
+    <Story of={TooltipStories.Bottom} />
+  </div>
+</Canvas>
+
+## Left position
+
+<Canvas>
+  <div className='flex justify-center items-center min-h-full h-16'>
+    <Story of={TooltipStories.Left} />
+  </div>
+</Canvas>
+
+## Top-Left position
+
+<Canvas>
+  <div className='flex justify-center items-center min-h-full h-16'>
+    <Story of={TooltipStories.TopLeft} />
+  </div>
+</Canvas>
+
+## Top-Right position
+
+<Canvas>
+  <div className='flex justify-center items-center min-h-full h-16'>
+    <Story of={TooltipStories.TopRight} />
+  </div>
+</Canvas>
+
+## Bottom-Left position
+
+<Canvas>
+  <div className='flex justify-center items-center min-h-full h-16'>
+    <Story of={TooltipStories.BottomLeft} />
+  </div>
+</Canvas>
+
+## Bottom-Right position
+
+<Canvas>
+  <div className='flex justify-center items-center min-h-full h-16'>
+    <Story of={TooltipStories.BottomRight} />
+  </div>
+</Canvas>
