@@ -17,7 +17,7 @@
     "moduleResolution": "node",
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
   },
   "include": ["src", "src/assets/tailwind.config.ts"],
   "exclude": ["node_modules", "dist", "docs"]

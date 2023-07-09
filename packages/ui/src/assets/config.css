@@ -245,6 +245,3 @@ select:-webkit-autofill:focus {
 .CircularProgressbar-text {
   fill: rgb(var(--secondary-color)) !important;
 }
-.CircularProgressbar-background {
-  fill: green !important;
-}
