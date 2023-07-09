@@ -1,0 +1,27 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title='Hooks/SSR' />
+
+# SSR Hooks
+
+SSR Hooks is a collection of hooks for server side rendering.
+
+## useSSR()
+
+`useSSR` hook returns a boolean value indicating whether the code is running on the server or not.
+
+```js
+import useSSR from '@turistikrota/ui/hooks/ssr'
+
+const isSSR = useSSR()
+```
+
+## useClient()
+
+`useClient` hook returns a boolean value indicating whether the code is running on the client or not.
+
+```js
+import { useClient } from '@turistikrota/ui/hooks/ssr'
+
+const isClient = useClient()
+```
