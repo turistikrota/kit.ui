@@ -5,7 +5,9 @@ const meta = {
   title: 'Components/Accessibility/MobileInfoBox',
   component: MobileInfoBox,
   tags: [],
-  argTypes: {},
+  argTypes: {
+    children: { control: { type: 'text' }, default: 'Default Text' },
+  },
 } satisfies Meta<typeof MobileInfoBox>
 
 export default meta
@@ -17,6 +19,10 @@ type Story = StoryObj<typeof meta>
  * See https://storybook.js.org/docs/react/api/csf
  * to learn how to use render functions.
  */
-export const Primary: Story = {
-  render: () => <MobileInfoBox>primary</MobileInfoBox>,
+export const Default: Story = {
+  args: {
+    // the args you need here will depend on your component
+    children: 'Default Text',
+  },
+  render: ({ children }) => <MobileInfoBox>{children}</MobileInfoBox>,
 }
