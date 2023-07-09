@@ -3,7 +3,7 @@ import { Size } from '../types'
 
 type Props = {
   children: React.ReactNode
-  head: React.ReactNode
+  head?: React.ReactNode
   className?: string
   size?: Size
   onClose: () => void
