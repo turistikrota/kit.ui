@@ -1,0 +1,16 @@
+import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
+import * as SelectStories from './Select.stories'
+
+<Meta of={SelectStories} />
+
+# Select
+
+Select component is used to select an option from a list of options.
+
+<Canvas of={SelectStories.Playground}>
+  <div className='bg-second p-4 rounded-md'>
+    <Story of={SelectStories.Playground} />
+  </div>
+</Canvas>
+
+<Controls of={SelectStories.Playground} />
