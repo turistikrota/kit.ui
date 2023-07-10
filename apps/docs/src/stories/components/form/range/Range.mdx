@@ -1,0 +1,16 @@
+import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
+import * as RangeStories from './Range.stories'
+
+<Meta of={RangeStories} />
+
+# Range
+
+Range component is used to enter a range of values.
+
+<Canvas of={RangeStories.Playground}>
+  <div className='bg-second p-4 rounded-md'>
+    <Story of={RangeStories.Playground} />
+  </div>
+</Canvas>
+
+<Controls of={RangeStories.Playground} />
