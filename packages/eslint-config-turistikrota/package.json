@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-turistikrota",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
@@ -13,5 +13,21 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "author": "Sami Salih İbrahimbaş <info@ssibrahimbas.com> (ssibrahimbas)",
+  "description": "The ESLint config for turistikrota projects",
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "eslint-config",
+    "eslint-config-turistikrota",
+    "turistikrota",
+    "eslint-config-turistikrota"
+  ],
+  "bugs": "https://github.com/turistikrota/kit.ui/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/turistikrota/kit.ui.git"
+  },
+  "homepage": "https://github.com/turistikrota/kit.ui/tree/main/packages/eslint-config-turistikrota#readme"
 }
