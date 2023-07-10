@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useAgentMobile } from '../hooks/dom'
 import PerfectImage from '../image/perfect'
 import DotRenderer from './dot-renderer'
 
@@ -15,11 +16,14 @@ type ButtonProps = {
 }
 
 const CarouselButton: React.FC<ButtonProps> = ({ position, onClick }) => {
+  const isMobile = useAgentMobile()
   const icon = position === 'left' ? 'bx-chevron-left' : 'bx-chevron-right'
   const left = position === 'left' ? 'left-2' : 'right-2'
   return (
     <button
-      className={`hidden lg:flex absolute invisible opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-90 group-hover:hover:opacity-100 top-1/2 ${left} transform -translate-y-1/2 text-gray-600 border shadow-xs bg-third bg-opacity-95 dark:bg-opacity-10 dark:text-white w-8 h-8 rounded-full items-center justify-center`}
+      className={`${
+        !isMobile ? 'flex' : 'hidden'
+      } absolute invisible opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-90 group-hover:hover:opacity-100 top-1/2 ${left} transform -translate-y-1/2 text-gray-600 border shadow-xs bg-third bg-opacity-95 dark:bg-opacity-10 dark:text-white w-8 h-8 rounded-full items-center justify-center`}
       onClick={onClick}
     >
       <i className={`bx bx-sm ${icon}`} />
@@ -62,8 +66,17 @@ const Carousel: React.FC<Props> = ({ images, sizeClassName, className, onClick }
     goToNextSlide()
   }
 
+  const checkImageClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (
+      (e.target instanceof HTMLImageElement || e.target instanceof HTMLDivElement || e.target === e.currentTarget) &&
+      onClick
+    ) {
+      onClick()
+    }
+  }
+
   return (
-    <div className={`w-full group ${className ? className : ''}`} onClick={onClick}>
+    <div className={`w-full group ${className ? className : ''}`} onClick={checkImageClick}>
       <div className={`relative ${sizeClassName}`}>
         {images.map((img, idx) => (
           <PerfectImage
