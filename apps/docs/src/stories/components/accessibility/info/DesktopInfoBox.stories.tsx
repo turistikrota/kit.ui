@@ -28,7 +28,7 @@ export const Default: Story = {
     <TooltipProvider>
       <MobileInfoBox>If you are on a mobile device, you can see this text.</MobileInfoBox>
       <DesktopInfoBox>
-        <span className='text-gray-200'>{children}</span>
+        <span className='dark:text-gray-200'>{children}</span>
       </DesktopInfoBox>
     </TooltipProvider>
   ),
