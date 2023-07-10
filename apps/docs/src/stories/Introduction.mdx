@@ -22,9 +22,6 @@ import { Meta } from '@storybook/blocks'
   <a href='https://github.com/turistikrota/kit.ui/LICENSE'>
     <img src='https://img.shields.io/github/license/turistikrota/kit.ui' alt='License' />
   </a>
-  <a href='https://www.jsdelivr.com/package/npm/@turistikrota/ui'>
-    <img src='https://img.shields.io/jsdelivr/npm/hm/@turistikrota/ui' alt='jsDelivr hits' />
-  </a>
 </div>
 
 `@turistikrota/ui` kit was developed by [`Turistikrota Tech`](https://github.com/turistikrota) for use in shared websites.
@@ -51,6 +48,14 @@ module.exports = withTouristicUI({
 
 // postcss.config.js
 module.exports = require('@turistikrota/ui/assets/postcss.config.cjs')
+```
+
+Use your tailwind configuration in your `css` file:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 ```
 
 Finally, we need to load css to use our tailwind values. In your main `js/ts` file:
