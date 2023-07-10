@@ -1,0 +1,64 @@
+import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
+import * as InputStories from './Input.stories'
+
+<Meta of={InputStories} />
+
+# Input
+
+Input component is used for collecting data from the user.
+
+<Canvas of={InputStories.Playground}>
+  <div className='p-5 rounded-md bg-second'>
+    <Story of={InputStories.Playground} />
+  </div>
+</Canvas>
+
+<Controls of={InputStories.Playground} />
+
+## With Error
+
+The `error` prop is used to indicate the input has an error.
+
+<Canvas of={InputStories.WithError}>
+  <div className='p-5 rounded-md bg-second'>
+    <Story of={InputStories.WithError} />
+  </div>
+</Canvas>
+
+<Controls of={InputStories.WithError} />
+
+## With Suffix
+
+The `suffix` prop is used to add a suffix to the input.
+
+<Canvas of={InputStories.WithSuffix}>
+  <div className='p-5 rounded-md bg-second'>
+    <Story of={InputStories.WithSuffix} />
+  </div>
+</Canvas>
+
+<Controls of={InputStories.WithSuffix} />
+
+## Min-Max with Number
+
+The `min` and `max` props are used to set the minimum and maximum values of the input.
+
+<Canvas of={InputStories.MinMaxNumber}>
+  <div className='p-5 rounded-md bg-second'>
+    <Story of={InputStories.MinMaxNumber} />
+  </div>
+</Canvas>
+
+<Controls of={InputStories.MinMaxNumber} />
+
+## Password Input
+
+The `type` prop is used to set the type of the input.
+
+<Canvas of={InputStories.Password}>
+  <div className='p-5 rounded-md bg-second'>
+    <Story of={InputStories.Password} />
+  </div>
+</Canvas>
+
+<Controls of={InputStories.Password} />
