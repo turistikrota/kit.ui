@@ -1,0 +1,24 @@
+import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
+import * as PerfectImageStories from './PerfectImage.stories'
+import Alert from '@turistikrota/ui/alert'
+
+<Meta of={PerfectImageStories} />
+
+# PerfectImage
+
+<Alert type='warning'>
+  This component is not yet optimized for load performance. If this is important to you, you can continue to use
+  next/image in NextJS projects.
+</Alert>
+
+PerfectImage is a component that renders an image with a perfect aspect ratio.
+
+This component is ideal for mobile use. You will be notified when the user performs the swipe action on the picture.
+
+<Canvas>
+  <div className='h-96 w-96'>
+    <Story of={PerfectImageStories.Playground} />
+  </div>
+</Canvas>
+
+<Controls />
