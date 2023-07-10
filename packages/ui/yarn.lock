@@ -145,10 +145,10 @@
   resolved "https://registry.yarnpkg.com/@trysound/sax/-/sax-0.2.0.tgz#cccaab758af56761eb7bf37af6f03f326dd798ad"
   integrity sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==
 
-"@turistikrota/prettier-config@0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@turistikrota/prettier-config/-/prettier-config-0.0.3.tgz#d5fbb50af69c834a3abbc1a7d07a4107eaf6ef94"
-  integrity sha512-h71detp3pTptYayBDZ0XC61JOQH5HF99YvVDZTiAKuQqqkFaqP9hY9k4odoAsxzYk7VgnaGkIF7HomxOOGqPIg==
+"@turistikrota/prettier-config@0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@turistikrota/prettier-config/-/prettier-config-0.1.0.tgz#cdd8cd3ab2e5b2533cd7771cb13864f1d3e93e33"
+  integrity sha512-JUA3RF4TBZV5maAsWmPBroSq31s8TqATlvRwEKwH3HTxRJIPq/4WSDVDMBHbzmcVyAflQVKoqOpF21cLUAk7Bg==
 
 "@types/json-schema@^7.0.9":
   version "7.0.12"
@@ -883,10 +883,10 @@ eslint-config-prettier@^8.8.0:
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.8.0.tgz#bfda738d412adc917fd7b038857110efe98c9348"
   integrity sha512-wLbQiFre3tdGgpDv67NQKnJuTlcUVYHas3k+DZCc2U2BadthoEY4B7hLPvAxaqdyOGCzuLfii2fqGph10va7oA==
 
-eslint-config-turistikrota@0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/eslint-config-turistikrota/-/eslint-config-turistikrota-0.0.2.tgz#db221d94225afdddc737bcf53938073e52292faa"
-  integrity sha512-zxd1b0xKvREvdDOwnHvLcA1DqJ5/iuY6Ftr6JUUVFQcqh+8MeZ7kJThBKxhWwi9ge7yi/Sc6Bu27eqIwqhKZjg==
+eslint-config-turistikrota@0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-turistikrota/-/eslint-config-turistikrota-0.1.0.tgz#1d6656c839839655779e36eebf238bc3877b8e37"
+  integrity sha512-T42VE/t3KfhKHVWVuMdRVPd7GbfptFR4DC2mpr7FWUBDAz2m7WHnGJrOaxlr53yybCDGXimi+MsTscj7JAOwhQ==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^5.59.6"
     "@typescript-eslint/parser" "^5.59.6"
