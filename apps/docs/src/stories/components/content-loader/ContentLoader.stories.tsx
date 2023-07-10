@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import ContentLoader from '@turistikrota/ui/loader'
 
 const meta = {
-  title: 'Components/ContentLoader',
+  title: 'Components/Content Loader',
   component: ContentLoader,
   tags: [],
   argTypes: {},

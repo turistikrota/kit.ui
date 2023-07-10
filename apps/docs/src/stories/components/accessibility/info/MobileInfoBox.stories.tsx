@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { MobileInfoBox } from '@turistikrota/ui/accessibility/info'
 
 const meta = {
-  title: 'Components/Accessibility/MobileInfoBox',
+  title: 'Components/Accessibility/Mobile Info Box',
   component: MobileInfoBox,
   tags: [],
   argTypes: {

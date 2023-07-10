@@ -3,7 +3,7 @@ import { DesktopInfoBox, MobileInfoBox } from '@turistikrota/ui/accessibility/in
 import { TooltipProvider } from '@turistikrota/ui/tooltip'
 
 const meta = {
-  title: 'Components/Accessibility/DesktopInfoBox',
+  title: 'Components/Accessibility/Desktop Info Box',
   component: DesktopInfoBox,
   tags: [],
   argTypes: {
