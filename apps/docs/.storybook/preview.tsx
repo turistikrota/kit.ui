@@ -38,7 +38,7 @@ const preview: Preview = {
         includeNames: true,
         order: [
           'Documentation',
-          ['Introduction', 'Package Structure', 'Customization'],
+          ['Introduction', 'Package Structure', 'Customization', 'Eslint Configuration', 'Prettier Configuration'],
           'Components',
           ['Accessibility', 'Section', 'Form', '*'],
           'Hooks',
