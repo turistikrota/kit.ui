@@ -1,0 +1,16 @@
+import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
+import * as ToggleStories from './Toggle.stories'
+
+<Meta of={ToggleStories} />
+
+# Toggle
+
+Toggle component is used to switch between two states.
+
+<Canvas of={ToggleStories.Playground}>
+  <div className='bg-second p-5 rounded-md'>
+    <Story of={ToggleStories.Playground} />
+  </div>
+</Canvas>
+
+<Controls of={ToggleStories.Playground} />
