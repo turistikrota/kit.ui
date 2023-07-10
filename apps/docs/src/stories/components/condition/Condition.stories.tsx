@@ -13,7 +13,7 @@ const meta = {
     },
     children: {
       control: { type: 'text' },
-      description: 'The content of the username',
+      description: 'The content of the condition',
     },
   },
 } satisfies Meta<typeof Condition>
