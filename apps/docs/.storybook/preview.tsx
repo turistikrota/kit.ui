@@ -38,6 +38,7 @@ const preview: Preview = {
         includeNames: true,
         order: [
           'Documentation',
+          ['Introduction', 'Package Structure', 'Customization'],
           'Components',
           ['Accessibility', 'Section', 'Form', '*'],
           'Hooks',

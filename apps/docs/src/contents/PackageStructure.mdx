@@ -1,0 +1,95 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title='Documentation/Package Structure' />
+
+# Package Structure
+
+Turistikrota cares about the performance of your site and does not import any components unless you use it.
+
+Importing components in Turistikrota is as follows:
+
+```jsx
+import Button from '@turistikrota/ui/button'
+import Input from '@turistikrota/ui/form/input'
+```
+
+You may want to use the following instead. We thought about you and this situation, we decided that; you shouldn't want.
+
+```jsx
+import { Button, Input } from '@turistikrota/ui'
+```
+
+## The structure of the package is as follows:
+
+```bash
+📦src
+ ┣ 📂accessibility
+ ┃ ┗ 📜info
+ ┣ 📜alert
+ ┣ 📂assets
+ ┃ ┣ 📜animation.css
+ ┃ ┣ 📜config.css
+ ┃ ┣ 📜postcss.config.cjs
+ ┃ ┣ 📜scrollbar.css
+ ┣ 📜button
+ ┣ 📜carousel
+ ┣ 📜condition
+ ┣ 📜dropdown
+ ┣ 📂form
+ ┃ ┣ 📜checkbox
+ ┃ ┣ 📜input
+ ┃ ┣ 📜line
+ ┃ ┣ 📜radio
+ ┃ ┣ 📜range
+ ┃ ┣ 📜section
+ ┃ ┣ 📜select
+ ┃ ┣ 📜textarea
+ ┃ ┗ 📜toggle
+ ┣ 📂hooks
+ ┃ ┣ 📜dom
+ ┃ ┗ 📜ssr
+ ┣ 📂image
+ ┃ ┗ 📜perfect
+ ┣ 📜loader
+ ┣ 📜modal
+ ┣ 📜popup
+ ┣ 📜progress
+ ┣ 📂section
+ ┃ ┗ 📜disabled
+ ┣ 📂text
+ ┃ ┗ 📜error
+ ┣ 📜toast
+ ┣ 📜tooltip
+ ┣ 📜types
+ ┣ 📜username
+ ┣ 📂utils
+ ┃ ┣ 📜async
+ ┃ ┣ 📜debounce
+ ┃ ┣ 📜response
+ ┃ ┣ 📜sort
+ ┃ ┣ 📜storage
+ ┃ ┗ 📜transform
+ ┣ 📜config
+```
+
+## Importing Components
+
+```jsx
+import Button from '@turistikrota/ui/button'
+import Input from '@turistikrota/ui/form/input'
+```
+
+## Importing Hooks
+
+```jsx
+import { useSSR, useClient } from '@turistikrota/ui/hooks/ssr'
+import { useListener } from '@turistikrota/ui/hooks/dom'
+```
+
+## Importing Utils
+
+```jsx
+import { wait } from '@turistikrota/ui/utils/async'
+import debounce from '@turistikrota/ui/utils/debounce'
+import { parseApiError } from '@turistikrota/ui/utils/response'
+```
