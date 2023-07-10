@@ -1,0 +1,162 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks'
+
+<Meta title='Theme/Colors' />
+
+# Colors
+
+`@turistikrota/ui` uses tailwind css. In addition to all tailwindcss colors the following can be used.
+
+## Background Colors
+
+Background colors are used for the background of elements, components, and screens.
+
+use with `bg-` prefix.
+
+Like: `bg-default`, `bg-secondary`, `bg-third`
+
+<ColorPalette>
+  <ColorItem
+    title='light.theme.background-color.default'
+    subtitle='Default BG'
+    colors={{ default: 'rgb(239, 244, 245)' }}
+  />
+  <ColorItem title='light.theme.background-color.secondary' subtitle='Secondary BG' colors={{ default: '#fff' }} />
+  <ColorItem title='light.theme.background-color.third' subtitle='Third BG' colors={{ default: '#e7edef' }} />
+
+  <ColorItem
+    title='dark.theme.background-color.default'
+    subtitle='Default BG'
+    colors={{ default: '#0f0e0e' }}
+  />
+  <ColorItem title='dark.theme.background-color.secondary' subtitle='Secondary BG' colors={{ default: '#121212' }} />
+  <ColorItem title='dark.theme.background-color.third' subtitle='Third BG' colors={{ default: '#191919' }} />
+</ColorPalette>
+
+## Border Colors
+
+Border colors are used for the border of elements, components, and screens.
+
+use with `border-` prefix.
+
+Like: `border-default`
+
+<ColorPalette>
+  <ColorItem
+    title='light.theme.border-color.default'
+    subtitle='Default BG'
+    colors={{ default: '#f2f0f0' }}
+  />
+
+  <ColorItem
+    title='dark.theme.border-color.default'
+    subtitle='Default BG'
+    colors={{ default: '#252525' }}
+  />
+  
+</ColorPalette>
+
+## Theme Colors
+
+<ColorPalette>
+  <ColorItem title='theme.color.primary' subtitle='Sea' colors={{ default: '#3397e6' }} />
+  <ColorItem title='theme.color.secondary' subtitle='Sun' colors={{ default: '#ffa500' }} />
+  <ColorItem title='theme.color.vip' subtitle='Vip' colors={{ default: 'rgb(255, 215, 0)' }} />
+  <ColorItem title='theme.color.deluxe' subtitle='Deluxe' colors={{ default: 'rgb(135, 206, 235)' }} />
+  <ColorItem
+    title='theme.color.primary'
+    subtitle='Primary color with 1-6 shades'
+    colors={{
+      50: 'rgb(240, 248, 255)',
+      100: 'rgb(199, 225, 247)',
+      200: 'rgb(135, 206, 235)',
+      300: 'rgb(92, 175, 231)',
+      400: 'rgb(51, 151, 230)',
+      500: 'rgb(0, 119, 204)',
+    }}
+  />
+  <ColorItem
+    title='theme.color.primary'
+    subtitle='Primary color with 7-12 shades'
+    colors={{
+      600: 'rgb(0, 107, 179)',
+      700: 'rgb(0, 90, 156)',
+      800: 'rgb(0, 77, 128)',
+      900: 'rgb(0, 61, 102)',
+      1000: 'rgb(0, 46, 77)',
+      1100: 'rgb(0, 34, 51)',
+    }}
+  />
+  <ColorItem
+  title='theme.color.secondary'
+  subtitle='Secondary color with 1-6 shades'
+  colors={{
+    50: 'rgb(255, 248, 240)',
+    100: 'rgb(254, 231, 195)',
+    200: 'rgb(252, 217, 146)',
+    300: 'rgb(255, 204, 102)',
+    400: 'rgb(255, 165, 0)',
+    500: 'rgb(255, 153, 0)',
+  }}
+/>
+<ColorItem
+  title='theme.color.secondary'
+  subtitle='Secondary color with 7-12 shades'
+  colors={{
+    600: 'rgb(230, 138, 0)',
+    700: 'rgb(204, 122, 0)',
+    800: 'rgb(179, 107, 0)',
+    900: 'rgb(143, 79, 0)',
+    1000: 'rgb(102, 51, 0)',
+    1100: 'rgb(77, 38, 0)',
+  }}
+/>
+<ColorItem
+  title='theme.color.vip'
+  subtitle='VIP color with 1-6 shades'
+  colors={{
+    50: 'rgb(255, 248, 240)',
+    100: 'rgb(254, 231, 195)',
+    200: 'rgb(252, 217, 146)',
+    300: 'rgb(255, 204, 102)',
+    400: 'rgb(255, 165, 0)',
+    500: 'rgb(255, 153, 0)',
+  }}
+/>
+<ColorItem
+  title='theme.color.vip'
+  subtitle='VIP color with 7-12 shades'
+  colors={{
+    600: 'rgb(230, 138, 0)',
+    700: 'rgb(204, 122, 0)',
+    800: 'rgb(179, 107, 0)',
+    900: 'rgb(143, 79, 0)',
+    1000: 'rgb(102, 51, 0)',
+    1100: 'rgb(77, 38, 0)',
+  }}
+/>
+<ColorItem
+  title='theme.color.deluxe'
+  subtitle='Deluxe color with 1-6 shades'
+  colors={{
+    50: 'rgb(235, 245, 250)',
+    100: 'rgb(197, 232, 250)',
+    200: 'rgb(144, 207, 240)',
+    300: 'rgb(94, 183, 238)',
+    400: 'rgb(50, 161, 232)',
+    500: 'rgb(31, 136, 200)',
+  }}
+/>
+<ColorItem
+  title='theme.color.deluxe'
+  subtitle='Deluxe color with 7-12 shades'
+  colors={{
+    600: 'rgb(24, 117, 173)',
+    700: 'rgb(19, 99, 144)',
+    800: 'rgb(15, 81, 116)',
+    900: 'rgb(12, 65, 92)',
+    1000: 'rgb(8, 52, 73)',
+    1100: 'rgb(5, 40, 56)',
+  }}
+/>
+
+</ColorPalette>

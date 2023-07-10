@@ -2,13 +2,13 @@ import { Meta, StoryObj } from '@storybook/react'
 import ErrorText from '@turistikrota/ui/text/error'
 
 const meta = {
-  title: 'Components/ErrorText',
+  title: 'Components/Error Text',
   component: ErrorText,
   tags: [],
   argTypes: {
     children: {
       control: { type: 'text' },
-      description: 'The content of the username',
+      description: 'The content of the error text',
     },
   },
 } satisfies Meta<typeof ErrorText>

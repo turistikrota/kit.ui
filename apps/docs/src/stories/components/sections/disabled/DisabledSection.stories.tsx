@@ -12,7 +12,7 @@ const meta = {
       control: { type: 'select' },
       default: 'sm',
       defaultValue: 'sm',
-      description: 'The size of the username',
+      description: 'The size of the section',
     },
     blur: {
       control: { type: 'boolean' },
@@ -53,7 +53,7 @@ const meta = {
     },
     children: {
       control: { type: 'text' },
-      description: 'The content of the username',
+      description: 'The content of the section',
     },
   },
 } satisfies Meta<typeof DisabledSection>

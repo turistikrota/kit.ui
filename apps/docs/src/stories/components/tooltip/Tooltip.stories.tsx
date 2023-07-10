@@ -35,7 +35,7 @@ export const Playground: Story = {
   },
   render: ({ content, children, position }) => (
     <TooltipProvider>
-      <Tooltip content={<span className='text-gray-200'>{content}</span>} position={position}>
+      <Tooltip content={<span className='dark:text-gray-200'>{content}</span>} position={position}>
         <span className='dark:text-gray-300'> {children}</span>
       </Tooltip>
     </TooltipProvider>
@@ -46,11 +46,11 @@ const createStaticWithPosition = (position: TooltipPosition): Story => ({
   args: {
     content: 'this is the tooltip',
     position,
-    children: <i className='bx bx-info-circle text-gray-200' />,
+    children: <i className='bx bx-info-circle dark:text-gray-200' />,
   },
   render: ({ content, children, position }) => (
     <TooltipProvider>
-      <Tooltip content={<span className='text-gray-200'>{content}</span>} position={position}>
+      <Tooltip content={<span className='dark:text-gray-200'>{content}</span>} position={position}>
         <span className='dark:text-gray-300'> {children}</span>
       </Tooltip>
     </TooltipProvider>

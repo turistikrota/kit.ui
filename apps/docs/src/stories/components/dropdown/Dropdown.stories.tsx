@@ -8,7 +8,7 @@ const meta = {
   argTypes: {
     children: {
       control: { type: 'text' },
-      description: 'The content of the username',
+      description: 'The content of the dropdown',
     },
   },
 } satisfies Meta<typeof Dropdown>

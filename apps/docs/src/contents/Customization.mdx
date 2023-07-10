@@ -1,0 +1,22 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title='Documentation/Customization' />
+
+# Customize Theme
+
+Turistikrota combines your tailwindcss configuration with its own configuration together with the `withTouristicUI` function. Therefore, you can transfer the values you want with the tailwindcss configuration.
+
+```js
+// tailwind.config.js
+const { withTouristicUI } = require('@turistikrota/ui/config')
+
+module.exports = withTouristicUI({
+  theme: {
+    extend: {
+      colors: {
+        primary: '#ff0000',
+      },
+    },
+  },
+})
+```

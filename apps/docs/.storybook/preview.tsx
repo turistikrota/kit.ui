@@ -35,15 +35,17 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        method: 'alphabetical',
-        order: ['Documentation', ['Welcome', '*'], 'Components', 'Hooks', 'Utils', 'Colors'],
-        locales: 'en-US',
-      },
-      controls: {
-        matchers: {
-          color: /(background|color)$/i,
-          date: /Date$/,
-        },
+        includeNames: true,
+        order: [
+          'Documentation',
+          ['Introduction', 'Package Structure', 'Customization', 'Eslint Configuration', 'Prettier Configuration'],
+          'Components',
+          ['Accessibility', 'Section', 'Form', '*'],
+          'Hooks',
+          ['useToast', '*'],
+          'Utils',
+          'Theme',
+        ],
       },
     },
   },

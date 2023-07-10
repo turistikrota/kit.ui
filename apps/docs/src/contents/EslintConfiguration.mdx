@@ -1,0 +1,21 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title='Documentation/Eslint Configuration' />
+
+# Eslint Configuration
+
+you need to install the following packages:
+
+```bash
+yarn add -D eslint eslint-config-turistikrota
+```
+
+Then you need to create a `.eslintrc.js` file in the root directory of your project and add the following code:
+
+```js
+module.exports = {
+  extends: ['turistikrota'],
+}
+```
+
+That's all, now you can use eslint.

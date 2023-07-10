@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import PerfectImage from '@turistikrota/ui/image/perfect'
 
 const meta = {
-  title: 'Components/PerfectImage',
+  title: 'Components/Perfect Image',
   component: PerfectImage,
   tags: [],
   argTypes: {
@@ -36,7 +36,7 @@ type Story = StoryObj<typeof meta>
  */
 export const Playground: Story = {
   args: {
-    src: '/images/vite.png',
+    src: '/images/react.png',
   },
   render: ({ children, ...args }) => <PerfectImage {...args}>{children}</PerfectImage>,
 }
