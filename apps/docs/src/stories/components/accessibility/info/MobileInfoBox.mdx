@@ -1,4 +1,4 @@
-import { Meta, Canvas, Story, Controls } from '@storybook/blocks'
+import { Meta, Canvas, Controls } from '@storybook/blocks'
 import * as MobileInfoBoxStories from './MobileInfoBox.stories'
 
 <Meta of={MobileInfoBoxStories} />
@@ -15,8 +15,6 @@ Please note that this component is not responsive and should only be used on mob
 
 ## The Overview
 
-<Canvas>
-  <Story of={MobileInfoBoxStories.Default} />
-</Canvas>
+<Canvas of={MobileInfoBoxStories.Default} />
 
 <Controls />

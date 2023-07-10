@@ -36,7 +36,7 @@ type Story = StoryObj<typeof meta>
  */
 export const Playground: Story = {
   args: {
-    src: '/images/vite.png',
+    src: '/images/react.png',
   },
   render: ({ children, ...args }) => <PerfectImage {...args}>{children}</PerfectImage>,
 }
