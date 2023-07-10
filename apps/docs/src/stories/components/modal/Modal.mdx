@@ -1,0 +1,31 @@
+import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
+import * as ModalStories from './Modal.stories'
+import Alert from '@turistikrota/ui/alert'
+
+<Meta of={ModalStories} />
+
+# Modal
+
+Modal component is used to display content in a layer above the app.
+
+<Alert type='warning'>
+  You can turn the popup you have customized on or off by changing the open value in the field below.
+</Alert>
+
+<Canvas of={ModalStories.Playground}>
+  <Story of={ModalStories.Playground} />
+</Canvas>
+
+<Controls of={ModalStories.Playground} />
+
+## Custom Content Example
+
+<Alert type='warning'>
+  You can turn the popup you have customized on or off by changing the open value in the field below.
+</Alert>
+
+<Canvas of={ModalStories.CustomContent}>
+  <Story of={ModalStories.CustomContent} />
+</Canvas>
+
+<Controls of={ModalStories.CustomContent} />
