@@ -1,0 +1,16 @@
+import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
+import * as TextareaStories from './Textarea.stories'
+
+<Meta of={TextareaStories} />
+
+# Textarea
+
+Textarea component is used for multi-line input.
+
+<Canvas of={TextareaStories.Playground}>
+  <div className='bg-second rounded-md p-4'>
+    <Story of={TextareaStories.Playground} />
+  </div>
+</Canvas>
+
+<Controls of={TextareaStories.Playground} />
