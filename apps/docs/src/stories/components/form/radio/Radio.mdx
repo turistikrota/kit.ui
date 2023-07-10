@@ -1,0 +1,20 @@
+import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
+import * as RadioStories from './Radio.stories'
+
+<Meta of={RadioStories} />
+
+# Radio
+
+Radio component is used to select a single option from a list of options.
+
+<Canvas of={RadioStories.Playground}>
+  <div className='bg-second p-4 rounded-md'>
+    <Story of={RadioStories.Playground} />
+  </div>
+</Canvas>
+
+<Controls of={RadioStories.Playground} />
+
+## List of Radio
+
+<Story of={RadioStories.List} />
