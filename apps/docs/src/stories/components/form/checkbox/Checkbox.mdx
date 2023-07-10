@@ -1,0 +1,14 @@
+import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
+import * as CheckboxStories from './Checkbox.stories'
+
+<Meta of={CheckboxStories} />
+
+# Checkbox
+
+Checkbox component is used for allowing a user to make a multiple choice. It's a wrapper around the native `<input type="checkbox" />` element.
+
+<Canvas of={CheckboxStories.Playground}>
+  <Story of={CheckboxStories.Playground} />
+</Canvas>
+
+<Controls of={CheckboxStories.Playground} />
