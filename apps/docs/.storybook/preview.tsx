@@ -35,15 +35,15 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        method: 'alphabetical',
-        order: ['Documentation', ['Welcome', '*'], 'Components', 'Hooks', 'Utils', 'Colors'],
-        locales: 'en-US',
-      },
-      controls: {
-        matchers: {
-          color: /(background|color)$/i,
-          date: /Date$/,
-        },
+        includeNames: true,
+        order: [
+          'Documentation',
+          'Components',
+          ['Accessibility', 'Section', 'Form', '*'],
+          'Hooks',
+          ['useToast', '*'],
+          'Utils',
+        ],
       },
     },
   },

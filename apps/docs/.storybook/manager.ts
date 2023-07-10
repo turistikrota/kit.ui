@@ -3,4 +3,7 @@ import theme from './turistikrota.theme'
 
 addons.setConfig({
   theme: theme,
+  sidebar: {
+    showRoots: true,
+  },
 })
