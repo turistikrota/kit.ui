@@ -1,10 +1,28 @@
-import { Meta } from '@storybook/blocks'
+import { Meta, Canvas } from '@storybook/blocks'
+import MobileHeader from '@turistikrota/ui/headers/mobile'
 
 <Meta title='Components/Headers/Mobile' />
 
 # Mobile Header
 
 Mobile header is used to display header on mobile devices.
+
+Features:
+
+- Fixed position
+- Left, right and fill slots
+
+<Canvas>
+  <MobileHeader>
+    <MobileHeader.Left>
+      <span className='dark:text-white'>Set your logo here</span>
+    </MobileHeader.Left>
+    <MobileHeader.Fill className='hidden md:flex'>{``}</MobileHeader.Fill>
+    <MobileHeader.Right>
+      <span className='dark:text-white'>Set login and register buttons here</span>
+    </MobileHeader.Right>
+  </MobileHeader>
+</Canvas>
 
 ## Usage
 

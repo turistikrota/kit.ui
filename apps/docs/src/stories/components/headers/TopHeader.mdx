@@ -1,10 +1,26 @@
-import { Meta } from '@storybook/blocks'
+import { Meta, Canvas } from '@storybook/blocks'
+import TopHeader from '@turistikrota/ui/headers/top'
 
 <Meta title='Components/Headers/Top' />
 
 # Top Header
 
 Top header is used to some contract information and login and register buttons.
+
+Features:
+
+- Left, right and fill slots
+
+<Canvas>
+  <TopHeader className='hidden md:flex'>
+    <TopHeader.Left>
+      <span className='dark:text-white'>some promotion text</span>
+    </TopHeader.Left>
+    <TopHeader.Right>
+      <span className='dark:text-white'>your some link</span>
+    </TopHeader.Right>
+  </TopHeader>
+</Canvas>
 
 ## Usage
 
