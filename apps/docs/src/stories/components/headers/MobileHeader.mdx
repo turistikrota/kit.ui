@@ -1,0 +1,23 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title='Components/Headers/Mobile' />
+
+# Mobile Header
+
+Mobile header is used to display header on mobile devices.
+
+## Usage
+
+```js
+import MobileHeader from '@turistikrota/ui/headers/mobile'
+
+export default function MyDefaultHeader() {
+  return (
+    <MobileHeader>
+      <MobileHeader.Left>Set your logo here</MobileHeader.Left>
+      <MobileHeader.Fill className='hidden md:flex'>{``}</MobileHeader.Fill>
+      <MobileHeader.Right>Set login and register buttons here</MobileHeader.Right>
+    </MobileHeader>
+  )
+}
+```
