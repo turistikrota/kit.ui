@@ -1,10 +1,26 @@
-import { Meta } from '@storybook/blocks'
+import { Meta, Canvas } from '@storybook/blocks'
+import ErrorPage from '@turistikrota/ui/pages/error'
+import Button from '@turistikrota/ui/button'
 
 <Meta title='Pages/Error' />
 
 # Error Page
 
 Error page is used to display error messages to the user.
+
+## The Overview
+
+<Canvas>
+  <ErrorPage
+    title='Not Found'
+    subtitle='The page you are looking for does not exist.'
+    button={
+      <Button className='inline-flex justify-center text-white bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900 my-4'>
+        Go to Home
+      </Button>
+    }
+  />
+</Canvas>
 
 ## As Not Found (404)
 
