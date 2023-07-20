@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title='Components/Headers/Top' />
+
+# Top Header
+
+Top header is used to some contract information and login and register buttons.
+
+## Usage
+
+```js
+import TopHeader from '@turistikrota/ui/headers/top'
+
+export default function MyDefaultTopHeader() {
+  return (
+    <TopHeader className='hidden md:flex'>
+      <TopHeader.Left>some promotion text</TopHeader.Left>
+      <TopHeader.Right>
+        <Link
+          href={getStaticRoute(locale).aboutUs}
+          className='hover:opacity-80 transition-all duration-200 ease-in-out'
+        >
+          link content
+        </Link>
+      </TopHeader.Right>
+    </TopHeader>
+  )
+}
+```
