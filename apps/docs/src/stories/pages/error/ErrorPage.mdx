@@ -1,0 +1,58 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title='Pages/Error' />
+
+# Error Page
+
+Error page is used to display error messages to the user.
+
+## As Not Found (404)
+
+Not found page is used to display 404 error message to the user.
+
+```js
+import ErrorPage from '@turistikrota/ui/pages/error'
+
+export default function MyApp() {
+  return (
+    <ErrorPage
+      title='Not Found'
+      subtitle='The page you are looking for does not exist.'
+      button={
+        <Link
+          to={'/'}
+          className='inline-flex text-white bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900 my-4'
+        >
+          Go to Home
+        </Link>
+      }
+    />
+  )
+}
+```
+
+## As Server Error (500)
+
+Server error page is used to display 500 error message to the user.
+
+```js
+import ErrorPage from '@turistikrota/ui/pages/error'
+
+export default function MyApp() {
+  return (
+    <ErrorPage
+      code={500}
+      title='Server Error'
+      subtitle='Something went wrong. Please try again later.'
+      button={
+        <Link
+          to={'/'}
+          className='inline-flex text-white bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900 my-4'
+        >
+          Go to Home
+        </Link>
+      }
+    />
+  )
+}
+```
