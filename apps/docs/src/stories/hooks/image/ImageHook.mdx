@@ -1,0 +1,45 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title='Hooks/Image' />
+
+# Image Hooks
+
+Image hooks are used to handle images in a more efficient way.
+
+## useImageSrc()
+
+`useImageSrc` hook is used to handle image loading and error states.
+
+It automatically replaces the src value with the fallback src when there is an error in the images.
+
+You must set the fallback value before executing it. Otherwise it saves an empty path.
+
+```tsx
+import { useImageSrc, setDefaultImageSrc } from '@turistikrota/ui/hooks/image'
+
+setDefaultImageSrc('/images/default.png')
+
+export default function MyComponent() {
+  const source = useImageSrc('/images/my-image.png')
+
+  return <img {...source} />
+}
+```
+
+or code more clearly
+
+```tsx
+import { useImageSrc, setDefaultImageSrc } from '@turistikrota/ui/hooks/image'
+
+setDefaultImageSrc('/images/default.png')
+
+export default function MyComponent() {
+  const { src, onError } = useImageSrc('/images/my-image.png')
+
+  return <img src={src} onError={onError} />
+}
+```
+
+Compatible with `NextJS` and `Vite`.
+
+It doesn't use env values to be compatible for both. Because these two technologies get env values in different ways. That's why we have the `setDefaultImageSrc` function.
