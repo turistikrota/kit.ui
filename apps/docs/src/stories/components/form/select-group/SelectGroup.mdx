@@ -1,0 +1,20 @@
+import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
+import * as SelectGroupStories from './SelectGroup.stories'
+
+<Meta of={SelectGroupStories} />
+
+# Select Group
+
+```jsx
+import SelectGroup from '@turistikrota/ui/form/select/group'
+```
+
+Select group is a component that groups multiple select components together.
+
+<Canvas of={SelectGroupStories.Playground}>
+  <div className='bg-second p-4 rounded-md'>
+    <Story of={SelectGroupStories.Playground} />
+  </div>
+</Canvas>
+
+<Controls of={SelectGroupStories.Playground} />
