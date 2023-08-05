@@ -1,6 +1,6 @@
 'use client'
-import React, { useState } from 'react'
-import { useListener } from '../hooks/dom'
+import React from 'react'
+import useHeaderFixed from '../hooks/header'
 
 type HeaderProps = {
   className?: string
@@ -52,12 +52,7 @@ const Avatar = ({ children, onClick }: React.PropsWithChildren<ClickableProps>) 
 }
 
 function MobileHeader({ children, className }: React.PropsWithChildren<HeaderProps>) {
-  const [isFixed, setIsFixed] = useState(false)
-
-  useListener('scroll', () => {
-    const checkPoint = isFixed ? 64 : 120
-    setIsFixed(window.scrollY >= checkPoint)
-  })
+  const isFixed = useHeaderFixed()
 
   return (
     <header
