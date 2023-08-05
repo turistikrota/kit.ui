@@ -1,0 +1,20 @@
+import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
+import * as FeatureCardStories from './FeatureCard.stories'
+
+<Meta of={FeatureCardStories} />
+
+# FeatureCard
+
+```jsx
+import FeatureCard from '@turistikrota/ui/cards/feature'
+```
+
+Feature card is used to display a feature of a product or service.
+
+<Canvas of={FeatureCardStories.Playground} />
+
+<Controls />
+
+## Core Label
+
+<Canvas of={FeatureCardStories.WithCoreFeature} />
