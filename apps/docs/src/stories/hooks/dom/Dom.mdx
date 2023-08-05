@@ -1,4 +1,5 @@
 import { Meta } from '@storybook/blocks'
+import Summary from '@/utils/Summary'
 
 <Meta title='Hooks/DOM' />
 
@@ -23,23 +24,23 @@ const Component = () => {
 }
 ```
 
-or with an element:
-
+<Summary title="With an element">
 ```jsx
 import { useListener } from '@turistikrota/ui/hooks/dom'
 
 const Component = () => {
-  const [count, setCount] = useState(0)
-  const ref = useRef()
+const [count, setCount] = useState(0)
+const ref = useRef()
 
-  useListener('click', () => setCount(count + 1), ref.current)
+useListener('click', () => setCount(count + 1), ref.current)
 
-  return <div ref={ref}>{count}</div>
+return <div ref={ref}>{count}</div>
 }
-```
 
-you can listen scroll events too:
+````
+</Summary>
 
+<Summary title="With scroll event">
 ```jsx
 import { useListener } from '@turistikrota/ui/hooks/dom'
 
@@ -50,7 +51,76 @@ const Component = () => {
 
   return <div>{count}</div>
 }
+````
+
+</Summary>
+
+## useInfiniteScroll(cb, loading, offset?)
+
+`useInfiniteScroll` is a hook that allows you to add infinite scroll to a DOM element.
+
+```jsx
+import { useInfiniteScroll } from '@turistikrota/ui/hooks/dom'
+
+const Component = () => {
+  const [count, setCount] = useState(0)
+
+  useInfiniteScroll(() => setCount(count + 1), false)
+
+  return <div>{count}</div>
+}
 ```
+
+<Summary title="Example with loading state">
+```jsx
+import { useInfiniteScroll } from '@turistikrota/ui/hooks/dom'
+
+const Component = () => {
+const [count, setCount] = useState(0)
+const [loading, setLoading] = useState(false)
+
+useInfiniteScroll(() => {
+setLoading(true)
+setTimeout(() => {
+setCount(count + 1)
+setLoading(false)
+}, 500)
+}, loading)
+
+return <div>{count}</div>
+}
+
+````
+</Summary>
+
+
+<Summary title="Example with offset">
+This will trigger the callback when the user is 100px from the bottom of the page.
+
+```jsx
+import { useInfiniteScroll } from '@turistikrota/ui/hooks/dom'
+
+const Component = () => {
+  const [count, setCount] = useState(0)
+  const [loading, setLoading] = useState(false)
+
+  useInfiniteScroll(
+    () => {
+      setLoading(true)
+      setTimeout(() => {
+        setCount(count + 1)
+        setLoading(false)
+      }, 500)
+    },
+    loading,
+    100,
+  )
+
+  return <div>{count}</div>
+}
+````
+
+</Summary>
 
 ## useWindowSize()
 

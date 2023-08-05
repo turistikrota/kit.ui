@@ -73,3 +73,12 @@ export const useAgentMobile = (): boolean => {
   }
   return false
 }
+
+export const useInfiniteScroll = (callback: () => void, loading: boolean, offset = 0) => {
+  useListener('scroll', () => {
+    if (loading) return
+    if (window.innerHeight + window.scrollY + offset >= document.body.scrollHeight) {
+      callback()
+    }
+  })
+}
