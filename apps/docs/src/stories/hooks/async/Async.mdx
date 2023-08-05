@@ -1,0 +1,23 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title='Hooks/Async' />
+
+# Async Hooks
+
+Async hooks are used to handle async operations in a declarative way.
+
+## useInterval(cb, delay)
+
+`useInterval` hook is used to execute a callback function in a given interval.
+
+```js
+import { useInterval } from '@turistikrota/ui/hooks/async'
+
+const MyComponent = () => {
+  useInterval(() => {
+    // do something
+  }, 1000)
+
+  return <div>...</div>
+}
+```

@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useInterval } from '../hooks/async'
 import { useAgentMobile } from '../hooks/dom'
 import PerfectImage from '../image/perfect'
 import DotRenderer from './dot-renderer'
@@ -6,8 +7,13 @@ import DotRenderer from './dot-renderer'
 type Props = {
   images: string[]
   sizeClassName: string
+  activeIndex?: number
   className?: string
-  onClick?: () => void
+  onClick?: (image: string, idx: number) => void
+  autoPlay?: boolean
+  autoPlayInterval?: number
+  showDots?: boolean
+  showSubImages?: boolean
 }
 
 type ButtonProps = {
@@ -31,9 +37,30 @@ const CarouselButton: React.FC<ButtonProps> = ({ position, onClick }) => {
   )
 }
 
-const Carousel: React.FC<Props> = ({ images, sizeClassName, className, onClick }) => {
+const Carousel: React.FC<Props> = ({
+  images,
+  sizeClassName,
+  className,
+  onClick,
+  showDots = true,
+  showSubImages = false,
+  autoPlay = false,
+  autoPlayInterval = 5000,
+  activeIndex = 0,
+}) => {
   const [indexes, setIndexes] = useState([0, 0, 2])
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(activeIndex)
+
+  useInterval(
+    () => {
+      goToNextSlide()
+    },
+    autoPlay ? autoPlayInterval : null,
+  )
+
+  useEffect(() => {
+    setCurrentIndex(activeIndex)
+  }, [activeIndex])
 
   const goToPreviousSlide = () => {
     setIndexes(([fromIndex, currentIndex, toIndex]) => {
@@ -71,7 +98,7 @@ const Carousel: React.FC<Props> = ({ images, sizeClassName, className, onClick }
       (e.target instanceof HTMLImageElement || e.target instanceof HTMLDivElement || e.target === e.currentTarget) &&
       onClick
     ) {
-      onClick()
+      onClick(images[currentIndex], currentIndex)
     }
   }
 
@@ -90,10 +117,24 @@ const Carousel: React.FC<Props> = ({ images, sizeClassName, className, onClick }
             onRightSwipe={checkRightSwipe}
           />
         ))}
-        <DotRenderer indexes={indexes} count={images.length} onClick={(idx) => setCurrentIndex(idx)} />
+        {showDots && <DotRenderer indexes={indexes} count={images.length} onClick={(idx) => setCurrentIndex(idx)} />}
         {currentIndex !== 0 && <CarouselButton position='left' onClick={goToPreviousSlide} />}
         {currentIndex !== images.length - 1 && <CarouselButton position='right' onClick={goToNextSlide} />}
       </div>
+      {showSubImages && (
+        <div className='mt-2 flex justify-start overflow-x-auto gap-1 pb-2'>
+          {images.map((img, idx) => (
+            <img
+              key={idx}
+              src={img}
+              className={`w-12 h-12 max-w-12 max-h-12 min-w-[3rem] min-h-[3rem] object-cover rounded-md transition-opacity duration-200 ${
+                idx === currentIndex ? 'opacity-100' : 'opacity-50 cursor-pointer'
+              }`}
+              onClick={() => setCurrentIndex(idx)}
+            />
+          ))}
+        </div>
+      )}
     </div>
   )
 }
