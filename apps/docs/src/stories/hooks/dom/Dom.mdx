@@ -122,6 +122,22 @@ const Component = () => {
 
 </Summary>
 
+## useInterval(cb, delay)
+
+`useInterval` is a hook that allows you to add an interval to a DOM element.
+
+```jsx
+import { useInterval } from '@turistikrota/ui/hooks/dom'
+
+const Component = () => {
+  const [count, setCount] = useState(0)
+
+  useInterval(() => setCount(count + 1), 1000)
+
+  return <div>{count}</div>
+}
+```
+
 ## useWindowSize()
 
 `useWindowSize` is a hook that allows you to get the current window size.
