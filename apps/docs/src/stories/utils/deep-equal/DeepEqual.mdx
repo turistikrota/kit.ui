@@ -1,0 +1,23 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title='Utils/Deep Equal' />
+
+# Deep Equal
+
+Deep equal is a function that compares two objects and returns true if they are equal.
+
+## deepEqual(obj1, obj2)
+
+```js
+import { deepEqual } from '@turistikrota/ui/utils'
+
+const obj1 = { a: 1, b: 2, c: 3 }
+const obj2 = { a: 1, b: 2, c: 3 }
+
+deepEqual(obj1, obj2) // true
+
+const obj3 = { a: 1, b: 2, c: 3 }
+const obj4 = { a: 1, b: 2, c: 4 }
+
+deepEqual(obj3, obj4) // false
+```
