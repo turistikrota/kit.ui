@@ -1,0 +1,56 @@
+import { Meta } from '@storybook/blocks'
+import Badge from '@turistikrota/ui/badge'
+import DiffComponent from '@/utils/Diff'
+import Summary from '@/utils/Summary'
+
+<Meta title='Documentation/Known Issues' />
+
+# Known Issues
+
+The following is a list of known issues with `@turistikrota/ui`.
+
+<Summary
+  title={
+    <>
+      SyntaxError: Cannot use import statement outside a module{' '}
+      <Badge variant='warning' size='sm'>
+        NextJS SSR Pages Dir
+      </Badge>
+    </>
+  }
+>
+If you are using `@turistikrota/ui` in a NextJS project and you are getting the following error:
+
+```bash
+SyntaxError: Cannot use import statement outside a module
+```
+
+This happens when nextjs tries to import es module files.
+
+To fix this, fix your tourist route imports as follows.
+
+From this:
+
+```js
+import Button from '@turistikrota/ui/button'
+```
+
+To this:
+
+```js
+import Button from '@turistikrota/ui/cjs/button'
+```
+
+Or with sub components:
+
+```js
+import Input from '@turistikrota/ui/form/input'
+```
+
+To this:
+
+```js
+import Input from '@turistikrota/ui/cjs/form/input'
+```
+
+</Summary>
