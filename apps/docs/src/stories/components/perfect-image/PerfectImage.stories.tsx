@@ -22,6 +22,12 @@ const meta = {
       action: 'onRightSwipe',
       description: 'The function to be called when the user swipes right',
     },
+    fit: {
+      options: ['contain', 'cover', 'fill', 'none', 'scale-down'],
+      control: { type: 'select' },
+      description: 'The fit of the image',
+      defaultValue: 'cover',
+    },
   },
 } satisfies Meta<typeof PerfectImage>
 
