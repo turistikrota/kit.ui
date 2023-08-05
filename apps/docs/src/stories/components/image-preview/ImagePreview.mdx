@@ -1,0 +1,65 @@
+import { Meta } from '@storybook/blocks'
+import Example from './ImagePreview.example'
+
+<Meta title='Components/Image Preview' />
+
+# Image Preview
+
+This component is used to display a preview of an image list.
+
+## Usage
+
+You can use the `ImagePreview` component to wrap the component that will use the preview. The `ImagePreview` component has a `list` prop that is used to pass the list of images to be displayed in the preview.
+
+and you can use the `useImagePreview` hook to get the `show` function to display the preview.
+
+## Example
+
+You can activate the preview by clicking the pictures in the carousel below.
+
+<Example />
+
+<br />
+
+### The Code
+
+These are the code used to create the example above.
+
+```tsx
+import '@turistikrota/ui/assets/animation.css'
+import Carousel from '@turistikrota/ui/carousel'
+import ImagePreview, { useImagePreview } from '@turistikrota/ui/image/preview'
+
+const images: string[] = [
+  '/images/react.png',
+  '/images/js.png',
+  '/images/vite.png',
+  '/images/nextjs.png',
+  '/images/golang.png',
+  '/images/cpp.png',
+  '/images/csharp.png',
+  '/images/java.png',
+  '/images/php.png',
+  '/images/py.png',
+]
+
+function Example() {
+  const preview = useImagePreview()
+
+  const open = (url: string, idx: number) => {
+    preview.show(idx)
+  }
+
+  return <Carousel images={images} sizeClassName='h-96 w-96 bg-third rounded-md' autoPlay onClick={open} />
+}
+
+function WithProvider() {
+  return (
+    <ImagePreview list={images}>
+      <Example />
+    </ImagePreview>
+  )
+}
+
+export default WithProvider
+```

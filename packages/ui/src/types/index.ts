@@ -55,6 +55,8 @@ export type Variant =
   | 'opacity'
   | 'vip'
 
+export type ObjectFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down'
+
 export type FullVariant =
   | 'success'
   | 'warning'
@@ -79,6 +81,14 @@ export const TextSize: Record<Size, string> = {
   '2xl': 'text-2xl',
   '3xl': 'text-3xl',
   '4xl': 'text-4xl',
+}
+
+export const ObjectFits: Record<ObjectFit, string> = {
+  contain: 'object-contain',
+  cover: 'object-cover',
+  fill: 'object-fill',
+  none: 'object-none',
+  'scale-down': 'object-scale-down',
 }
 
 export const FullVariantClasses: Record<FullVariant, string> = {

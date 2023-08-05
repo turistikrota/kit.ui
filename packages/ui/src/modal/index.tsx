@@ -1,6 +1,5 @@
 import React, { useRef } from 'react'
 import { CSSTransition } from 'react-transition-group'
-import '../assets/animation.css'
 
 type ModalType = React.FC<React.PropsWithChildren<ModalProps>> & {
   Head: HeadType
