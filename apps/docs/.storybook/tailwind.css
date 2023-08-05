@@ -7,3 +7,48 @@ iframe,
 #storybook-preview-iframe {
   background-color: var(--default-background) !important;
 }
+
+:root {
+  --foreground-rgb: 255, 255, 255 !important;
+  --background-color-start: #141414 !important;
+  --background-color-end: #121212 !important;
+  --popup-background-color: #121212 !important;
+  --header-background-color: #050505 !important;
+  --default-background: #0f0e0e !important;
+  --second-background-color: #121212 !important;
+  --third-background-color: #191919 !important;
+
+  --skeleton-default-color: #201c1c !important;
+  --skeleton-color-50: #212121 !important;
+  --skeleton-color-100: #1f1f1f !important;
+  --skeleton-color-200: #1d1d1d !important;
+  --skeleton-color-300: #1b1b1b !important;
+  --skeleton-color-400: #191919 !important;
+  --skeleton-color-500: #171717 !important;
+  --skeleton-color-600: #151515 !important;
+  --skeleton-color-700: #131313 !important;
+  --skeleton-color-800: #111111 !important;
+  --skeleton-color-900: #0f0f0f !important;
+  --skeleton-color-1000: #0d0d0d !important;
+  --skeleton-color-1100: #0b0b0b !important;
+  --loading-backdrop: brightness(0.5) blur(1px) !important;
+
+  --scroll-bar-bg: rgb(var(--primary-color-500)) !important;
+  --scroll-bar-bg-hover: rgb(var(--primary-color-600)) !important;
+  --scroll-bar-track: var(--background-color-end) !important;
+
+  --progressbar-background: rgb(var(--primary-color-1100)) !important;
+
+  --shadow-color-start: rgba(255, 255, 255, 0.1) !important;
+  --shadow-color-end: rgba(255, 255, 255, 0.6) !important;
+  --preview-border-color: rgba(255, 255, 255, 0.25) !important;
+
+  --border-color: #252525 !important;
+
+  --autofill-background-color: rgb(var(--primary-color-1000)) !important;
+  --autofill-color: rgb(var(--primary-color-50)) !important;
+}
+
+body {
+  color: rgb(var(--foreground-rgb)) !important;
+}

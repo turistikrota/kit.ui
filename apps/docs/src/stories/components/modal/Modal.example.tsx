@@ -1,28 +1,3 @@
-import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
-import * as ModalStories from './Modal.stories'
-import Alert from '@turistikrota/ui/alert'
-import Example from './Modal.example'
-import Summary from '@/utils/Summary'
-
-<Meta of={ModalStories} />
-
-# Modal
-
-```jsx
-import Modal from '@turistikrota/ui/modal'
-```
-
-Modal component is used to display content in a layer above the app.
-
-<Controls of={ModalStories.Playground} />
-
-<Example />
-
-<br />
-
-<Summary title="Show Code">
-
-```jsx
 import Button from '@turistikrota/ui/button'
 import Modal from '@turistikrota/ui/modal'
 import { useState } from 'react'
@@ -53,6 +28,3 @@ export default function ModalExample() {
     </>
   )
 }
-```
-
-</Summary>
