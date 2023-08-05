@@ -1,31 +1,3 @@
-import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
-import * as FeatureCardStories from './FeatureCard.stories'
-import Summary from '@/utils/Summary'
-import Example from './Feature.example'
-
-<Meta of={FeatureCardStories} />
-
-# FeatureCard
-
-```jsx
-import FeatureCard from '@turistikrota/ui/cards/feature'
-```
-
-Feature card is used to display a feature of a product or service.
-
-<Canvas of={FeatureCardStories.Playground} />
-
-<Controls />
-
-## Core Label
-
-<Example />
-
-<br />
-
-<Summary title="Show Code">
-
-```jsx
 import FeatureCard from '@turistikrota/ui/cards/feature'
 import CoreFeatureLabel from '@turistikrota/ui/cards/feature/core'
 
@@ -43,6 +15,3 @@ export default function FeatureExample() {
     </div>
   )
 }
-```
-
-</Summary>

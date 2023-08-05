@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
 import FeatureCard from '@turistikrota/ui/cards/feature'
-import CoreFeatureLabel from '@turistikrota/ui/cards/feature/core'
 
 const meta = {
   title: 'Components/Feature Card',
@@ -77,17 +76,4 @@ export const Playground: Story = {
     children: '',
   },
   render: ({ ...args }) => <FeatureCard {...args} />,
-}
-
-export const WithCoreFeature: Story = {
-  args: {
-    text: 'Feature',
-    icon: 'bx bx-star',
-    subtext: 'This is a feature card.',
-  },
-  render: () => (
-    <FeatureCard icon='bx bxs-hot' text='Hot' subtext='The ui kit is hot' variant='blue'>
-      <CoreFeatureLabel text='This feature is a core feature.' />
-    </FeatureCard>
-  ),
 }
