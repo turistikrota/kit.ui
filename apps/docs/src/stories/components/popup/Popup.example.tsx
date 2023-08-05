@@ -1,27 +1,3 @@
-import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
-import * as PopupStories from './Popup.stories'
-import Example from './Popup.example'
-import Summary from '@/utils/Summary'
-
-<Meta of={PopupStories} />
-
-# Popup
-
-```jsx
-import Popup from '@turistikrota/ui/popup'
-```
-
-Popup component is used to display a popup.
-
-<Controls />
-
-<br />
-
-<Example />
-
-<Summary title="Show Code">
-
-```jsx
 import Button from '@turistikrota/ui/button'
 import Popup from '@turistikrota/ui/popup'
 import { useState } from 'react'
@@ -43,6 +19,3 @@ export default function PopupExample() {
     </>
   )
 }
-```
-
-</Summary>
