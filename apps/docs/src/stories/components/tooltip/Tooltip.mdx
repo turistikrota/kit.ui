@@ -1,6 +1,8 @@
 import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
 import * as TooltipStories from './Tooltip.stories'
 import Alert from '@turistikrota/ui/alert'
+import Summary from '@/utils/Summary'
+import Example from './Tooltip.example'
 
 <Meta of={TooltipStories} />
 
@@ -14,74 +16,74 @@ Tooltip component is used to display additional information when hovering over a
 
 <Alert type='warning'>The Position value is only used on the first render. It cannot be changed later.</Alert>
 
-<Canvas>
-  <div className='flex justify-center items-center min-h-full h-16'>
-    <Story of={TooltipStories.Playground} />
-  </div>
-</Canvas>
-
 <Controls />
 
-## Top position
+```jsx
+import Tooltip, { TooltipProvider } from '@turistikrota/ui/tooltip'
 
-<Canvas>
-  <div className='flex justify-center items-center min-h-full h-16'>
-    <Story of={TooltipStories.Top} />
+export default function TooltipExample() {
+  return (
+    <TooltipProvider>
+      <Tooltip content={<span className='dark:text-gray-200'>this is tooltip content</span>}>
+        <span className='dark:text-gray-300'>Hover Me</span>
+      </Tooltip>
+    </TooltipProvider>
+  )
+}
+```
+
+<Summary title='Top Position'>
+  <div className='p-20 flex items-center justify-center bg-second'>
+    <Example position='top' />
   </div>
-</Canvas>
+</Summary>
 
-## Right position
+<br />
 
-<Canvas>
-  <div className='flex justify-center items-center min-h-full h-16'>
-    <Story of={TooltipStories.Right} />
+<Summary title='Right Position'>
+  <div className='p-20 flex items-center justify-center bg-second'>
+    <Example position='right' />
   </div>
-</Canvas>
+</Summary>
+<br />
 
-## Bottom position
-
-<Canvas>
-  <div className='flex justify-center items-center min-h-full h-16'>
-    <Story of={TooltipStories.Bottom} />
+<Summary title='Bottom Position'>
+  <div className='p-20 flex items-center justify-center bg-second'>
+    <Example position='bottom' />
   </div>
-</Canvas>
+</Summary>
+<br />
 
-## Left position
-
-<Canvas>
-  <div className='flex justify-center items-center min-h-full h-16'>
-    <Story of={TooltipStories.Left} />
+<Summary title='Left Position'>
+  <div className='p-20 flex items-center justify-center bg-second'>
+    <Example position='left' />
   </div>
-</Canvas>
+</Summary>
+<br />
 
-## Top-Left position
-
-<Canvas>
-  <div className='flex justify-center items-center min-h-full h-16'>
-    <Story of={TooltipStories.TopLeft} />
+<Summary title='Top Left Position'>
+  <div className='p-20 flex items-center justify-center bg-second'>
+    <Example position='top-left' />
   </div>
-</Canvas>
+</Summary>
+<br />
 
-## Top-Right position
-
-<Canvas>
-  <div className='flex justify-center items-center min-h-full h-16'>
-    <Story of={TooltipStories.TopRight} />
+<Summary title='Top Right Position'>
+  <div className='p-20 flex items-center justify-center bg-second'>
+    <Example position='top-right' />
   </div>
-</Canvas>
+</Summary>
+<br />
 
-## Bottom-Left position
-
-<Canvas>
-  <div className='flex justify-center items-center min-h-full h-16'>
-    <Story of={TooltipStories.BottomLeft} />
+<Summary title='Bottom Left Position'>
+  <div className='p-20 flex items-center justify-center bg-second'>
+    <Example position='bottom-left' />
   </div>
-</Canvas>
+</Summary>
+<br />
 
-## Bottom-Right position
-
-<Canvas>
-  <div className='flex justify-center items-center min-h-full h-16'>
-    <Story of={TooltipStories.BottomRight} />
+<Summary title='Bottom-Right Position'>
+  <div className='p-20 flex items-center justify-center bg-second'>
+    <Example position='bottom-right' />
   </div>
-</Canvas>
+</Summary>

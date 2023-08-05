@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
 import Tooltip, { TooltipProvider } from '@turistikrota/ui/tooltip'
-import { TooltipPosition } from '@turistikrota/ui/tooltip/positions'
 
 const meta = {
   title: 'Components/Tooltip',
@@ -41,27 +40,3 @@ export const Playground: Story = {
     </TooltipProvider>
   ),
 }
-
-const createStaticWithPosition = (position: TooltipPosition): Story => ({
-  args: {
-    content: 'this is the tooltip',
-    position,
-    children: <i className='bx bx-info-circle dark:text-gray-200' />,
-  },
-  render: ({ content, children, position }) => (
-    <TooltipProvider>
-      <Tooltip content={<span className='dark:text-gray-200'>{content}</span>} position={position}>
-        <span className='dark:text-gray-300'> {children}</span>
-      </Tooltip>
-    </TooltipProvider>
-  ),
-})
-
-export const Top = createStaticWithPosition('top')
-export const Bottom = createStaticWithPosition('bottom')
-export const Left = createStaticWithPosition('left')
-export const Right = createStaticWithPosition('right')
-export const TopRight = createStaticWithPosition('top-right')
-export const TopLeft = createStaticWithPosition('top-left')
-export const BottomRight = createStaticWithPosition('bottom-right')
-export const BottomLeft = createStaticWithPosition('bottom-left')
