@@ -1,0 +1,19 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title='Utils/Markdown' />
+
+# Markdown
+
+Markdown utils are used to fetch markdown files from the cdn and parse them to string.
+
+## getMdContent(url, withoutCache?)
+
+Fetches the markdown file from the cdn and parses it to string.
+
+This utility may be used in Server Side Rendering (SSR) and Client Side Rendering (CSR).
+
+```js
+import { getMdContent } from '@turistikrota/ui/utils/md'
+
+const content = await getMdContent('...')
+```
