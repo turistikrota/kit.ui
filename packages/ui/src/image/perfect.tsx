@@ -1,11 +1,12 @@
 import React, { useRef } from 'react'
-import { PropsWithClassName } from '../types'
+import { ObjectFit, ObjectFits, PropsWithClassName } from '../types'
 
 type Props = {
   src: string
   imgClassName?: string
   onLeftSwipe?: () => void
   onRightSwipe?: () => void
+  fit?: ObjectFit
 }
 
 const PerfectImage: React.FC<React.PropsWithChildren<PropsWithClassName<Props>>> = ({
@@ -14,6 +15,7 @@ const PerfectImage: React.FC<React.PropsWithChildren<PropsWithClassName<Props>>>
   imgClassName,
   onLeftSwipe,
   onRightSwipe,
+  fit = 'cover',
 }) => {
   const onSwipeStart = useRef(0)
 
@@ -42,12 +44,12 @@ const PerfectImage: React.FC<React.PropsWithChildren<PropsWithClassName<Props>>>
 
   return (
     <picture
-      className={`w-full h-full object-cover ${className ? className : ''}`}
+      className={`w-full h-full ${className ? className : ''} ${ObjectFits[fit]}`}
       onTouchStart={onSwipe}
       onTouchEnd={onSwipeEnd}
     >
       <source srcSet={src} type='image/webp' />
-      <img src={src} alt='' className={`w-full h-full object-cover ${imgClassName ? imgClassName : ''}`} />
+      <img src={src} alt='' className={`w-full h-full ${ObjectFits[fit]} ${imgClassName ? imgClassName : ''}`} />
     </picture>
   )
 }
