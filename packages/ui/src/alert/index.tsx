@@ -53,7 +53,9 @@ const Alert: Alert = ({ children, onClose, closable = false, show = true, showIc
               className='ml-auto absolute right-1.5 top-0 bg-transparent border-0 text-2xl leading-none font-semibold outline-none focus:outline-none'
               onClick={onClose}
             >
-              <span className='text-black opacity-70 h-6 w-6 text-2xl block outline-none focus:outline-none'>×</span>
+              <span className='text-black dark:text-white opacity-70 h-6 w-6 text-2xl block outline-none focus:outline-none'>
+                ×
+              </span>
             </button>
           )}
         </div>
