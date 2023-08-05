@@ -1,0 +1,22 @@
+import { Canvas, Meta, Story, ArgsTable, Controls } from '@storybook/blocks'
+import * as StickySectionStories from './StickySection.stories'
+import Alert from '@turistikrota/ui/alert'
+
+<Meta of={StickySectionStories} />
+
+# Sticky Section
+
+```jsx
+import StickySection from '@turistikrota/ui/section/sticky'
+```
+
+Sticky section is a section that sticks to the top of the page when the user scrolls past it.
+
+<Alert type='warning'>
+  We can't give a real life example on the storybook. We will add a link to the real life example here in the next
+  versions.
+</Alert>
+
+<Canvas className='min-h-32 h-60' of={StickySectionStories.Playground} />
+
+<Controls />
