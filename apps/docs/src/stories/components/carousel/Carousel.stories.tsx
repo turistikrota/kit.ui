@@ -22,6 +22,26 @@ const meta = {
       action: 'clicked',
       description: 'The click handler of the carousel',
     },
+    autoPlay: {
+      control: { type: 'boolean' },
+      description: 'The auto play of the carousel',
+      defaultValue: false,
+    },
+    autoPlayInterval: {
+      control: { type: 'number' },
+      description: 'The auto play interval of the carousel',
+      defaultValue: 5000,
+    },
+    showDots: {
+      control: { type: 'boolean' },
+      description: 'The show dots of the carousel',
+      defaultValue: true,
+    },
+    showSubImages: {
+      control: { type: 'boolean' },
+      description: 'The show sub images of the carousel',
+      defaultValue: false,
+    },
   },
 } satisfies Meta<typeof Carousel>
 
@@ -50,6 +70,7 @@ export const Playground: Story = {
       '/images/py.png',
     ],
     onClick: () => alert('clicked'),
+    autoPlay: true,
   },
   render: (args) => <Carousel {...args} />,
 }
