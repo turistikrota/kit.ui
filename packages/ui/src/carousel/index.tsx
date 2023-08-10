@@ -8,6 +8,8 @@ type Props = {
   images: string[]
   imageAltPrefix: string
   imageTitlePrefix?: string
+  imageClassName?: string
+  pictureClassName?: string
   sizeClassName: string
   activeIndex?: number
   className?: string
@@ -44,6 +46,8 @@ const Carousel: React.FC<Props> = ({
   imageTitlePrefix,
   imageAltPrefix,
   sizeClassName,
+  imageClassName,
+  pictureClassName,
   className,
   onClick,
   showDots = true,
@@ -117,8 +121,8 @@ const Carousel: React.FC<Props> = ({
             title={imageTitlePrefix ? `${imageTitlePrefix}-${idx}` : undefined}
             className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-200 ${
               idx === currentIndex ? 'opacity-100' : 'opacity-0'
-            }`}
-            imgClassName='rounded-md'
+            } ${pictureClassName ? pictureClassName : ''}`}
+            imgClassName={`rounded-md ${imageClassName ? imageClassName : ''}`}
             onLeftSwipe={checkLeftSwipe}
             onRightSwipe={checkRightSwipe}
           />
