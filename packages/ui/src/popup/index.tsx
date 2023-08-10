@@ -66,7 +66,7 @@ function Popup({ children, head, className, onClose, open, size = 'lg' }: Props)
 
   return (
     <div
-      className={`flex justify-center items-end fixed top-0 left-0 w-full h-full bg-opacity-50 z-501 backdrop-blur-xs transition-opacity ${
+      className={`flex justify-center items-end fixed top-0 left-0 w-full h-full bg-opacity-50 z-9999 backdrop-blur-xs transition-opacity ${
         isClosing
           ? 'pointer-events-none opacity-0'
           : open

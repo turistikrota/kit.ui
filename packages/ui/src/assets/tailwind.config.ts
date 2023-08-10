@@ -43,6 +43,7 @@ export const TailwindConfiguration: Config = {
         500: '500',
         501: '501',
         5000: '5000',
+        9999: '9999',
       },
       width: {
         'dot-base': '0.375rem',
