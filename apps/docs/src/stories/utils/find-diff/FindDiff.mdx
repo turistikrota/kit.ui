@@ -1,0 +1,27 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title='Utils/Find Diff' />
+
+# Find Diff
+
+Find diff between two objects
+
+## findDiff(obj1, obj2)
+
+```js
+import { findDiff } from '@turistikrota/ui/utils'
+
+const obj1 = { a: 1, b: 2, c: 3 }
+const obj2 = { a: 1, b: 2, c: 3 }
+
+findDiff(obj1, obj2) // {}
+
+const obj3 = { a: 1, b: 2, c: 3 }
+const obj4 = { a: 1, b: 2, c: 4 }
+
+findDiff(obj3, obj4) // { c: 4 }
+
+const obj1 = { a: [1, 2], b: 3 }
+const obj2 = { a: [1, 2, 3], b: 4 }
+const result = findDiff(obj1, obj2) // { a: [1, 2, 3], b: 4 }
+```
