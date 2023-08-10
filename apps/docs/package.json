@@ -14,7 +14,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@turistikrota/ui": "^0.2.2",
+    "@turistikrota/ui": "^0.2.4",
     "boxicons": "^2.1.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
