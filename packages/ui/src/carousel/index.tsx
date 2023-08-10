@@ -6,6 +6,10 @@ import DotRenderer from './dot-renderer'
 
 type Props = {
   images: string[]
+  imageAltPrefix: string
+  imageTitlePrefix?: string
+  imageClassName?: string
+  pictureClassName?: string
   sizeClassName: string
   activeIndex?: number
   className?: string
@@ -39,7 +43,11 @@ const CarouselButton: React.FC<ButtonProps> = ({ position, onClick }) => {
 
 const Carousel: React.FC<Props> = ({
   images,
+  imageTitlePrefix,
+  imageAltPrefix,
   sizeClassName,
+  imageClassName,
+  pictureClassName,
   className,
   onClick,
   showDots = true,
@@ -109,10 +117,12 @@ const Carousel: React.FC<Props> = ({
           <PerfectImage
             key={idx}
             src={img}
+            alt={`${imageAltPrefix}-${idx}`}
+            title={imageTitlePrefix ? `${imageTitlePrefix}-${idx}` : undefined}
             className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-200 ${
               idx === currentIndex ? 'opacity-100' : 'opacity-0'
-            }`}
-            imgClassName='rounded-md'
+            } ${pictureClassName ? pictureClassName : ''}`}
+            imgClassName={`rounded-md ${imageClassName ? imageClassName : ''}`}
             onLeftSwipe={checkLeftSwipe}
             onRightSwipe={checkRightSwipe}
           />
@@ -124,9 +134,13 @@ const Carousel: React.FC<Props> = ({
       {showSubImages && (
         <div className='mt-2 flex justify-start overflow-x-auto gap-1 pb-2'>
           {images.map((img, idx) => (
-            <img
+            <PerfectImage
               key={idx}
               src={img}
+              full={false}
+              alt={`${imageAltPrefix}-${idx}`}
+              title={imageTitlePrefix ? `${imageTitlePrefix}-${idx}` : undefined}
+              imgClassName='rounded-md w-full h-full'
               className={`w-12 h-12 max-w-12 max-h-12 min-w-[3rem] min-h-[3rem] object-cover rounded-md transition-opacity duration-200 ${
                 idx === currentIndex ? 'opacity-100' : 'opacity-50 cursor-pointer'
               }`}

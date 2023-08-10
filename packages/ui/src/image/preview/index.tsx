@@ -7,6 +7,7 @@ type Props = {
   open?: boolean
   idx?: number
   list: string[]
+  altPrefix: string
 }
 
 type ContentProps = {
@@ -16,9 +17,18 @@ type ContentProps = {
   onNext: () => void
   list: string[]
   idx: number
+  altPrefix: string
 }
 
-const ImagePreviewContent: React.FC<ContentProps> = ({ open, onHide, onPrev, onNext, list, idx: current }) => {
+const ImagePreviewContent: React.FC<ContentProps> = ({
+  open,
+  onHide,
+  onPrev,
+  onNext,
+  list,
+  idx: current,
+  altPrefix,
+}) => {
   return (
     <Modal onClose={() => {}} open={open} shadow={false}>
       <div className='fixed bottom-4 md:top-4 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-4 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200'>
@@ -41,6 +51,7 @@ const ImagePreviewContent: React.FC<ContentProps> = ({ open, onHide, onPrev, onN
           {list.map((item, idx) => (
             <PerfectImage
               key={idx}
+              alt={`${altPrefix}-${idx}`}
               src={item}
               className={`absolute top-0 left-0 max-h-full object-contain max-w-full h-full w-full rounded-md transition-opacity duration-200 ${
                 idx === current ? 'opacity-100' : 'opacity-0'
@@ -66,6 +77,7 @@ const ImagePreviewProvider: React.FC<React.PropsWithChildren<Props>> = ({
   open: defaultOpen = false,
   idx = 0,
   list,
+  altPrefix,
 }) => {
   const [open, setOpen] = useState<boolean>(defaultOpen)
   const [currentIdx, setCurrentIdx] = useState<number>(idx)
@@ -109,7 +121,15 @@ const ImagePreviewProvider: React.FC<React.PropsWithChildren<Props>> = ({
     >
       {children}
       {open && (
-        <ImagePreviewContent open={open} onHide={hide} onPrev={prev} onNext={next} list={list} idx={currentIdx} />
+        <ImagePreviewContent
+          altPrefix={altPrefix}
+          open={open}
+          onHide={hide}
+          onPrev={prev}
+          onNext={next}
+          list={list}
+          idx={currentIdx}
+        />
       )}
     </ImagePreviewContext.Provider>
   )

@@ -10,6 +10,15 @@ const meta = {
       control: { type: 'text' },
       description: 'The source of the image',
     },
+    alt: {
+      control: { type: 'text' },
+      description: 'The alt of the image',
+    },
+    full: {
+      control: { type: 'boolean' },
+      description: 'Whether the image should be full width',
+      defaultValue: true,
+    },
     imgClassName: {
       control: { type: 'text' },
       description: 'The class name of the img element',
@@ -43,6 +52,8 @@ type Story = StoryObj<typeof meta>
 export const Playground: Story = {
   args: {
     src: '/images/react.png',
+    alt: 'React',
+    full: true,
   },
   render: ({ children, ...args }) => <PerfectImage {...args}>{children}</PerfectImage>,
 }

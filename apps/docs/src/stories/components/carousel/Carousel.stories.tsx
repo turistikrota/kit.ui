@@ -10,6 +10,19 @@ const meta = {
       control: { type: 'array' },
       description: 'The images of the carousel',
     },
+    imageAltPrefix: {
+      control: { type: 'text' },
+      description: 'The image alt prefix of the carousel',
+    },
+    imageTitlePrefix: {
+      control: { type: 'text' },
+      description: 'The image title prefix of the carousel',
+    },
+    activeIndex: {
+      control: { type: 'number' },
+      description: 'The active index of the carousel',
+      defaultValue: 0,
+    },
     sizeClassName: {
       control: { type: 'text' },
       description: 'The size of the carousel. Like `h-96`',
@@ -69,6 +82,7 @@ export const Playground: Story = {
       '/images/php.png',
       '/images/py.png',
     ],
+    imageAltPrefix: 'image',
     onClick: () => alert('clicked'),
     autoPlay: true,
   },
