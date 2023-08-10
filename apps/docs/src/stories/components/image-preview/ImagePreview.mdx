@@ -50,12 +50,20 @@ function Example() {
     preview.show(idx)
   }
 
-  return <Carousel images={images} sizeClassName='h-96 w-96 bg-third rounded-md' autoPlay onClick={open} />
+  return (
+    <Carousel
+      imageAltPrefix='image'
+      images={images}
+      sizeClassName='h-96 w-96 bg-third rounded-md'
+      autoPlay
+      onClick={open}
+    />
+  )
 }
 
 function WithProvider() {
   return (
-    <ImagePreview list={images}>
+    <ImagePreview altPrefix='image' list={images}>
       <Example />
     </ImagePreview>
   )
