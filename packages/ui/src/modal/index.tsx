@@ -73,7 +73,7 @@ const Modal: ModalType = ({
   return (
     <div
       className={`items-center justify-center flex-col ${
-        open ? 'fixed inset-0 z-50 flex overflow-hidden backdrop-blur-md' : 'hidden'
+        open ? 'fixed inset-0 z-9999 flex overflow-hidden backdrop-blur-md' : 'hidden'
       }`}
     >
       <div
