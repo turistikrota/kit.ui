@@ -1,0 +1,23 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title='Utils/Deep Merge' />
+
+# Deep Merge
+
+Deep merge is a function that merges two objects recursively. It's useful when you need to merge two objects that have nested objects.
+
+## deepMerge(obj1, obj2)
+
+```js
+import { deepMerge } from '@turistikrota/ui/utils'
+
+const obj1 = { a: 1, b: 2, c: 3 }
+const obj2 = { a: 1, b: 2, c: 3 }
+
+deepMerge(obj1, obj2) // { a: 1, b: 2, c: 3 }
+
+const obj3 = { a: 1, b: 2, c: 3 }
+const obj4 = { a: 1, b: 2, c: 4 }
+
+deepMerge(obj3, obj4) // { a: 1, b: 2, c: 4 }
+```
