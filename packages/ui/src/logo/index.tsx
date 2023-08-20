@@ -3,6 +3,7 @@ import React from 'react'
 type Props = {
   width?: number
   height?: number
+  className?: string
 }
 
 type BadgeProps = {
@@ -11,6 +12,7 @@ type BadgeProps = {
 
 type LogoComponent = React.FC<React.PropsWithChildren<Props>> & {
   Badge: typeof Badge
+  SubModule: typeof SubModule
 }
 
 const Badge: React.FC<React.PropsWithChildren<BadgeProps>> = ({ children, className }) => {
@@ -23,9 +25,17 @@ const Badge: React.FC<React.PropsWithChildren<BadgeProps>> = ({ children, classN
   )
 }
 
-const Logo: LogoComponent = ({ children, width = 186, height = 30 }) => {
+const SubModule: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
-    <div className='relative'>
+    <span className='inline-flex items-center justify-center px-1.5 py-1.5 text-sm leading-none text-black dark:text-white bg-secondary dark:bg-secondary-600 rounded-md'>
+      {children}
+    </span>
+  )
+}
+
+const Logo: LogoComponent = ({ children, width = 186, height = 30, className }) => {
+  return (
+    <div className={`relative ${className ? className : ''}`}>
       <svg xmlns='http://www.w3.org/2000/svg' viewBox={`0 0 ${width} ${height}`} width={width} height={height}>
         <text
           style={{
@@ -58,5 +68,6 @@ const Logo: LogoComponent = ({ children, width = 186, height = 30 }) => {
 }
 
 Logo.Badge = Badge
+Logo.SubModule = SubModule
 
 export default Logo
