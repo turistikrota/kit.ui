@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useRef, useState } from 'react'
+import React, { memo, useCallback, useRef } from 'react'
 import { ObjectFit, ObjectFits, PropsWithClassName } from '../types'
 
 type Props = {
@@ -27,7 +27,6 @@ const PerfectImage: React.FC<React.PropsWithChildren<PropsWithClassName<Props> &
   ...rest
 }) => {
   const onSwipeStart = useRef(0)
-  const [isLoaded, setIsLoaded] = useState(false)
 
   const onSwipe = useCallback((e: React.TouchEvent<HTMLDivElement>) => {
     if (e.touches.length === 1) {
@@ -51,10 +50,6 @@ const PerfectImage: React.FC<React.PropsWithChildren<PropsWithClassName<Props> &
     [onLeftSwipe, onRightSwipe],
   )
 
-  const onLoad = useCallback(() => {
-    setIsLoaded(true)
-  }, [])
-
   const isFullClassNames = full === true ? 'w-full h-full' : undefined
   const pictureClassName = [isFullClassNames, ObjectFits[fit], className].filter(Boolean).join(' ')
   const imageClassName = [isFullClassNames, ObjectFits[fit], imgClassName, 'transition-opacity', 'duration-200']
@@ -64,15 +59,7 @@ const PerfectImage: React.FC<React.PropsWithChildren<PropsWithClassName<Props> &
   return (
     <picture className={pictureClassName} onTouchStart={onSwipe} onTouchEnd={onSwipeEnd} {...rest}>
       <source srcSet={src} type='image/webp' />
-      <img
-        src={src}
-        alt={alt}
-        title={title}
-        className={imageClassName}
-        onLoad={onLoad}
-        loading='lazy'
-        style={{ opacity: isLoaded ? 1 : 0.5 }}
-      />
+      <img src={src} alt={alt} title={title} className={imageClassName} loading='lazy' />
     </picture>
   )
 }
