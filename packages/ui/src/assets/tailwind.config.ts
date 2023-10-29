@@ -40,10 +40,15 @@ export const TailwindConfiguration: Config = {
         top: 'top',
       },
       zIndex: {
+        '-1': '-1',
         500: '500',
         501: '501',
         5000: '5000',
         9999: '9999',
+      },
+      spacing: {
+        128: '32rem',
+        144: '36rem',
       },
       width: {
         'dot-base': '0.375rem',
@@ -219,6 +224,7 @@ export const TailwindConfiguration: Config = {
         '3xs': '1px',
         xxs: '1.5px',
         xs: '3px',
+        '3xl': '30px',
       },
       brightness: {
         10: '0.1',
