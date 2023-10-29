@@ -4,10 +4,10 @@ const sizeClasses = {
   xs: 'w-24 h-24',
   sm: 'w-32 h-32',
   md: 'w-48 h-48',
-  lg: 'w-72 h-72',
-  xl: 'w-96 h-96',
-  '2xl': 'w-128 h-128',
-  '3xl': 'w-144 h-144',
+  lg: 'lg:w-72 lg:h-72 w-56 h-56',
+  xl: 'lg:w-96 lg:h-96 w-64 h-64',
+  '2xl': 'lg:w-128 lg:h-128 w-80 h-80',
+  '3xl': 'lg:w-144 lg:h-144 w-96 h-96',
 }
 
 const justifyClass = {
