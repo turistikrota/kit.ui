@@ -1,9 +1,20 @@
 'use client'
 import React from 'react'
-import useHeaderFixed from '../hooks/header'
+import useHeaderFixed, { Options as HeaderOptions } from '../hooks/header'
+
+const withoutTopHeaderOptions: HeaderOptions = {
+  checkPoint: 0,
+  fixedCheckPoint: 0,
+}
+
+const withTopHeaderOptions: HeaderOptions = {
+  checkPoint: 3,
+  fixedCheckPoint: 3,
+}
 
 type HeaderProps = {
   className?: string
+  withTopHeader?: boolean
 }
 
 type ClickableProps = {
@@ -51,19 +62,22 @@ const Avatar = ({ children, onClick }: React.PropsWithChildren<ClickableProps>) 
   )
 }
 
-function MobileHeader({ children, className }: React.PropsWithChildren<HeaderProps>) {
-  const isFixed = useHeaderFixed()
+function MobileHeader({ children, className, withTopHeader = false }: React.PropsWithChildren<HeaderProps>) {
+  const isFixed = useHeaderFixed(withTopHeader ? withTopHeaderOptions : withoutTopHeaderOptions)
 
   return (
-    <header
-      className={`backdrop-blur-md w-full h-16 border-b border-gray-200 dark:border-gray-800 ${
-        isFixed ? 'fixed top-0 left-0 z-30 animate-slide-down' : ''
-      }`}
-    >
-      <div className={`flex items-center h-full px-4 mx-auto max-w-7xl ${className ? className : 'justify-between'}`}>
-        {children}
-      </div>
-    </header>
+    <>
+      <header
+        className={`backdrop-blur-md w-full h-16 left-0 border-b border-gray-200 dark:border-gray-800 fixed transition-top duration-200 z-30 ${
+          isFixed ? 'top-0' : 'top-6'
+        }`}
+      >
+        <div className={`flex items-center h-full px-4 mx-auto max-w-7xl ${className ? className : 'justify-between'}`}>
+          {children}
+        </div>
+      </header>
+      <div className='h-16' />
+    </>
   )
 }
 

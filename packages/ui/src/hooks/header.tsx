@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useListener } from './dom'
 
-type Options = {
+export type Options = {
   fixedCheckPoint: number
   checkPoint: number
 }
