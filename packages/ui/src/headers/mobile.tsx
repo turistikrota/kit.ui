@@ -55,7 +55,7 @@ const Avatar = ({ children, onClick }: React.PropsWithChildren<ClickableProps>) 
   return (
     <button
       onClick={onClick}
-      className='p-2 flex items-center text-center justify-center text-gray-600 w-9 h-9 bg-gray-200 rounded-full dark:text-gray-300 dark:bg-gray-700 transition-colors duration-200'
+      className='flex items-center text-center justify-center text-gray-600 w-9 h-9 bg-gray-200 rounded-md dark:text-gray-300 dark:bg-gray-700 transition-colors duration-200'
     >
       {children}
     </button>
