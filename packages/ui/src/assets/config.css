@@ -134,19 +134,20 @@
     --second-background-color: #121212;
     --third-background-color: #191919;
 
-    --skeleton-default-color: #201c1c;
-    --skeleton-color-50: #212121;
-    --skeleton-color-100: #1f1f1f;
-    --skeleton-color-200: #1d1d1d;
-    --skeleton-color-300: #1b1b1b;
-    --skeleton-color-400: #191919;
-    --skeleton-color-500: #171717;
-    --skeleton-color-600: #151515;
-    --skeleton-color-700: #131313;
-    --skeleton-color-800: #111111;
-    --skeleton-color-900: #0f0f0f;
-    --skeleton-color-1000: #0d0d0d;
-    --skeleton-color-1100: #0b0b0b;
+    --skeleton-default-color: 43, 42, 42;
+    --skeleton-color-50: 33, 33, 33;
+    --skeleton-color-100: 31, 31, 31;
+    --skeleton-color-200: 29, 29, 29;
+    --skeleton-color-300: 27, 27, 27;
+    --skeleton-color-400: 25, 25, 25;
+    --skeleton-color-500: 23, 23, 23;
+    --skeleton-color-600: 21, 21, 21;
+    --skeleton-color-700: 19, 19, 19;
+    --skeleton-color-800: 17, 17, 17;
+    --skeleton-color-900: 15, 15, 15;
+    --skeleton-color-1000: 13, 13, 13;
+    --skeleton-color-1100: 11, 11, 11;
+  
     --loading-backdrop: brightness(0.5) blur(1px);
 
     --scroll-bar-bg: rgb(var(--primary-color-500));
@@ -159,7 +160,7 @@
     --shadow-color-end: rgba(255, 255, 255, 0.6);
     --preview-border-color: rgba(255, 255, 255, 0.25);
 
-    --border-color: #252525;
+    --border-color: #353535;
 
     --autofill-background-color: rgb(var(--primary-color-1000));
     --autofill-color: rgb(var(--primary-color-50));
