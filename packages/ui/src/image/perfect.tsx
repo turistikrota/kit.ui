@@ -6,6 +6,7 @@ type Props = {
   alt: string
   title?: string
   imgClassName?: string
+  loadingClassName?: string
   onLeftSwipe?: () => void
   onRightSwipe?: () => void
   fit?: ObjectFit
@@ -20,6 +21,7 @@ const PerfectImage: React.FC<React.PropsWithChildren<PropsWithClassName<Props> &
   alt,
   title,
   imgClassName,
+  loadingClassName,
   onLeftSwipe,
   onRightSwipe,
   fit = 'cover',
@@ -76,7 +78,13 @@ const PerfectImage: React.FC<React.PropsWithChildren<PropsWithClassName<Props> &
 
   return (
     <picture className={pictureClassName} onTouchStart={onSwipe} onTouchEnd={onSwipeEnd} {...rest}>
-      {loading && <div className='absolute inset-0 bg-skeleton-300 dark:bg-skeleton animate-pulse' />}
+      {loading && (
+        <div
+          className={`absolute inset-0 bg-skeleton-300 dark:bg-skeleton animate-pulse ${
+            loadingClassName ? loadingClassName : ''
+          }`}
+        />
+      )}
       <source srcSet={src} type='image/webp' />
       <img src={src} alt={alt} title={title} className={imageClassName} loading='lazy' onLoad={onImageLoad} />
     </picture>

@@ -9,6 +9,7 @@ type Props = {
   imageAltPrefix: string
   imageTitlePrefix?: string
   imageClassName?: string
+  imgLoadingClassName?: string
   pictureClassName?: string
   sizeClassName: string
   activeIndex?: number
@@ -48,6 +49,7 @@ const Carousel: React.FC<Props> = ({
   sizeClassName,
   imageClassName,
   pictureClassName,
+  imgLoadingClassName = 'rounded-md',
   className,
   onClick,
   showDots = true,
@@ -123,6 +125,7 @@ const Carousel: React.FC<Props> = ({
               idx === currentIndex ? 'opacity-100' : 'opacity-0'
             } ${pictureClassName ? pictureClassName : ''}`}
             imgClassName={`rounded-md ${imageClassName ? imageClassName : ''}`}
+            loadingClassName={imgLoadingClassName}
             onLeftSwipe={checkLeftSwipe}
             onRightSwipe={checkRightSwipe}
           />
