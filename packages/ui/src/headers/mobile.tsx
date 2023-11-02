@@ -69,7 +69,7 @@ function MobileHeader({ children, className, withTopHeader = false }: React.Prop
     <>
       <header
         className={`backdrop-blur-md w-full h-16 left-0 border-b border-gray-200 dark:border-gray-800 fixed transition-top duration-200 z-30 ${
-          isFixed ? 'top-0' : 'top-6'
+          isFixed ? 'top-0' : 'top-8'
         }`}
       >
         <div className={`flex items-center h-full px-4 mx-auto max-w-7xl ${className ? className : 'justify-between'}`}>
