@@ -11,8 +11,9 @@ const useHeaderFixed = (
     fixedCheckPoint: 64,
     checkPoint: 120,
   },
+  defaultFixed = false,
 ) => {
-  const [fixed, setFixed] = useState(false)
+  const [fixed, setFixed] = useState(defaultFixed)
 
   useListener('scroll', () => {
     const checkPoint: number = fixed ? opts.fixedCheckPoint : opts.checkPoint

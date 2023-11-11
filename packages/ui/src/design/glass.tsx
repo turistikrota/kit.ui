@@ -42,6 +42,7 @@ type GlassEffectProps = {
 
 const GlassEffect: React.FC<GlassEffectProps> & {
   Item: typeof GlassItem
+  Fixed: typeof Fixed
 } = ({ justify, align, position, children }) => (
   <div
     className={`absolute inset-x-0 w-full min-h-0 flex overflow-hidden -z-1 p-10 ${
@@ -52,6 +53,16 @@ const GlassEffect: React.FC<GlassEffectProps> & {
   </div>
 )
 
+export const Fixed: React.FC = () => {
+  return (
+    <>
+      <span className='fixed blur-[200px] lg:w-[600px] w-[400px] lg:h-[600px] h-[400px] rounded-full top-[10%] md:start-[10%] -start-[20%] -z-1 bg-primary-600/20 dark:bg-primary-600/10' />
+      <span className='fixed blur-[200px] lg:w-[600px] w-[400px] lg:h-[600px] h-[400px] rounded-full bottom-[10%] md:end-[10%] -end-[20%] -z-1 bg-secondary-600/20 dark:bg-secondary-600/10' />
+    </>
+  )
+}
+
 GlassEffect.Item = GlassItem
+GlassEffect.Fixed = Fixed
 
 export default GlassEffect
