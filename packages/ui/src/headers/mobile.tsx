@@ -15,6 +15,7 @@ const withTopHeaderOptions: HeaderOptions = {
 type HeaderProps = {
   className?: string
   withTopHeader?: boolean
+  defaultFixed?: boolean
 }
 
 type ClickableProps = {
@@ -62,8 +63,13 @@ const Avatar = ({ children, onClick }: React.PropsWithChildren<ClickableProps>) 
   )
 }
 
-function MobileHeader({ children, className, withTopHeader = false }: React.PropsWithChildren<HeaderProps>) {
-  const isFixed = useHeaderFixed(withTopHeader ? withTopHeaderOptions : withoutTopHeaderOptions)
+function MobileHeader({
+  children,
+  className,
+  withTopHeader = false,
+  defaultFixed = false,
+}: React.PropsWithChildren<HeaderProps>) {
+  const isFixed = useHeaderFixed(withTopHeader ? withTopHeaderOptions : withoutTopHeaderOptions, defaultFixed)
 
   return (
     <>
