@@ -5,6 +5,7 @@ type Size = 'sm' | 'md' | 'lg'
 
 type Props = {
   defaultChecked?: boolean
+  disabled?: boolean
   onChange?: (checked: boolean) => void
   variant?: Variant
   size?: Size
@@ -79,6 +80,7 @@ const ToggleButton: React.FC<Props> = ({
   defaultChecked = false,
   variant = 'primary',
   size = 'md',
+  disabled = false,
   title,
   onChange,
 }) => {
@@ -99,6 +101,7 @@ const ToggleButton: React.FC<Props> = ({
         sizes[size].default
       } ${checked ? variants[variant].checked : variants[variant].default}`}
       onClick={handleChange}
+      disabled={disabled}
       title={title}
       aria-label={title}
     >
