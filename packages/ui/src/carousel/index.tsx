@@ -135,7 +135,7 @@ const Carousel: React.FC<Props> = ({
         {currentIndex !== images.length - 1 && <CarouselButton position='right' onClick={goToNextSlide} />}
       </div>
       {showSubImages && (
-        <div className='mt-2 flex justify-start overflow-x-auto gap-1 pb-2'>
+        <div className='mt-2 flex justify-start overflow-x-auto gap-1 pb-2 relative'>
           {images.map((img, idx) => (
             <PerfectImage
               key={idx}
