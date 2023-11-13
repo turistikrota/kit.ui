@@ -9,6 +9,7 @@ type Props = {
   loadingClassName?: string
   onLeftSwipe?: () => void
   onRightSwipe?: () => void
+  onImageLoaded?: () => void
   fit?: ObjectFit
   full?: boolean
 }
@@ -24,6 +25,7 @@ const PerfectImage: React.FC<React.PropsWithChildren<PropsWithClassName<Props> &
   loadingClassName,
   onLeftSwipe,
   onRightSwipe,
+  onImageLoaded,
   fit = 'cover',
   full = true,
   ...rest
@@ -63,6 +65,7 @@ const PerfectImage: React.FC<React.PropsWithChildren<PropsWithClassName<Props> &
 
   const onImageLoad = () => {
     setLoading(false)
+    if (onImageLoaded) onImageLoaded()
   }
 
   const isFullClassNames = useMemo(() => (full === true ? 'w-full h-full' : undefined), [full])
