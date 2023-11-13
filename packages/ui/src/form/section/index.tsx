@@ -11,7 +11,7 @@ type FormType = React.FC<React.PropsWithChildren<Props>> & {
 }
 
 type TitleProps = {
-  size: 'md' | 'lg'
+  size?: 'md' | 'lg'
 }
 
 type Head = {
