@@ -34,7 +34,7 @@ const InputRange: React.FC<Props> = ({ values, onChange, min = 0, max, size, min
 
   return (
     <>
-      <div className='flex gap-4 justify-between items-center w-full'>
+      <div className='flex w-full items-center justify-between gap-4'>
         <Input
           label={minText}
           name='min'

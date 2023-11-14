@@ -11,7 +11,7 @@ export default function ShowHideButton({ show, showText, hideText, onClick }: Sh
   return (
     <button
       type='button'
-      className='absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-gray-400'
+      className='text-blue-gray-400 absolute right-3 top-1/2 -translate-y-1/2 transform'
       onClick={onClick}
       aria-label={show ? showText : hideText}
       title={show ? showText : hideText}

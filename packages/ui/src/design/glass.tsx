@@ -29,7 +29,7 @@ type GlassItemProps = {
 
 const GlassItem: React.FC<GlassItemProps> = ({ color, size, position }) => (
   <span
-    className={`block ${color} ${sizeClasses[size]} ${position} rounded-full mix-blend-multiply filter blur-3xl opacity-10`}
+    className={`block ${color} ${sizeClasses[size]} ${position} rounded-full opacity-10 mix-blend-multiply blur-3xl filter`}
   ></span>
 )
 
@@ -45,7 +45,7 @@ const GlassEffect: React.FC<GlassEffectProps> & {
   Fixed: typeof Fixed
 } = ({ justify, align, position, children }) => (
   <div
-    className={`absolute inset-x-0 w-full min-h-0 flex overflow-hidden -z-1 p-10 ${
+    className={`-z-1 absolute inset-x-0 flex min-h-0 w-full overflow-hidden p-10 ${
       justify ? justifyClass[justify] : ''
     } ${align ? alignClass[align] : ''} ${position ? position : ''}`}
   >
@@ -56,8 +56,8 @@ const GlassEffect: React.FC<GlassEffectProps> & {
 export const Fixed: React.FC = () => {
   return (
     <>
-      <span className='fixed blur-[200px] lg:w-[600px] w-[400px] lg:h-[600px] h-[400px] rounded-full top-[10%] md:start-[10%] -start-[20%] -z-1 bg-primary-600/20 dark:bg-primary-600/10' />
-      <span className='fixed blur-[200px] lg:w-[600px] w-[400px] lg:h-[600px] h-[400px] rounded-full bottom-[10%] md:end-[10%] -end-[20%] -z-1 bg-secondary-600/20 dark:bg-secondary-600/10' />
+      <span className='-z-1 bg-primary-600/20 dark:bg-primary-600/10 fixed -start-[20%] top-[10%] h-[400px] w-[400px] rounded-full blur-[200px] md:start-[10%] lg:h-[600px] lg:w-[600px]' />
+      <span className='-z-1 bg-secondary-600/20 dark:bg-secondary-600/10 fixed -end-[20%] bottom-[10%] h-[400px] w-[400px] rounded-full blur-[200px] md:end-[10%] lg:h-[600px] lg:w-[600px]' />
     </>
   )
 }

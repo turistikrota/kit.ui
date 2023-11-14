@@ -1,6 +1,6 @@
 {
   "name": "@turistikrota/prettier-config",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "The Turistikrota Prettier config",
   "main": "index.json",
   "repository": "git@github.com:turistikrota/kit.ui.git",
@@ -13,5 +13,8 @@
     "turistikrota",
     "turistikrota-ui"
   ],
-  "bugs": "https://github.com/turistikrota/kit.ui/issues"
+  "bugs": "https://github.com/turistikrota/kit.ui/issues",
+  "devDependencies": {
+    "prettier-plugin-tailwindcss": "^0.5.7"
+  }
 }

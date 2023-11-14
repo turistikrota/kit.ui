@@ -21,8 +21,8 @@ const StickySection: React.FC<React.PropsWithChildren<Props>> = ({
       }`}
     >
       <div
-        className={`overflow-x-hidden overflow-y-auto sticky transition-top duration-200 ${
-          headerFixed ? 'top-[80px] h-sticky-bar' : 'top-0 h-screen'
+        className={`transition-top sticky overflow-y-auto overflow-x-hidden duration-200 ${
+          headerFixed ? 'h-sticky-bar top-[80px]' : 'top-0 h-screen'
         } ${innerClassName ? innerClassName : ''}`}
       >
         {children}

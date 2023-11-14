@@ -92,21 +92,21 @@ export default function DisabledSection({
 }: React.PropsWithChildren<Props>) {
   return (
     <>
-      <div className='relative  w-full h-full text-center border-2 rounded-md '>
+      <div className='relative  h-full w-full rounded-md border-2 text-center '>
         <div className={`lg:hidden ${Sizes[size].mobileMargin}`}></div>
         <div className={`w-full ${blur ? 'blur-3xs' : ''} ${brightness ? 'brightness-80' : ''}`}>{children}</div>
         <span
           className={`
-      absolute top-0 left-0 w-full flex flex-col items-center lg:justify-center h-full bg-opacity-20 dark:bg-opacity-20 p-4
+      absolute left-0 top-0 flex h-full w-full flex-col items-center bg-opacity-20 p-4 dark:bg-opacity-20 lg:justify-center
       ${rounded ? 'rounded-md' : ''}
         ${Variants[variant].content}
       `}
         >
           <div
-            className={` flex flex-col lg:flex-row border items-center justify-center rounded-md bg-second ${Variants[variant].overlay} ${Sizes[size].content}`}
+            className={` bg-second flex flex-col items-center justify-center rounded-md border lg:flex-row ${Variants[variant].overlay} ${Sizes[size].content}`}
           >
             <i className={`bx ${Sizes[size].icon} ${icon ?? Variants[variant].iconName} ${Variants[variant].icon}`}></i>
-            <div className={`flex flex-col lg:border-l text-gray-400 dark:border-l-gray-600 ${Sizes[size].stick}`}>
+            <div className={`flex flex-col text-gray-400 dark:border-l-gray-600 lg:border-l ${Sizes[size].stick}`}>
               <div className={`${Sizes[size].title} text-left font-semibold text-gray-800 dark:text-gray-200`}>
                 {title}
               </div>

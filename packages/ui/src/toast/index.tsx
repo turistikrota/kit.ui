@@ -245,13 +245,13 @@ const TextToast: React.FC<TextToastProps> = ({ toast, onClose }) => {
   return (
     <div
       id={toast.id}
-      className={`flex items-center w-full max-w-xs p-4 rounded-lg shadow ${ToastStyles[toast.type].card} ${
+      className={`flex w-full max-w-xs items-center rounded-lg p-4 shadow ${ToastStyles[toast.type].card} ${
         toast.closing ? 'animate-fade-out-to-right' : 'animate-fade-in-from-right'
       }`}
       role='alert'
     >
       <div
-        className={`inline-flex items-center justify-center flex-shrink-0 w-8 h-8 rounded-lg ${
+        className={`inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg ${
           ToastStyles[toast.type].icon
         }`}
       >
@@ -261,7 +261,7 @@ const TextToast: React.FC<TextToastProps> = ({ toast, onClose }) => {
       <div className='ml-3 text-sm font-normal'>{toast.message}</div>
       <button
         type='button'
-        className={`ml-auto -mx-1.5 -my-1.5 rounded-lg p-1.5 inline-flex justify-center items-center h-8 w-8 ${
+        className={`-mx-1.5 -my-1.5 ml-auto inline-flex h-8 w-8 items-center justify-center rounded-lg p-1.5 ${
           ToastStyles[toast.type].close
         }`}
         data-dismiss-target={`#${toast.id}`}
@@ -284,14 +284,14 @@ const InteractiveToast: React.FC<InteractiveToastProps> = ({ toast, onClose }) =
   return (
     <div
       id={toast.id}
-      className={`w-full lg:max-w-xs p-4 rounded-lg shadow ${ToastStyles[toast.type].card} ${
+      className={`w-full rounded-lg p-4 shadow lg:max-w-xs ${ToastStyles[toast.type].card} ${
         toast.closing ? 'animate-fade-out-to-right' : 'animate-fade-in-from-right'
       }`}
       role='alert'
     >
       <div className='flex'>
         <div
-          className={`inline-flex items-center justify-center flex-shrink-0 w-8 h-8 rounded-lg ${
+          className={`inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg ${
             ToastStyles[toast.type].icon
           }`}
         >
@@ -308,7 +308,7 @@ const InteractiveToast: React.FC<InteractiveToastProps> = ({ toast, onClose }) =
                   onClose()
                   if (toast.onConfirm) toast.onConfirm()
                 }}
-                className={`inline-flex justify-center w-full px-2 py-2 lg:py-1.5 text-xs font-medium text-center rounded-lg transition-colors ${
+                className={`inline-flex w-full justify-center rounded-lg px-2 py-2 text-center text-xs font-medium transition-colors lg:py-1.5 ${
                   ToastStyles[toast.type].primaryButton
                 }`}
               >
@@ -321,7 +321,7 @@ const InteractiveToast: React.FC<InteractiveToastProps> = ({ toast, onClose }) =
                   onClose()
                   if (toast.onCancel) toast.onCancel()
                 }}
-                className={`inline-flex justify-center w-full px-2 py-2 lg:py-1.5 text-xs font-medium text-center border rounded-lg transition-colors ${
+                className={`inline-flex w-full justify-center rounded-lg border px-2 py-2 text-center text-xs font-medium transition-colors lg:py-1.5 ${
                   ToastStyles[toast.type].secondaryButton
                 }`}
               >
@@ -332,7 +332,7 @@ const InteractiveToast: React.FC<InteractiveToastProps> = ({ toast, onClose }) =
         </div>
         <button
           type='button'
-          className={`ml-auto -mx-1.5 -my-1.5 rounded-lg p-1.5 inline-flex justify-center items-center h-8 w-8 ${
+          className={`-mx-1.5 -my-1.5 ml-auto inline-flex h-8 w-8 items-center justify-center rounded-lg p-1.5 ${
             ToastStyles[toast.type].close
           }`}
           data-dismiss-target={`#${toast.id}`}
@@ -465,7 +465,7 @@ export const ToastProvider = ({ children }: Props) => {
       }}
     >
       {children}
-      <div className='fixed bottom-0 max-w-[100vw] min-w-[100vw] md:min-w-none md:max-w-none right-1/2 transform translate-x-1/2 lg:transform-none lg:translate-x-0 lg:right-0 p-4 gap-5 lg:gap-3 flex flex-col items-center lg:items-end z-50'>
+      <div className='md:min-w-none fixed bottom-0 right-1/2 z-50 flex min-w-[100vw] max-w-[100vw] translate-x-1/2 transform flex-col items-center gap-5 p-4 md:max-w-none lg:right-0 lg:translate-x-0 lg:transform-none lg:items-end lg:gap-3'>
         {toasts.map((toast) =>
           toast.interactive ? (
             <InteractiveToast toast={toast} key={toast.id} onClose={() => removeToast(toast.id)} />

@@ -9,13 +9,13 @@ type Props = {
 
 function ErrorPage({ code = 404, title, subtitle, button }: Props) {
   return (
-    <main className='relative overflow-hidden h-full flex items-center justify-center'>
-      <section className='py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6'>
+    <main className='relative flex h-full items-center justify-center overflow-hidden'>
+      <section className='mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16'>
         <div className='mx-auto max-w-screen-sm text-center'>
-          <h1 className='mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-secondary-600 dark:text-secondary-500'>
+          <h1 className='text-secondary-600 dark:text-secondary-500 mb-4 text-7xl font-extrabold tracking-tight lg:text-9xl'>
             {code}
           </h1>
-          <p className='mb-4 text-3xl tracking-tight font-bold text-gray-900 md:text-4xl dark:text-white'>{title}</p>
+          <p className='mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl'>{title}</p>
           <p className='mb-4 text-lg font-light text-gray-500 dark:text-gray-400'>{subtitle}</p>
           {button}
         </div>

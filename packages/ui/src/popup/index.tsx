@@ -66,7 +66,7 @@ function Popup({ children, head, className, onClose, open, size = 'lg' }: Props)
 
   return (
     <div
-      className={`flex justify-center items-end fixed top-0 left-0 w-full h-full bg-opacity-50 z-9999 backdrop-blur-xs transition-opacity ${
+      className={`z-9999 backdrop-blur-xs fixed left-0 top-0 flex h-full w-full items-end justify-center bg-opacity-50 transition-opacity ${
         isClosing
           ? 'pointer-events-none opacity-0'
           : open
@@ -76,7 +76,7 @@ function Popup({ children, head, className, onClose, open, size = 'lg' }: Props)
       onClick={checkOutsideClick}
     >
       <div
-        className={`bg-popup border-t shadow-top shadow-slate-200 dark:shadow-gray-950 rounded-t-3xl ${className} min-w-0 w-full ${
+        className={`bg-popup shadow-top rounded-t-3xl border-t shadow-slate-200 dark:shadow-gray-950 ${className} w-full min-w-0 ${
           PopupSizes[size]
         } relative border-gray-200 dark:border-gray-800 ${
           isClosing ? 'animate-fade-out-to-bottom' : open ? 'animate-fade-in-from-bottom' : ''
@@ -84,9 +84,9 @@ function Popup({ children, head, className, onClose, open, size = 'lg' }: Props)
         onTouchStart={onSwipe}
         onTouchEnd={onSwipeEnd}
       >
-        <span className={`absolute -top-2.5 w-10 h-0.5 bg-primary rounded-full left-1/2 transform -translate-x-1/2`} />
-        {head && <div className='px-4 pt-4 mb-4'>{head}</div>}
-        <div className='h-full pt-2 overflow-y-auto px-4 pb-4'>{children}</div>
+        <span className={`bg-primary absolute -top-2.5 left-1/2 h-0.5 w-10 -translate-x-1/2 transform rounded-full`} />
+        {head && <div className='mb-4 px-4 pt-4'>{head}</div>}
+        <div className='h-full overflow-y-auto px-4 pb-4 pt-2'>{children}</div>
       </div>
     </div>
   )

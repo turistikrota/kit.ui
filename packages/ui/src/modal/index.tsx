@@ -27,7 +27,7 @@ type HeadType = typeof Head & {
 }
 
 function Head({ children }: React.PropsWithChildren) {
-  return <div className='flex bg-second w-full flex-col p-4 border-b rounded-t-md'>{children}</div>
+  return <div className='bg-second flex w-full flex-col rounded-t-md border-b p-4'>{children}</div>
 }
 
 function Title({ children }: React.PropsWithChildren) {
@@ -41,7 +41,7 @@ function Subtitle({ children }: React.PropsWithChildren) {
 function CloseButton({ onClose, title }: CloseableProps) {
   return (
     <button
-      className='absolute top-4 right-4 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200'
+      className='absolute right-4 top-4 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200'
       onClick={onClose}
       aria-label={title}
       title={title}
@@ -53,11 +53,11 @@ function CloseButton({ onClose, title }: CloseableProps) {
 }
 
 function Body({ children }: React.PropsWithChildren) {
-  return <div className='p-4 grow bg-second w-full overflow-hidden overflow-y-auto scrollbar'>{children}</div>
+  return <div className='bg-second scrollbar w-full grow overflow-hidden overflow-y-auto p-4'>{children}</div>
 }
 
 function Footer({ children }: React.PropsWithChildren) {
-  return <div className='flex p-4 bg-second w-full justify-between items-center border-t rounded-b-md'>{children}</div>
+  return <div className='bg-second flex w-full items-center justify-between rounded-b-md border-t p-4'>{children}</div>
 }
 
 const Modal: ModalType = ({
@@ -72,12 +72,12 @@ const Modal: ModalType = ({
   const nodeRef = useRef(null)
   return (
     <div
-      className={`items-center justify-center flex-col ${
-        open ? 'fixed inset-0 z-9999 flex overflow-hidden backdrop-blur-md' : 'hidden'
+      className={`flex-col items-center justify-center ${
+        open ? 'z-9999 fixed inset-0 flex overflow-hidden backdrop-blur-md' : 'hidden'
       }`}
     >
       <div
-        className={`bg-white dark:bg-black opacity-50 ${open ? 'fixed inset-0 opacity-50 block' : ' hidden opacity-0'}`}
+        className={`bg-white opacity-50 dark:bg-black ${open ? 'fixed inset-0 block opacity-50' : ' hidden opacity-0'}`}
         onClick={onClose}
       ></div>
       <CSSTransition
@@ -89,7 +89,7 @@ const Modal: ModalType = ({
         nodeRef={nodeRef}
       >
         <div
-          className={`w-full max-w-md flex flex-col items-center justify-center rounded-lg relative z-10 min-h-[50vh] min-w-[50vw] ${
+          className={`relative z-10 flex min-h-[50vh] w-full min-w-[50vw] max-w-md flex-col items-center justify-center rounded-lg ${
             shadow ? 'shadow-lg' : ''
           }`}
           ref={nodeRef}

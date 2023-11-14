@@ -34,7 +34,7 @@ const CarouselButton: React.FC<ButtonProps> = ({ position, onClick }) => {
     <button
       className={`${
         !isMobile ? 'flex' : 'hidden'
-      } absolute invisible opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-90 group-hover:hover:opacity-100 top-1/2 ${left} transform -translate-y-1/2 text-gray-600 border shadow-xs bg-third bg-opacity-95 dark:bg-opacity-10 dark:text-white w-8 h-8 rounded-full items-center justify-center`}
+      } invisible absolute top-1/2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-90 group-hover:hover:opacity-100 ${left} shadow-xs bg-third h-8 w-8 -translate-y-1/2 transform items-center justify-center rounded-full border bg-opacity-95 text-gray-600 dark:bg-opacity-10 dark:text-white`}
       onClick={onClick}
     >
       <i className={`bx bx-sm ${icon}`} />
@@ -113,7 +113,7 @@ const Carousel: React.FC<Props> = ({
   }
 
   return (
-    <div className={`w-full group ${className ? className : ''}`} onClick={checkImageClick}>
+    <div className={`group w-full ${className ? className : ''}`} onClick={checkImageClick}>
       <div className={`relative ${sizeClassName}`}>
         {images.map((img, idx) => (
           <PerfectImage
@@ -121,7 +121,7 @@ const Carousel: React.FC<Props> = ({
             src={img}
             alt={`${imageAltPrefix}-${idx}`}
             title={imageTitlePrefix ? `${imageTitlePrefix}-${idx}` : undefined}
-            className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-200 ${
+            className={`absolute left-0 top-0 h-full w-full object-cover transition-opacity duration-200 ${
               idx === currentIndex ? 'opacity-100' : 'opacity-0'
             } ${pictureClassName ? pictureClassName : ''}`}
             imgClassName={`rounded-md ${imageClassName ? imageClassName : ''}`}
@@ -135,9 +135,9 @@ const Carousel: React.FC<Props> = ({
         {currentIndex !== images.length - 1 && <CarouselButton position='right' onClick={goToNextSlide} />}
       </div>
       {showSubImages && (
-        <div className='mt-2 flex justify-start overflow-x-auto gap-1 pb-2'>
+        <div className='mt-2 flex justify-start gap-1 overflow-x-auto pb-2'>
           {images.map((img, idx) => (
-            <div key={idx} className='relative w-12 h-12 max-w-12 max-h-12 min-w-[3rem] min-h-[3rem]'>
+            <div key={idx} className='max-w-12 relative h-12 max-h-12 min-h-[3rem] w-12 min-w-[3rem]'>
               <PerfectImage
                 src={img}
                 full={false}
@@ -145,8 +145,8 @@ const Carousel: React.FC<Props> = ({
                 title={imageTitlePrefix ? `${imageTitlePrefix}-${idx}` : undefined}
                 imgClassName='rounded-md w-full h-full'
                 loadingClassName='rounded-md w-full h-full'
-                className={`w-12 h-12 max-w-12 max-h-12 min-w-[3rem] min-h-[3rem] object-cover rounded-md transition-opacity duration-200 ${
-                  idx === currentIndex ? 'opacity-100' : 'opacity-50 cursor-pointer'
+                className={`max-w-12 h-12 max-h-12 min-h-[3rem] w-12 min-w-[3rem] rounded-md object-cover transition-opacity duration-200 ${
+                  idx === currentIndex ? 'opacity-100' : 'cursor-pointer opacity-50'
                 }`}
                 onClick={() => setCurrentIndex(idx)}
               />

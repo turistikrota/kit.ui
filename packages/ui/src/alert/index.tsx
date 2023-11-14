@@ -34,26 +34,26 @@ const Styles: Record<AlertType, string> = {
 }
 
 const Title: React.FC<BaseProps> = ({ children }) => {
-  return <p className='font-bold text-left'>{children}</p>
+  return <p className='text-left font-bold'>{children}</p>
 }
 
 const Description: React.FC<BaseProps> = ({ children }) => {
-  return <p className='text-sm text-left'>{children}</p>
+  return <p className='text-left text-sm'>{children}</p>
 }
 
 const Alert: Alert = ({ children, onClose, closable = false, show = true, showIcon = false, type, className }) => {
   return (
     <>
       {show && (
-        <div className={`flex items-center relative rounded border-l-4 p-4 ${Styles[type]} ${className}`} role='alert'>
-          {showIcon && <i className='bx bx-info-circle text-2xl mr-4'></i>}
+        <div className={`relative flex items-center rounded border-l-4 p-4 ${Styles[type]} ${className}`} role='alert'>
+          {showIcon && <i className='bx bx-info-circle mr-4 text-2xl'></i>}
           <div>{children}</div>
           {closable && (
             <button
-              className='ml-auto absolute right-1.5 top-0 bg-transparent border-0 text-2xl leading-none font-semibold outline-none focus:outline-none'
+              className='absolute right-1.5 top-0 ml-auto border-0 bg-transparent text-2xl font-semibold leading-none outline-none focus:outline-none'
               onClick={onClose}
             >
-              <span className='text-black dark:text-white opacity-70 h-6 w-6 text-2xl block outline-none focus:outline-none'>
+              <span className='block h-6 w-6 text-2xl text-black opacity-70 outline-none focus:outline-none dark:text-white'>
                 ×
               </span>
             </button>

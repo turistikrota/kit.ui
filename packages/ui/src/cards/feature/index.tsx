@@ -18,7 +18,7 @@ export default function FeatureCard({
 }: React.PropsWithChildren<Props>) {
   return (
     <div
-      className={`col-span-4 relative grid grid-cols-6 items-center px-0 py-4 rounded-md ${FullVariantClasses[variant]}`}
+      className={`relative col-span-4 grid grid-cols-6 items-center rounded-md px-0 py-4 ${FullVariantClasses[variant]}`}
     >
       <div className='col-span-1 flex items-center justify-center'>
         <i className={`${icon} bx-xl`}></i>

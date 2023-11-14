@@ -10,15 +10,15 @@ type Props = {
 }
 
 function Left({ children }: React.PropsWithChildren) {
-  return <div className='flex flex-col grow justify-start'>{children}</div>
+  return <div className='flex grow flex-col justify-start'>{children}</div>
 }
 
 function Title({ children }: React.PropsWithChildren) {
-  return <div className='text-lg text-left font-bold text-gray-800 dark:text-gray-200'>{children}</div>
+  return <div className='text-left text-lg font-bold text-gray-800 dark:text-gray-200'>{children}</div>
 }
 
 function Description({ children }: React.PropsWithChildren) {
-  return <div className='text-sm text-left text-gray-600 dark:text-gray-400'>{children}</div>
+  return <div className='text-left text-sm text-gray-600 dark:text-gray-400'>{children}</div>
 }
 
 function Right({ children }: React.PropsWithChildren) {
@@ -26,7 +26,7 @@ function Right({ children }: React.PropsWithChildren) {
 }
 
 const LineForm: FormType = ({ children, className }) => {
-  return <div className={`flex justify-between items-center ${className ? className : ''}`}>{children}</div>
+  return <div className={`flex items-center justify-between ${className ? className : ''}`}>{children}</div>
 }
 
 Left.Title = Title
