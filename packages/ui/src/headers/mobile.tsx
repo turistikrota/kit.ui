@@ -16,6 +16,7 @@ type HeaderProps = {
   className?: string
   withTopHeader?: boolean
   defaultFixed?: boolean
+  zIndex?: string
 }
 
 type ClickableProps = {
@@ -68,15 +69,16 @@ function MobileHeader({
   className,
   withTopHeader = false,
   defaultFixed = false,
+  zIndex = 'z-30',
 }: React.PropsWithChildren<HeaderProps>) {
   const isFixed = useHeaderFixed(withTopHeader ? withTopHeaderOptions : withoutTopHeaderOptions, defaultFixed)
 
   return (
     <>
       <header
-        className={`transition-top fixed left-0 z-30 h-16 w-full border-b border-gray-200 backdrop-blur-md duration-200 dark:border-gray-800 ${
+        className={`transition-top fixed left-0 h-16 w-full border-b border-gray-200 backdrop-blur-md duration-200 dark:border-gray-800 ${
           isFixed ? 'top-0' : 'top-8'
-        }`}
+        } ${zIndex ? zIndex : 'z-30'}`}
       >
         <div className={`mx-auto flex h-full max-w-7xl items-center px-4 ${className ? className : 'justify-between'}`}>
           {children}
