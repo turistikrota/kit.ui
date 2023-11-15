@@ -18,6 +18,7 @@ export type InputProps<Value extends InputValue = string> = {
   onBlur?: (e: ChangeEvent<HTMLInputElement>) => void
   autoComplete?: string
   autoFocus?: boolean
+  step?: string
   disabled?: boolean
   readOnly?: boolean
   placeholder?: string
