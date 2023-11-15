@@ -16,6 +16,7 @@ type HeaderProps = {
   className?: string
   withTopHeader?: boolean
   defaultFixed?: boolean
+  zIndex?: string
 }
 
 type ClickableProps = {
@@ -32,7 +33,7 @@ const Left = ({ children }: React.PropsWithChildren) => {
 }
 
 const Fill = ({ children, className }: React.PropsWithChildren<HeaderProps>) => {
-  return <div className={`flex items-center flex-grow ${className}`}>{children}</div>
+  return <div className={`flex flex-grow items-center ${className}`}>{children}</div>
 }
 
 const Right = ({ children }: React.PropsWithChildren) => {
@@ -43,7 +44,7 @@ const Button = ({ children, onClick, ...props }: React.PropsWithChildren<ButtonP
   return (
     <button
       onClick={onClick}
-      className='p-2 flex items-center text-center justify-center text-gray-600 w-9 h-9 bg-gray-200 rounded-full hover:bg-gray-300 dark:text-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors duration-200'
+      className='flex h-9 w-9 items-center justify-center rounded-full bg-gray-200 p-2 text-center text-gray-600 transition-colors duration-200 hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700'
       aria-label={props.ariaLabel}
       title={props.title}
     >
@@ -56,7 +57,7 @@ const Avatar = ({ children, onClick }: React.PropsWithChildren<ClickableProps>) 
   return (
     <button
       onClick={onClick}
-      className='flex items-center text-center justify-center text-gray-600 w-9 h-9 bg-gray-200 rounded-md dark:text-gray-300 dark:bg-gray-700 transition-colors duration-200'
+      className='flex h-9 w-9 items-center justify-center rounded-md bg-gray-200 text-center text-gray-600 transition-colors duration-200 dark:bg-gray-700 dark:text-gray-300'
     >
       {children}
     </button>
@@ -68,17 +69,18 @@ function MobileHeader({
   className,
   withTopHeader = false,
   defaultFixed = false,
+  zIndex = 'z-30',
 }: React.PropsWithChildren<HeaderProps>) {
   const isFixed = useHeaderFixed(withTopHeader ? withTopHeaderOptions : withoutTopHeaderOptions, defaultFixed)
 
   return (
     <>
       <header
-        className={`backdrop-blur-md w-full h-16 left-0 border-b border-gray-200 dark:border-gray-800 fixed transition-top duration-200 z-30 ${
+        className={`transition-top fixed left-0 h-16 w-full border-b border-gray-200 backdrop-blur-md duration-200 dark:border-gray-800 ${
           isFixed ? 'top-0' : 'top-8'
-        }`}
+        } ${zIndex ? zIndex : 'z-30'}`}
       >
-        <div className={`flex items-center h-full px-4 mx-auto max-w-7xl ${className ? className : 'justify-between'}`}>
+        <div className={`mx-auto flex h-full max-w-7xl items-center px-4 ${className ? className : 'justify-between'}`}>
           {children}
         </div>
       </header>

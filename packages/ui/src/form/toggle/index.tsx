@@ -97,7 +97,7 @@ const ToggleButton: React.FC<Props> = ({
   return (
     <button
       type='button'
-      className={`relative disable-highlight inline-flex items-center rounded-full transition-colors shadow-none focus:ring-0 focus:ring-offset-0 focus:ring-offset-transparent focus:ring-transparent ${
+      className={`disable-highlight relative inline-flex items-center rounded-full shadow-none transition-colors focus:ring-0 focus:ring-transparent focus:ring-offset-0 focus:ring-offset-transparent ${
         sizes[size].default
       } ${checked ? variants[variant].checked : variants[variant].default}`}
       onClick={handleChange}
@@ -106,7 +106,7 @@ const ToggleButton: React.FC<Props> = ({
       aria-label={title}
     >
       <span
-        className={`inline-block transform transition-transform ease-in-out rounded-full ${variants[variant].circle} ${
+        className={`inline-block transform rounded-full transition-transform ease-in-out ${variants[variant].circle} ${
           sizes[size].circle
         } ${checked ? `${sizes[size].circleChecked} ${variants[variant].circleChecked}` : 'translate-x-1'}`}
       />

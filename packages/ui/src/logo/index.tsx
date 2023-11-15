@@ -17,8 +17,8 @@ type LogoComponent = React.FC<React.PropsWithChildren<Props>> & {
 
 const Badge: React.FC<React.PropsWithChildren<BadgeProps>> = ({ children, className }) => {
   return (
-    <span className={className ? className : 'absolute -top-2 -right-8'}>
-      <span className='inline-flex items-center justify-center px-1 py-1 text-xs leading-none text-black bg-secondary rounded-md'>
+    <span className={className ? className : 'absolute -right-8 -top-2'}>
+      <span className='bg-secondary inline-flex items-center justify-center rounded-md px-1 py-1 text-xs leading-none text-black'>
         {children}
       </span>
     </span>
@@ -27,7 +27,7 @@ const Badge: React.FC<React.PropsWithChildren<BadgeProps>> = ({ children, classN
 
 const SubModule: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
-    <span className='inline-flex items-center justify-center px-1.5 py-1.5 text-sm leading-none text-black dark:text-white bg-secondary dark:bg-secondary-600 rounded-md'>
+    <span className='bg-secondary dark:bg-secondary-600 inline-flex items-center justify-center rounded-md px-1.5 py-1.5 text-sm leading-none text-black dark:text-white'>
       {children}
     </span>
   )

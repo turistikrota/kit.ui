@@ -40,7 +40,7 @@ const Tooltip: React.FC<React.PropsWithChildren<Props>> = ({ content, position =
   }
 
   return (
-    <div className='relative group'>
+    <div className='group relative'>
       <div className='inline-flex items-center' onMouseEnter={show} onMouseLeave={hide}>
         {children}
       </div>

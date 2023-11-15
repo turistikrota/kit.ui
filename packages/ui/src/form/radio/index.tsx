@@ -95,32 +95,32 @@ const Radio: React.FC<PropsWithChildren<RadioProps>> = ({
 
   return (
     <label
-      className={`flex items-center disable-highlight rounded-md cursor-pointer ${
+      className={`disable-highlight flex cursor-pointer items-center rounded-md ${
         reverse ? 'flex-row-reverse justify-between' : ''
       } ${effects[effect].label} `}
       htmlFor={id}
     >
       <label
-        className='relative flex disable-highlight cursor-pointer items-center rounded-full p-3 lg:p-1.5'
+        className='disable-highlight relative flex cursor-pointer items-center rounded-full p-3 lg:p-1.5'
         htmlFor={id}
       >
         <input
           id={id}
           name={name}
           type='radio'
-          className={`peer bg-white dark:bg-inherit disable-highlight cursor-pointer appearance-none rounded-full border transition-all ${variants[variant]} ${sizes[size]} ${effects[effect].input}`}
+          className={`disable-highlight peer cursor-pointer appearance-none rounded-full border bg-white transition-all dark:bg-inherit ${variants[variant]} ${sizes[size]} ${effects[effect].input}`}
           value={id}
           checked={isChecked}
           onChange={handleChange}
         />
         <div
-          className={`pointer-events-none flex items-center justify-center absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 opacity-0 transition-opacity peer-checked:opacity-100 ${svgVariants[variant]}`}
+          className={`pointer-events-none absolute left-2/4 top-2/4 flex -translate-x-2/4 -translate-y-2/4 items-center justify-center opacity-0 transition-opacity peer-checked:opacity-100 ${svgVariants[variant]}`}
         >
           <i className={`bx bx-check ${iconSizes[size]}`}></i>
         </div>
       </label>
       <label
-        className={`cursor-pointer select-none disable-highlight font-light text-gray-500 dark:text-gray-500 flex items-center`}
+        className={`disable-highlight flex cursor-pointer select-none items-center font-light text-gray-500 dark:text-gray-500`}
         htmlFor={id}
       >
         {children}

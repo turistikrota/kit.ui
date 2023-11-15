@@ -75,19 +75,19 @@ export default function Checkbox({
       <div
         className={`flex items-center justify-between ${reversed ? 'flex-row-reverse' : ''}  ${effects[effect].label}`}
       >
-        <label className='relative flex cursor-pointer disable-highlight items-center rounded-full mr-3' htmlFor={id}>
+        <label className='disable-highlight relative mr-3 flex cursor-pointer items-center rounded-full' htmlFor={id}>
           <input
             id={id}
             name={name}
             type='checkbox'
-            className={`peer bg-white dark:bg-inherit cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all ${variants[variant]} ${sizes[size]} ${effects[effect].input}`}
+            className={`border-blue-gray-200 peer cursor-pointer appearance-none rounded-md border bg-white transition-all dark:bg-inherit ${variants[variant]} ${sizes[size]} ${effects[effect].input}`}
             required={required}
             checked={value}
             onChange={(e) => onChange?.(e.target.checked)}
             onBlur={(e) => onBlur?.(e.target.checked)}
             {...props}
           />
-          <div className='pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100'>
+          <div className='pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               className={`${svgSizes[size]}`}
@@ -105,7 +105,7 @@ export default function Checkbox({
           </div>
         </label>
         <label
-          className='mt-px flex items-center justify-between cursor-pointer select-none disable-highlight grow font-light text-gray-800 dark:text-gray-400'
+          className='disable-highlight mt-px flex grow cursor-pointer select-none items-center justify-between font-light text-gray-800 dark:text-gray-400'
           htmlFor={id}
         >
           {children}

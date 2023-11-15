@@ -82,8 +82,8 @@ const PerfectImage: React.FC<React.PropsWithChildren<PropsWithClassName<Props> &
   return (
     <picture className={pictureClassName} onTouchStart={onSwipe} onTouchEnd={onSwipeEnd} {...rest}>
       {loading && (
-        <div
-          className={`absolute inset-0 bg-skeleton-300 dark:bg-skeleton animate-pulse ${
+        <span
+          className={`bg-skeleton-300 dark:bg-skeleton absolute inset-0 animate-pulse ${
             loadingClassName ? loadingClassName : ''
           }`}
         />

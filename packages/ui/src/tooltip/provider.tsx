@@ -127,7 +127,7 @@ const TooltipProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
             <CSSTransition key={el.key} timeout={200} classNames='tooltip' unmountOnExit>
               <>
                 <div
-                  className={`fixed bg-third shadow-lg rounded-md p-2 transition-opacity  text-sm font-normal`}
+                  className={`bg-third fixed rounded-md p-2 text-sm font-normal  shadow-lg transition-opacity`}
                   style={{
                     ...PositionGetters[el.position]({
                       x: el.x,
@@ -140,7 +140,7 @@ const TooltipProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
                   {el.value}
                 </div>
                 <i
-                  className={`fixed bx text-third bx-${
+                  className={`bx text-third fixed bx-${
                     el.position === 'auto' ? getAutoTooltipIcon(el) : TooltipIcons[el.position]
                   }`}
                   style={{

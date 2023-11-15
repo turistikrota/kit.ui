@@ -8,7 +8,7 @@ type Props = BaseProps & {
   show?: boolean
   showIcon?: boolean
   closable?: boolean
-  className?: string
+  innerClassName?: string
 }
 
 type Alert = React.FC<Props> & {
@@ -18,6 +18,7 @@ type Alert = React.FC<Props> & {
 
 type BaseProps = {
   children: React.ReactNode
+  className?: string
 }
 
 const Styles: Record<AlertType, string> = {
@@ -33,27 +34,39 @@ const Styles: Record<AlertType, string> = {
     'bg-secondary-400 text-secondary-900 border-secondary-400 bg-opacity-30 dark:text-secondary-400 dark:bg-secondary-900 dark:bg-opacity-30',
 }
 
-const Title: React.FC<BaseProps> = ({ children }) => {
-  return <p className='font-bold text-left'>{children}</p>
+const Title: React.FC<BaseProps> = ({ children, className }) => {
+  return <p className={`text-left font-bold ${className ? className : ''}`}>{children}</p>
 }
 
-const Description: React.FC<BaseProps> = ({ children }) => {
-  return <p className='text-sm text-left'>{children}</p>
+const Description: React.FC<BaseProps> = ({ children, className }) => {
+  return <p className={`text-left text-sm ${className ? className : ''}`}>{children}</p>
 }
 
-const Alert: Alert = ({ children, onClose, closable = false, show = true, showIcon = false, type, className }) => {
+const Alert: Alert = ({
+  children,
+  onClose,
+  closable = false,
+  show = true,
+  showIcon = false,
+  type,
+  className,
+  innerClassName,
+}) => {
   return (
     <>
       {show && (
-        <div className={`flex items-center relative rounded border-l-4 p-4 ${Styles[type]} ${className}`} role='alert'>
-          {showIcon && <i className='bx bx-info-circle text-2xl mr-4'></i>}
-          <div>{children}</div>
+        <div
+          className={`relative flex items-center rounded border-l-4 p-4 ${Styles[type]} ${className ? className : ''}`}
+          role='alert'
+        >
+          {showIcon && <i className='bx bx-info-circle mr-4 text-2xl'></i>}
+          <div className={`w-full ${innerClassName ? innerClassName : ''}`}>{children}</div>
           {closable && (
             <button
-              className='ml-auto absolute right-1.5 top-0 bg-transparent border-0 text-2xl leading-none font-semibold outline-none focus:outline-none'
+              className='absolute right-1.5 top-0 ml-auto border-0 bg-transparent text-2xl font-semibold leading-none outline-none focus:outline-none'
               onClick={onClose}
             >
-              <span className='text-black dark:text-white opacity-70 h-6 w-6 text-2xl block outline-none focus:outline-none'>
+              <span className='block h-6 w-6 text-2xl text-black opacity-70 outline-none focus:outline-none dark:text-white'>
                 ×
               </span>
             </button>

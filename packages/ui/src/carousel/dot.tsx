@@ -27,7 +27,7 @@ const sizes: Record<DotSize, string> = {
 const Dot: DotComponent = ({ active, onClick, className, style, size = 'xs' }) => {
   return (
     <span
-      className={`rounded-full w-dot-base h-dot-base cursor-pointer transition-all duration-200 animate-fade-in ${
+      className={`w-dot-base h-dot-base animate-fade-in cursor-pointer rounded-full transition-all duration-200 ${
         active ? 'bg-gray-900' : 'bg-gray-300'
       } ${sizes[size]} ${className ? className : ''}`}
       onClick={onClick}
@@ -37,7 +37,7 @@ const Dot: DotComponent = ({ active, onClick, className, style, size = 'xs' }) =
 }
 
 const Provider: React.FC<React.PropsWithChildren> = ({ children }) => {
-  return <div className='absolute bottom-0 left-0 w-full flex justify-center items-center '>{children}</div>
+  return <div className='absolute bottom-0 left-0 flex w-full items-center justify-center '>{children}</div>
 }
 
 Dot.Provider = Provider

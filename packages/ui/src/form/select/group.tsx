@@ -21,7 +21,7 @@ type SelectGroupType = React.FC<React.PropsWithChildren<Props>> & {
 const ClearButton: React.FC<ClearButtonProps> = ({ onClear, clearText, clearAriaLabel }) => {
   return (
     <span
-      className='text-sm text-primary hover:opacity-90 transition-colors'
+      className='text-primary text-sm transition-colors hover:opacity-90'
       onClick={() => onClear && onClear()}
       role='button'
       title={clearAriaLabel ?? clearText}
@@ -44,12 +44,12 @@ const SelectGroup: SelectGroupType = ({
 }) => {
   return (
     <div className={`${className ? className : ''}`}>
-      <div className='flex justify-between items-center'>
-        <div className='font-bold text-lg text-gray-700 dark:text-gray-200'>{title}</div>
+      <div className='flex items-center justify-between'>
+        <div className='text-lg font-bold text-gray-700 dark:text-gray-200'>{title}</div>
         {filtered && <ClearButton onClear={onClear} clearText={clearText} clearAriaLabel={clearAriaLabel} />}
       </div>
       {filter && <div className='my-4 lg:my-2'>{filter}</div>}
-      <div className={`max-h-60 overflow-y-auto space-y-3 lg:space-y-2 ${!filtered ? 'mt-2 lg:mt-2' : ''}`}>
+      <div className={`max-h-60 space-y-3 overflow-y-auto lg:space-y-2 ${!filtered ? 'mt-2 lg:mt-2' : ''}`}>
         {children}
       </div>
     </div>

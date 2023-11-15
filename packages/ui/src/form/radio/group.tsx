@@ -21,7 +21,7 @@ type RadioGroupType = React.FC<React.PropsWithChildren<Props>> & {
 const ClearButton: React.FC<ClearButtonProps> = ({ onClear, clearText, clearAriaLabel }) => {
   return (
     <span
-      className='text-sm text-primary hover:opacity-90 transition-colors'
+      className='text-primary text-sm transition-colors hover:opacity-90'
       onClick={() => onClear && onClear()}
       role='button'
       title={clearAriaLabel ?? clearText}
@@ -43,7 +43,7 @@ const RadioGroup: RadioGroupType = ({
 }) => {
   return (
     <div className={`${className ? className : ''}`}>
-      <div className='flex justify-between items-center'>
+      <div className='flex items-center justify-between'>
         <div className='text-lg font-bold'>{title}</div>
         {clearable && <ClearButton onClear={onClear} clearText={clearText} clearAriaLabel={clearAriaLabel} />}
       </div>
