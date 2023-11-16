@@ -465,7 +465,7 @@ export const ToastProvider = ({ children }: Props) => {
       }}
     >
       {children}
-      <div className='md:min-w-none fixed bottom-0 right-1/2 z-50 flex min-w-[100vw] max-w-[100vw] translate-x-1/2 transform flex-col items-center gap-5 p-4 md:max-w-none lg:right-0 lg:translate-x-0 lg:transform-none lg:items-end lg:gap-3'>
+      <div className='md:min-w-none z-9999 fixed bottom-0 right-1/2 flex min-w-[100vw] max-w-[100vw] translate-x-1/2 transform flex-col items-center gap-5 p-4 md:max-w-none lg:right-0 lg:translate-x-0 lg:transform-none lg:items-end lg:gap-3'>
         {toasts.map((toast) =>
           toast.interactive ? (
             <InteractiveToast toast={toast} key={toast.id} onClose={() => removeToast(toast.id)} />
