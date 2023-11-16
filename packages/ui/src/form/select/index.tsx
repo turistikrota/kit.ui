@@ -59,13 +59,13 @@ const Select: SelectType = ({
   return (
     <div className={`min-w-48 relative w-full ${sizes[size]}`}>
       <select
-        className={`caret-secondary border-blue-gray-200 bg-default text-blue-gray-700 disabled:bg-blue-gray-50 peer h-full w-full rounded-[7px] border px-3 py-2.5 font-sans text-sm font-normal outline-0 transition-colors  focus:border-2 focus:border-t-transparent focus:outline-0 focus-visible:outline-none focus-visible:outline-0 disabled:border-0
-        ${
-          error
-            ? 'invalid border-2 border-red-500 border-t-transparent text-red-500 focus:border-red-500 focus:border-t-transparent focus-visible:border-t-transparent'
-            : 'focus:border-secondary-500 '
-        }
-        `}
+        className={`border-blue-gray-200 text-blue-gray-700 disabled:bg-blue-gray-50 bg-default peer h-full w-full rounded-[7px] border px-3 py-2.5 font-sans text-sm font-normal outline-0 transition-colors  focus:border-2 focus:border-t-transparent focus:outline-0 focus-visible:outline-none focus-visible:outline-0 disabled:border-0
+          ${
+            error
+              ? 'invalid border-2 border-red-500 border-t-transparent text-red-500 placeholder-shown:border-t-red-500 focus:border-red-500 focus:border-t-transparent focus-visible:border-t-transparent'
+              : 'caret-secondary focus:border-secondary-500 !border-t-0'
+          }
+          `}
         placeholder=' '
         value={value}
         onChange={onChange}
@@ -77,15 +77,15 @@ const Select: SelectType = ({
         {children}
       </select>
       <label
-        className={`before:content[' '] after:content[' '] text-blue-gray-400 before:border-blue-gray-200 after:border-blue-gray-200 peer-placeholder-shown:text-blue-gray-500 peer-autofill:text-blue-gray-500 peer-focus:text-secondary-500 peer-focus:before:border-secondary-500 peer-focus:after:border-secondary-500 peer-disabled:peer-placeholder-shown:text-blue-gray-500 pointer-events-none absolute -top-1.5 left-0 flex h-full w-full select-none text-[11px] font-normal leading-tight transition-all before:pointer-events-none before:mr-1 before:mt-[6.5px] before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-l before:border-t before:transition-all after:pointer-events-none after:ml-1 after:mt-[6.5px] after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-r
-          after:border-t after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:before:border-transparent
-          peer-placeholder-shown:after:border-transparent peer-autofill:text-sm peer-autofill:before:border-transparent peer-autofill:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:before:border-l-2 peer-focus:before:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-t-2 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent ${
-            labelSizes[size]
-          } ${
-            error
-              ? 'peer-invalid:text-red-500 peer-invalid:before:border-l-2 peer-invalid:before:border-t-2 peer-invalid:before:border-red-500 peer-invalid:after:border-r-2 peer-invalid:after:border-t-2 peer-invalid:after:border-red-500 peer-invalid:peer-placeholder-shown:text-red-500 peer-invalid:peer-placeholder-shown:before:border-transparent peer-invalid:peer-placeholder-shown:after:border-transparent peer-focus:text-red-500 peer-focus:before:border-red-500 peer-focus:after:border-red-500 peer-focus:peer-invalid:text-red-500 peer-focus:peer-invalid:before:border-red-500 peer-focus:peer-invalid:after:border-red-500'
-              : ''
-          } `}
+        className={`before:content[' '] after:content[' '] text-blue-gray-400 before:border-blue-gray-200 after:border-blue-gray-200 peer-placeholder-shown:text-blue-gray-500 peer-autofill:text-blue-gray-500 peer-disabled:peer-placeholder-shown:text-blue-gray-500 pointer-events-none absolute -top-1.5 left-0 flex h-full w-full select-none text-[11px] font-normal leading-tight transition-all before:pointer-events-none before:mr-1 before:mt-[6.5px] before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-l before:border-t before:transition-all after:pointer-events-none after:ml-1 after:mt-[6.5px] after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-r after:border-t after:transition-all peer-placeholder-shown:text-sm
+            peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-autofill:text-sm peer-autofill:before:border-transparent
+            peer-autofill:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:before:border-l-2 peer-focus:before:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-t-2 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent ${
+              labelSizes[size]
+            } ${
+              error
+                ? 'text-red-500 before:border-l-2 before:border-t-2 before:border-red-500 after:border-r-2 after:border-t-2 after:border-red-500 peer-placeholder-shown:text-red-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-red-500  peer-focus:before:border-red-500 peer-focus:after:border-red-500'
+                : 'peer-focus:text-secondary-500 peer-focus:before:border-secondary-500 peer-focus:after:border-secondary-500'
+            } `}
       >
         {label}
       </label>

@@ -10,7 +10,7 @@ type FormType = React.FC<React.PropsWithChildren<Props>> & {
   Footer: typeof Footer
 }
 
-type TitleProps = {
+type TitleProps = Props & {
   size?: 'md' | 'lg'
 }
 
@@ -24,16 +24,22 @@ const TitleSizes = {
   lg: 'text-lg',
 }
 
-function Title({ children, size = 'lg' }: React.PropsWithChildren<TitleProps>) {
-  return <h2 className={`text-left font-bold lg:block ${TitleSizes[size]}`}>{children}</h2>
+function Title({ children, className, size = 'lg' }: React.PropsWithChildren<TitleProps>) {
+  return (
+    <h2 className={`text-left font-bold lg:block ${TitleSizes[size]} ${className ? className : ''}`}>{children}</h2>
+  )
 }
 
-function Subtitle({ children }: React.PropsWithChildren) {
-  return <p className='text-left text-sm text-gray-600 dark:text-gray-400 lg:block'>{children}</p>
+function Subtitle({ children, className }: React.PropsWithChildren<Props>) {
+  return (
+    <p className={`text-left text-sm text-gray-600 dark:text-gray-400 lg:block ${className ? className : ''}`}>
+      {children}
+    </p>
+  )
 }
 
-function Head({ children }: React.PropsWithChildren) {
-  return <div className='bg-second rounded-t-md border-b p-4'>{children}</div>
+function Head({ children, className }: React.PropsWithChildren<Props>) {
+  return <div className={`bg-second rounded-t-md border-b p-4 ${className ? className : ''}`}>{children}</div>
 }
 
 function Body({ children, className }: React.PropsWithChildren<Props>) {

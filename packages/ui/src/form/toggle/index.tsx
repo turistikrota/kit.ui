@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 type Variant = 'primary' | 'secondary' | 'success' | 'error' | 'warning'
 type Size = 'sm' | 'md' | 'lg'
 
 type Props = {
   defaultChecked?: boolean
+  checked?: boolean
   disabled?: boolean
   onChange?: (checked: boolean) => void
   variant?: Variant
@@ -78,6 +79,7 @@ const sizes: Record<Size, Sizes> = {
 
 const ToggleButton: React.FC<Props> = ({
   defaultChecked = false,
+  checked: checkedProp,
   variant = 'primary',
   size = 'md',
   disabled = false,
@@ -93,6 +95,12 @@ const ToggleButton: React.FC<Props> = ({
       onChange(newChecked)
     }
   }
+
+  useEffect(() => {
+    if (checkedProp !== undefined) {
+      setChecked(checkedProp)
+    }
+  }, [checkedProp])
 
   return (
     <button
