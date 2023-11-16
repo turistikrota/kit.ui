@@ -75,12 +75,14 @@ export type ToastContextType = ContextType
 type ListContextType = {
   toasts: Toast[]
   onToast: (toast: Toast) => void
+  destroy: (id: string) => void
   removeToast: (id: string) => void
 }
 
 const ToastListContext = React.createContext<ListContextType>({
   toasts: [],
   onToast: () => {},
+  destroy: () => {},
   removeToast: () => {},
 })
 
@@ -239,16 +241,22 @@ const ToastStyles: Record<ToastType, Styles> = {
 type TextToastProps = {
   toast: Toast
   onClose: () => void
+  onAnimateEnd: () => void
 }
 
-const TextToast: React.FC<TextToastProps> = ({ toast, onClose }) => {
+const TextToast: React.FC<TextToastProps> = ({ toast, onClose, onAnimateEnd }) => {
   return (
     <div
       id={toast.id}
-      className={`flex w-full max-w-xs items-center rounded-lg p-4 shadow ${ToastStyles[toast.type].card} ${
-        toast.closing ? 'animate-fade-out-to-right' : 'animate-fade-in-from-right'
+      className={`flex w-full max-w-xs items-center rounded-lg p-4 shadow ${
+        ToastStyles[toast.type].card
+      } transition-opacity duration-200 ${
+        toast.closing ? 'animate-fade-out-to-right opacity-0' : 'animate-fade-in-from-right'
       }`}
       role='alert'
+      onAnimationEnd={() => {
+        if (toast.closing) onAnimateEnd()
+      }}
     >
       <div
         className={`inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg ${
@@ -278,16 +286,20 @@ const TextToast: React.FC<TextToastProps> = ({ toast, onClose }) => {
 type InteractiveToastProps = {
   toast: Toast
   onClose: () => void
+  onAnimateEnd: () => void
 }
 
-const InteractiveToast: React.FC<InteractiveToastProps> = ({ toast, onClose }) => {
+const InteractiveToast: React.FC<InteractiveToastProps> = ({ toast, onClose, onAnimateEnd }) => {
   return (
     <div
       id={toast.id}
-      className={`w-full rounded-lg p-4 shadow lg:max-w-xs ${ToastStyles[toast.type].card} ${
-        toast.closing ? 'animate-fade-out-to-right' : 'animate-fade-in-from-right'
-      }`}
+      className={`w-full rounded-lg p-4 shadow transition-opacity duration-200 lg:max-w-xs ${
+        ToastStyles[toast.type].card
+      } ${toast.closing ? 'animate-fade-out-to-right opacity-0' : 'animate-fade-in-from-right'}`}
       role='alert'
+      onAnimationEnd={() => {
+        if (toast.closing) onAnimateEnd()
+      }}
     >
       <div className='flex'>
         <div
@@ -374,13 +386,16 @@ export const ToastListProvider: React.FC<React.PropsWithChildren> = ({ children 
     if (toast) {
       toast.closing = true
       setToasts((prev) => [...prev])
-      setTimeout(() => {
-        setToasts((prev) => prev.filter((t) => t.id !== id))
-      }, 290)
     }
   }
 
-  return <ToastListContext.Provider value={{ toasts, onToast, removeToast }}>{children}</ToastListContext.Provider>
+  const destroy = (id: string) => {
+    setToasts((prev) => prev.filter((t) => t.id !== id))
+  }
+
+  return (
+    <ToastListContext.Provider value={{ toasts, onToast, removeToast, destroy }}>{children}</ToastListContext.Provider>
+  )
 }
 
 export const useToastList = () => {
@@ -392,7 +407,7 @@ export const useToastList = () => {
 }
 
 export const ToastProvider = ({ children }: Props) => {
-  const { onToast, removeToast, toasts } = useToastList()
+  const { onToast, removeToast, destroy, toasts } = useToastList()
 
   const addToast = (type: ToastType, message: string, duration = 10000) => {
     const id = Math.random().toString(36).substr(2, 9)
@@ -468,9 +483,19 @@ export const ToastProvider = ({ children }: Props) => {
       <div className='md:min-w-none z-9999 fixed bottom-0 right-1/2 flex min-w-[100vw] max-w-[100vw] translate-x-1/2 transform flex-col items-center gap-5 p-4 md:max-w-none lg:right-0 lg:translate-x-0 lg:transform-none lg:items-end lg:gap-3'>
         {toasts.map((toast) =>
           toast.interactive ? (
-            <InteractiveToast toast={toast} key={toast.id} onClose={() => removeToast(toast.id)} />
+            <InteractiveToast
+              toast={toast}
+              key={toast.id}
+              onClose={() => removeToast(toast.id)}
+              onAnimateEnd={() => destroy(toast.id)}
+            />
           ) : (
-            <TextToast key={toast.id} onClose={() => removeToast(toast.id)} toast={toast} />
+            <TextToast
+              key={toast.id}
+              onClose={() => removeToast(toast.id)}
+              toast={toast}
+              onAnimateEnd={() => destroy(toast.id)}
+            />
           ),
         )}
       </div>
