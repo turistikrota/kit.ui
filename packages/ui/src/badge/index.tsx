@@ -3,6 +3,7 @@ import { FormSize, FullVariant, FullVariantClasses } from '../types'
 
 type Props = {
   variant?: FullVariant
+  className?: string
   size?: FormSize
 }
 
@@ -12,9 +13,13 @@ const SizeClasses: Record<FormSize, string> = {
   lg: 'px-4 py-2 text-base rounded-lg',
 }
 
-const Badge: React.FC<React.PropsWithChildren<Props>> = ({ variant = 'default', size = 'md', children }) => {
+const Badge: React.FC<React.PropsWithChildren<Props>> = ({ variant = 'default', size = 'md', className, children }) => {
   return (
-    <span className={`inline-flex items-center font-semibold ${SizeClasses[size]} ${FullVariantClasses[variant]}`}>
+    <span
+      className={`inline-flex items-center font-semibold ${SizeClasses[size]} ${FullVariantClasses[variant]} ${
+        className ? className : ''
+      }`}
+    >
       {children}
     </span>
   )
