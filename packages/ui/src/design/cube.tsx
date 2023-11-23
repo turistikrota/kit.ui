@@ -26,6 +26,7 @@ type Props = {
   variant?: Variant
   position?: Position
   onlyDesktop?: boolean
+  fixed?: boolean
 }
 
 const VariantClasses: Record<Variant, string> = {
@@ -44,12 +45,17 @@ const PositionClasses: Record<Position, string> = {
   [Position.Center]: 'top-1/2 left-1/2 animate-cube-effect-center',
 }
 
-const CubeEffect: ComponentType = ({ variant = Variant.Primary, position = Position.TopRight, onlyDesktop = true }) => {
+const CubeEffect: ComponentType = ({
+  variant = Variant.Primary,
+  position = Position.TopRight,
+  onlyDesktop = true,
+  fixed = true,
+}) => {
   return (
     <div
-      className={`absolute h-16 w-16 rounded-md bg-opacity-20 ${VariantClasses[variant]} ${PositionClasses[position]} ${
+      className={`h-16 w-16 rounded-md bg-opacity-20 ${VariantClasses[variant]} ${PositionClasses[position]} ${
         onlyDesktop ? 'hidden md:block' : ''
-      }`}
+      } ${fixed ? 'fixed' : 'absolute'}`}
     />
   )
 }
