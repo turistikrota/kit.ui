@@ -5,6 +5,8 @@ import { TooltipContext, TooltipProvider } from './provider'
 
 type Props = {
   content: React.ReactNode
+  className?: string
+  innerClassName?: string
   position?: TooltipPosition
 }
 
@@ -12,7 +14,13 @@ const randomUUID = (): string => {
   return Math.random().toString(36).substring(2) + Date.now().toString(36)
 }
 
-const Tooltip: React.FC<React.PropsWithChildren<Props>> = ({ content, position = 'auto', children }) => {
+const Tooltip: React.FC<React.PropsWithChildren<Props>> = ({
+  content,
+  position = 'auto',
+  className,
+  innerClassName,
+  children,
+}) => {
   const [key] = useState(randomUUID())
   const ctx = useContext(TooltipContext)
 
@@ -40,8 +48,12 @@ const Tooltip: React.FC<React.PropsWithChildren<Props>> = ({ content, position =
   }
 
   return (
-    <div className='group relative'>
-      <div className='inline-flex items-center' onMouseEnter={show} onMouseLeave={hide}>
+    <div className={`group relative ${className ? className : ''}`}>
+      <div
+        className={`inline-flex items-center ${innerClassName ? innerClassName : ''}`}
+        onMouseEnter={show}
+        onMouseLeave={hide}
+      >
         {children}
       </div>
     </div>

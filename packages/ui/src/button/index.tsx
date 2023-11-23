@@ -1,10 +1,10 @@
 import React, { PropsWithChildren } from 'react'
-import { Variant } from '../types'
+import { ButtonVariant } from '../types'
 
 type Size = 'normal' | 'xs' | 'sm' | 'md' | 'lg'
 
 type Props = {
-  variant?: Variant
+  variant?: ButtonVariant
   size?: Size
   htmlType?: 'button' | 'submit' | 'reset'
   block?: boolean
@@ -14,7 +14,7 @@ type Props = {
   onClick?: () => void
 }
 
-const variants: Record<Variant, string> = {
+const variants: Record<ButtonVariant, string> = {
   primary:
     'bg-primary-500 hover:bg-primary-400 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-500 dark:focus:ring-primary-900',
   vip: 'bg-vip-500 hover:bg-vip-400 focus:ring-vip-300 dark:bg-vip-600 dark:hover:bg-vip-500 dark:focus:ring-vip-900',
@@ -32,6 +32,8 @@ const variants: Record<Variant, string> = {
     'bg-transparent hover:bg-transparent dark:hover:bg-transparent shadow-none text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 focus:ring-0 focus:ring-offset-0 focus:ring-offset-transparent focus:ring-transparent',
   opacity:
     'bg-opacity-70 bg-gray-600 dark:bg-gray-700 hover:bg-opacity-100 dark:bg-opacity-70 dark:hover:bg-opacity-100 shadow-none dark:text-gray-200 dark:hover:text-white transition-colors duration-200 focus:ring-0 focus:ring-offset-0 focus:ring-offset-transparent focus:ring-transparent',
+  glass:
+    'bg-gray-400/5 dark:bg-white/5 hover:bg-gray-400/10 dark:hover:bg-white/10 focus:ring-0 focus:ring-offset-0 focus:ring-offset-transparent focus:ring-transparent',
 }
 
 const sizes: Record<Size, string> = {
@@ -41,6 +43,8 @@ const sizes: Record<Size, string> = {
   md: 'py-2 px-4 text-base',
   lg: 'py-3 px-6 text-lg',
 }
+
+const DefaultTextVariants: ButtonVariant[] = ['gray-text', 'transparent', 'opacity', 'glass']
 
 export default function Button({
   children,
@@ -55,9 +59,11 @@ export default function Button({
   return (
     <button
       type={htmlType}
-      className={`disable-highlight block rounded-md font-medium text-white shadow transition duration-200 ease-out hover:ease-in focus:outline-none focus:ring-4 focus-visible:outline-none ${
+      className={`disable-highlight block rounded-md font-medium shadow transition duration-200 ease-out hover:ease-in focus:outline-none focus:ring-4 focus-visible:outline-none ${
         variants[variant]
-      } ${sizes[size]} ${block ? 'w-full' : ''} ${className ? className : ''}`}
+      } ${sizes[size]} ${block ? 'w-full' : ''} ${className ? className : ''} ${
+        !DefaultTextVariants.includes(variant) ? 'text-white' : ''
+      } ${props.disabled ? 'opacity-50' : ''}`}
       onClick={onClick}
       {...props}
     >

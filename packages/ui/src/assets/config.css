@@ -1,5 +1,5 @@
-@import url("./scrollbar");
-@import url("./animation.css");
+@import url('./scrollbar');
+@import url('./animation.css');
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -147,7 +147,7 @@
     --skeleton-color-900: 15, 15, 15;
     --skeleton-color-1000: 13, 13, 13;
     --skeleton-color-1100: 11, 11, 11;
-  
+
     --loading-backdrop: brightness(0.5) blur(1px);
 
     --scroll-bar-bg: rgb(var(--primary-color-500));

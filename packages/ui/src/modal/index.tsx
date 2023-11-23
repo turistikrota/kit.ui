@@ -14,6 +14,8 @@ type CloseableProps = {
 
 type ModalProps = CloseableProps & {
   transitionClass?: string
+  heightClass?: string
+  widthClass?: string
   unmount?: boolean
   delay?: number
   open?: boolean
@@ -65,6 +67,8 @@ const Modal: ModalType = ({
   onClose,
   delay = 150,
   open = false,
+  heightClass = 'min-h-[50vh]',
+  widthClass = 'min-w-[50vw]',
   transitionClass = 'modal-scaler',
   unmount = true,
   shadow = true,
@@ -89,9 +93,9 @@ const Modal: ModalType = ({
         nodeRef={nodeRef}
       >
         <div
-          className={`relative z-10 flex min-h-[50vh] w-full min-w-[50vw] max-w-md flex-col items-center justify-center rounded-lg ${
+          className={`relative z-10 flex w-full max-w-md flex-col items-center justify-center rounded-lg ${
             shadow ? 'shadow-lg' : ''
-          }`}
+          } ${heightClass ? heightClass : ''} ${widthClass ? widthClass : ''}`}
           ref={nodeRef}
         >
           {children}

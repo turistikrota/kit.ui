@@ -56,8 +56,8 @@ const GlassEffect: React.FC<GlassEffectProps> & {
 export const Fixed: React.FC = () => {
   return (
     <>
-      <span className='-z-1 bg-primary-600/20 dark:bg-primary-600/10 fixed -start-[20%] top-[10%] h-[400px] w-[400px] rounded-full blur-[200px] md:start-[10%] lg:h-[600px] lg:w-[600px]' />
-      <span className='-z-1 bg-secondary-600/20 dark:bg-secondary-600/10 fixed -end-[20%] bottom-[10%] h-[400px] w-[400px] rounded-full blur-[200px] md:end-[10%] lg:h-[600px] lg:w-[600px]' />
+      <span className='-z-1 bg-primary-500/25 dark:bg-primary-500/30 fixed -start-[20%] top-[10%] h-[400px] w-[400px] rounded-full blur-[200px] md:start-[10%] lg:h-[600px] lg:w-[600px]' />
+      <span className='-z-1 bg-secondary-500/25 dark:bg-secondary-500/30 fixed -end-[20%] bottom-[10%] h-[400px] w-[400px] rounded-full blur-[200px] md:end-[10%] lg:h-[600px] lg:w-[600px]' />
     </>
   )
 }
