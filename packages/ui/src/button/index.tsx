@@ -44,6 +44,8 @@ const sizes: Record<Size, string> = {
   lg: 'py-3 px-6 text-lg',
 }
 
+const DefaultTextVariants: ButtonVariant[] = ['gray-text', 'transparent', 'opacity', 'glass']
+
 export default function Button({
   children,
   size = 'md',
@@ -57,9 +59,11 @@ export default function Button({
   return (
     <button
       type={htmlType}
-      className={`disable-highlight block rounded-md font-medium text-white shadow transition duration-200 ease-out hover:ease-in focus:outline-none focus:ring-4 focus-visible:outline-none ${
+      className={`disable-highlight block rounded-md font-medium shadow transition duration-200 ease-out hover:ease-in focus:outline-none focus:ring-4 focus-visible:outline-none ${
         variants[variant]
-      } ${sizes[size]} ${block ? 'w-full' : ''} ${className ? className : ''} ${props.disabled ? 'opacity-50' : ''}`}
+      } ${sizes[size]} ${block ? 'w-full' : ''} ${className ? className : ''} ${
+        !DefaultTextVariants.includes(variant) ? 'text-white' : ''
+      } ${props.disabled ? 'opacity-50' : ''}`}
       onClick={onClick}
       {...props}
     >
