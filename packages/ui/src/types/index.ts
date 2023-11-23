@@ -55,6 +55,8 @@ export type Variant =
   | 'opacity'
   | 'vip'
 
+export type ButtonVariant = Variant | 'glass'
+
 export type ObjectFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down'
 
 export type FullVariant =
