@@ -121,6 +121,7 @@ const Carousel: React.FC<Props> = ({
             src={img}
             alt={`${imageAltPrefix}-${idx}`}
             title={imageTitlePrefix ? `${imageTitlePrefix}-${idx}` : undefined}
+            isActive={idx === currentIndex}
             className={`absolute left-0 top-0 h-full w-full object-cover transition-opacity duration-200 ${
               idx === currentIndex ? 'opacity-100' : 'opacity-0'
             } ${pictureClassName ? pictureClassName : ''}`}

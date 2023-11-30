@@ -4,6 +4,7 @@ import { ObjectFit, ObjectFits, PropsWithClassName } from '../types'
 type Props = {
   src: string
   alt: string
+  isActive?: boolean
   title?: string
   imgClassName?: string
   loadingClassName?: string
@@ -26,20 +27,40 @@ const PerfectImage: React.FC<React.PropsWithChildren<PropsWithClassName<Props> &
   onLeftSwipe,
   onRightSwipe,
   onImageLoaded,
+  isActive = true,
   fit = 'cover',
   full = true,
   ...rest
 }) => {
+  const [isInView, setIsInView] = useState(false)
+  const imgRef = useRef(null)
   const onSwipeStart = useRef(0)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    if (src) {
-      const img = new Image()
-      img.src = src
-      img.onload = () => setLoading(false)
+    if (!isActive || !src) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries
+        if (entry.isIntersecting) {
+          setIsInView(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.01 },
+    )
+
+    const currentRef = imgRef.current
+    if (currentRef) {
+      observer.observe(currentRef)
     }
-  }, [src])
+
+    return () => {
+      if (currentRef) {
+        observer.disconnect()
+      }
+    }
+  }, [src, isActive])
 
   const onSwipe = useCallback((e: React.TouchEvent<HTMLDivElement>) => {
     if (e.touches.length === 1) {
@@ -80,7 +101,7 @@ const PerfectImage: React.FC<React.PropsWithChildren<PropsWithClassName<Props> &
   )
 
   return (
-    <picture className={pictureClassName} onTouchStart={onSwipe} onTouchEnd={onSwipeEnd} {...rest}>
+    <picture ref={imgRef} className={pictureClassName} onTouchStart={onSwipe} onTouchEnd={onSwipeEnd} {...rest}>
       {loading && (
         <span
           className={`bg-skeleton-300 dark:bg-skeleton absolute inset-0 animate-pulse ${
@@ -88,8 +109,12 @@ const PerfectImage: React.FC<React.PropsWithChildren<PropsWithClassName<Props> &
           }`}
         />
       )}
-      <source srcSet={src} type='image/webp' />
-      <img src={src} alt={alt} title={title} className={imageClassName} loading='lazy' onLoad={onImageLoad} />
+      {isInView && (
+        <>
+          <source srcSet={src} type='image/webp' />
+          <img src={src} alt={alt} title={title} className={imageClassName} onLoad={onImageLoad} />
+        </>
+      )}
     </picture>
   )
 }
