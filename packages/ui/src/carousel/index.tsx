@@ -104,10 +104,10 @@ const Carousel: React.FC<Props> = ({
   }
 
   const checkImageClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (
-      (e.target instanceof HTMLImageElement || e.target instanceof HTMLDivElement || e.target === e.currentTarget) &&
-      onClick
-    ) {
+    const isPictureClick =
+      e.target instanceof HTMLPictureElement ||
+      e.nativeEvent.composedPath().some((el) => el instanceof HTMLPictureElement)
+    if ((isPictureClick || e.target instanceof HTMLImageElement || e.target === e.currentTarget) && onClick) {
       onClick(images[currentIndex], currentIndex)
     }
   }
@@ -123,7 +123,7 @@ const Carousel: React.FC<Props> = ({
             title={imageTitlePrefix ? `${imageTitlePrefix}-${idx}` : undefined}
             isActive={idx === currentIndex}
             className={`absolute left-0 top-0 h-full w-full object-cover transition-opacity duration-200 ${
-              idx === currentIndex ? 'opacity-100' : 'opacity-0'
+              idx === currentIndex ? 'opacity-100' : 'cursor-pointer opacity-0'
             } ${pictureClassName ? pictureClassName : ''}`}
             imgClassName={`rounded-md ${imageClassName ? imageClassName : ''}`}
             loadingClassName={imgLoadingClassName}
