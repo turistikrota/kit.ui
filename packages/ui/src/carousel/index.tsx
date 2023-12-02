@@ -149,7 +149,10 @@ const Carousel: React.FC<Props> = ({
                 className={`max-w-12 h-12 max-h-12 min-h-[3rem] w-12 min-w-[3rem] rounded-md object-cover transition-opacity duration-200 ${
                   idx === currentIndex ? 'opacity-100' : 'cursor-pointer opacity-50'
                 }`}
-                onClick={() => setCurrentIndex(idx)}
+                onClick={(e) => {
+                  setCurrentIndex(idx)
+                  e.stopPropagation()
+                }}
               />
             </div>
           ))}
