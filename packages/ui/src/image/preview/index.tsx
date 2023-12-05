@@ -6,6 +6,7 @@ import ImagePreviewContext from './context'
 type Props = {
   open?: boolean
   idx?: number
+  blockScroll?: boolean
   list: string[]
   altPrefix: string
 }
@@ -78,6 +79,7 @@ const ImagePreviewProvider: React.FC<React.PropsWithChildren<Props>> = ({
   idx = 0,
   list,
   altPrefix,
+  blockScroll = true,
 }) => {
   const [open, setOpen] = useState<boolean>(defaultOpen)
   const [currentIdx, setCurrentIdx] = useState<number>(idx)
@@ -85,11 +87,17 @@ const ImagePreviewProvider: React.FC<React.PropsWithChildren<Props>> = ({
   const show = (idx = 0) => {
     setCurrentIdx(idx)
     setOpen(true)
+    if (blockScroll) {
+      document.body.style.overflow = 'hidden'
+    }
   }
 
   const hide = () => {
     setCurrentIdx(-1)
     setOpen(false)
+    if (blockScroll) {
+      document.body.style.overflow = 'unset'
+    }
   }
 
   const next = () => {
