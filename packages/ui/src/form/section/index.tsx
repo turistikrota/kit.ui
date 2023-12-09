@@ -53,8 +53,12 @@ function Footer({ children, className }: React.PropsWithChildren<Props>) {
 Head.Title = Title
 Head.Subtitle = Subtitle
 
-const FormSection: FormType = ({ children, className }) => {
-  return <section className={className}>{children}</section>
+const FormSection: FormType = ({ children, className, ...rest }) => {
+  return (
+    <section className={className} {...rest}>
+      {children}
+    </section>
+  )
 }
 
 FormSection.Head = Head

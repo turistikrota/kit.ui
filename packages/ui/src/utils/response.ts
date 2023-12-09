@@ -17,7 +17,7 @@ export const parseApiError = ({ error, form, toast, scroller }: ErrorChainEl) =>
         error,
         form,
         toast,
-        scroller
+        scroller,
       })
     ) {
       return
@@ -30,7 +30,7 @@ const checkIfValidationError = ({ error, form, toast, scroller }: ErrorChainEl):
   if (Array.isArray(error)) {
     error.forEach((err) => {
       if (err && err.namespace && !firstErrorId) {
-          firstErrorId = err.namespace
+        firstErrorId = err.namespace
       }
       setFormError({
         form,
