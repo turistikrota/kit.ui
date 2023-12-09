@@ -19,6 +19,7 @@ type ComponentType = FC<PropsWithChildren<Props>> & {
   Item: FC<PropsWithChildren<ItemProps>>
   Avatar: FC<AvatarProps>
   Admin: FC
+  System: FC
 }
 
 const Timeline: ComponentType = ({ className, children }) => {
@@ -27,6 +28,10 @@ const Timeline: ComponentType = ({ className, children }) => {
 
 const Avatar: FC<AvatarProps> = ({ avatar, avatarAlt }) => {
   return <img className='rounded-full shadow-lg' src={avatar} alt={avatarAlt} />
+}
+
+const System: FC = () => {
+  return <i className='bx bx-server text-xl' />
 }
 
 const Admin: FC = () => {
@@ -40,7 +45,7 @@ const Item: FC<PropsWithChildren<ItemProps>> = ({ avatar, date, children }) => {
         {avatar}
       </span>
       <Card className='items-center justify-between rounded-md p-4 sm:flex'>
-        <time className='mb-1 text-xs font-normal text-gray-400 sm:order-last sm:mb-0 min-w-max'>{date}</time>
+        <time className='mb-1 min-w-max text-xs font-normal text-gray-400 sm:order-last sm:mb-0'>{date}</time>
         <div className='text-sm font-normal text-gray-500 dark:text-gray-300'>{children}</div>
       </Card>
     </li>
@@ -50,5 +55,6 @@ const Item: FC<PropsWithChildren<ItemProps>> = ({ avatar, date, children }) => {
 Timeline.Item = Item
 Timeline.Avatar = Avatar
 Timeline.Admin = Admin
+Timeline.System = System
 
 export default Timeline
