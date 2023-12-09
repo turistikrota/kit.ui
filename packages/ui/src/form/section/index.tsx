@@ -2,7 +2,7 @@ import React from 'react'
 
 type Props = {
   className?: string
-}
+} & React.HTMLAttributes<HTMLDivElement>
 
 type FormType = React.FC<React.PropsWithChildren<Props>> & {
   Head: typeof Head
