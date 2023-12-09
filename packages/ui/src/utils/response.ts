@@ -1,12 +1,15 @@
 import { ToastContextType } from '../toast'
 
+type Scroller = (id: string) => void
+
 type ErrorChainEl = {
   error: any
   form?: any
   toast: ToastContextType
+  scroller?: Scroller
 }
 
-export const parseApiError = ({ error, form, toast }: ErrorChainEl) => {
+export const parseApiError = ({ error, form, toast, scroller }: ErrorChainEl) => {
   const arr = [checkIfValidationError, checkIfBaseError]
   for (let i = 0; i < arr.length; i++) {
     if (
@@ -14,6 +17,7 @@ export const parseApiError = ({ error, form, toast }: ErrorChainEl) => {
         error,
         form,
         toast,
+        scroller
       })
     ) {
       return
@@ -21,9 +25,13 @@ export const parseApiError = ({ error, form, toast }: ErrorChainEl) => {
   }
 }
 
-const checkIfValidationError = ({ error, form, toast }: ErrorChainEl): boolean => {
+const checkIfValidationError = ({ error, form, toast, scroller }: ErrorChainEl): boolean => {
+  let firstErrorId: string | null = null
   if (Array.isArray(error)) {
     error.forEach((err) => {
+      if (err && err.namespace && !firstErrorId) {
+          firstErrorId = err.namespace
+      }
       setFormError({
         form,
         msg: err.message,
@@ -31,6 +39,9 @@ const checkIfValidationError = ({ error, form, toast }: ErrorChainEl): boolean =
         field: err.namespace,
       })
     })
+    if (firstErrorId && scroller) {
+      scroller(firstErrorId)
+    }
     return true
   }
   return false
