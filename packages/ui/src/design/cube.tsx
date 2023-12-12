@@ -53,7 +53,7 @@ const CubeEffect: ComponentType = ({
 }) => {
   return (
     <div
-      className={`h-16 w-16 rounded-md bg-opacity-20 ${VariantClasses[variant]} ${PositionClasses[position]} ${
+      className={`-z-1 h-16 w-16 rounded-md bg-opacity-20 ${VariantClasses[variant]} ${PositionClasses[position]} ${
         onlyDesktop ? 'hidden lg:block' : ''
       } ${fixed ? 'fixed' : 'absolute'}`}
     />
