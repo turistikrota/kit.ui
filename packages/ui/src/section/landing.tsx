@@ -3,16 +3,16 @@ import React from 'react'
 type HeadProps = {
   title: string
   subtitle: string
-  left?: boolean
+  className?: string
 }
 
 type SectionType = React.FC<React.PropsWithChildren> & {
   Head: React.FC<HeadProps>
 }
 
-const Head: React.FC<HeadProps> = ({ title, subtitle, left = false }) => {
+const Head: React.FC<HeadProps> = ({ title, subtitle, className = 'text-center' }) => {
   return (
-    <div className={`${left ? 'text-left' : 'text-center'}`}>
+    <div className={className}>
       <h2 className='my-3 text-2xl font-semibold md:my-5 md:text-4xl'>{title}</h2>
       <p className='text-slate-600 dark:text-slate-400'>{subtitle}</p>
     </div>
