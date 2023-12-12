@@ -17,6 +17,7 @@ type HeaderProps = {
   withTopHeader?: boolean
   defaultFixed?: boolean
   zIndex?: string
+  fillSize?: boolean
 }
 
 type ClickableProps = {
@@ -70,6 +71,7 @@ function MobileHeader({
   withTopHeader = false,
   defaultFixed = false,
   zIndex = 'z-30',
+  fillSize = true,
 }: React.PropsWithChildren<HeaderProps>) {
   const isFixed = useHeaderFixed(withTopHeader ? withTopHeaderOptions : withoutTopHeaderOptions, defaultFixed)
 
@@ -84,7 +86,7 @@ function MobileHeader({
           {children}
         </div>
       </header>
-      <div className='h-16' />
+      {fillSize && <div className='h-16' />}
     </>
   )
 }
