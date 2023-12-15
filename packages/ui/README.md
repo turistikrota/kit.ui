@@ -8,6 +8,9 @@
   <a href='https://www.npmjs.com/package/@turistikrota/ui'>
     <img src='https://img.shields.io/npm/v/@turistikrota/ui.svg' alt='NPM Package Stable' />
   </a>
+  <a href='https://www.npmjs.com/package/@turistikrota/ui'>
+    <img src='https://img.shields.io/npm/dw/@turistikrota/ui.svg' alt='NPM Package Downloads' />
+  </a>
   <a href='https://github.com/turistikrota/kit.ui/LICENSE'>
     <img src='https://img.shields.io/github/license/turistikrota/kit.ui' alt='License' />
   </a>
