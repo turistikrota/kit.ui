@@ -13,5 +13,5 @@
   "globals": {
     "JSX": true
   },
-  "ignorePatterns": ["postcss.config.js"]
+  "ignorePatterns": ["postcss.config.js", "scripts"]
 }

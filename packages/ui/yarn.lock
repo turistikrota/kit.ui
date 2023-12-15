@@ -922,10 +922,10 @@ eslint-config-prettier@^8.8.0:
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.10.0.tgz#3a06a662130807e2502fc3ff8b4143d8a0658e11"
   integrity sha512-SM8AMJdeQqRYT9O9zguiruQZaN7+z+E4eAP9oiLNGKMtomwaB1E9dcgUD6ZAn/eQAb52USbvezbiljfZUhbJcg==
 
-eslint-config-turistikrota@0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-turistikrota/-/eslint-config-turistikrota-0.1.0.tgz#1d6656c839839655779e36eebf238bc3877b8e37"
-  integrity sha512-T42VE/t3KfhKHVWVuMdRVPd7GbfptFR4DC2mpr7FWUBDAz2m7WHnGJrOaxlr53yybCDGXimi+MsTscj7JAOwhQ==
+eslint-config-turistikrota@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-turistikrota/-/eslint-config-turistikrota-0.2.0.tgz#11f1a985342c7bf8001650d25b76ee615ef2f3a3"
+  integrity sha512-jtFD6KKDYGwDN31xFHQ9tTiu6BVAZ7ZCsf82OdmUy+XktbqPBarWE79xxIWaaWNZBV8/4fSWJ4oCqrB3m1Nbrg==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^5.59.6"
     "@typescript-eslint/parser" "^5.59.6"

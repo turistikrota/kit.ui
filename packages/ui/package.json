@@ -1,25 +1,25 @@
 {
   "name": "@turistikrota/ui",
-  "version": "0.9.4",
+  "version": "0.9.6",
   "description": "the turistikrota ui library for React",
-  "main": "./cjs/index.js",
+  "main": "./index.js",
   "module": "./index.js",
+  "types": "./index.d.ts",
   "files": [
     "./*"
   ],
   "scripts": {
-    "build:esm": "tsc",
-    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
-    "build": "npm run build:esm && npm run build:cjs",
-    "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
+    "build:project": "tsc",
+    "ts:mark": "node ./scripts/ts-declare.js --dir ./dist --target ./dist/index.d.ts",
+    "build": "npm run before-build && npm run build:project && npm run ts:mark",
+    "before-build": "npm run prettier && npm run lint",
+    "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\" --fix",
     "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
     "minify:css": "postcss ./src/assets/*.css --dir ./dist/assets --use autoprefixer cssnano",
-    "copy:assets": "cp package.json dist && cp README.md dist && cp LICENSE dist && cp ./src/assets/*.cjs dist/assets && cp ./src/fonts/* dist/fonts",
-    "copy:assets:win": "wsl cp package.json dist && wsl cp README.md dist && wsl cp LICENSE dist && wsl cp ./src/assets/*.cjs dist/assets && cp ./src/fonts/* dist/fonts",
-    "beforepub": "npm run build && npm run prettier && npm run lint && npm run copy:assets && npm run minify:css",
-    "beforepub:win": "npm run build && npm run prettier && npm run lint && npm run copy:assets:win && npm run minify:css"
+    "copy:assets": "cp package.json dist && cp README.md dist && cp LICENSE dist && cp ./src/assets/*.cjs dist/assets",
+    "beforepub": "npm run build && npm run copy:assets && npm run minify:css"
   },
-  "author": "Sami Salih İbrahimbaş <info@ssibrahimbas.com> (ssibrahimbas)",
+  "author": "Sami Salih İbrahimbaş <salih@turistikrota.com> (9ssi7)",
   "license": "MIT",
   "devDependencies": {
     "@turistikrota/prettier-config": "0.2.0",
@@ -28,7 +28,7 @@
     "@types/react-transition-group": "^4.4.6",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.40.0",
-    "eslint-config-turistikrota": "0.1.0",
+    "eslint-config-turistikrota": "^0.2.0",
     "postcss": "^8.4.25",
     "postcss-cli": "^10.1.0",
     "prettier": "^3.0.0",

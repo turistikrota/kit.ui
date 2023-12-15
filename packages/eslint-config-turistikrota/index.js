@@ -17,5 +17,6 @@ module.exports = {
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-empty-function": "off",
     "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off"
   },
 };

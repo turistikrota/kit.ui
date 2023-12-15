@@ -1,4 +1,7 @@
-export type Locales = 'en' | 'tr'
+export enum Locales {
+  en = 'en',
+  tr = 'tr',
+}
 
 export type PropsWithClassName<P = unknown> = P & {
   className?: string
