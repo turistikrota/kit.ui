@@ -5,6 +5,6 @@ body {
   min-height: 100vh;
 }
 
-body {
+body, html {
   @apply selection:bg-primary-200 selection:text-primary-600 dark:selection:bg-primary-500 dark:selection:text-primary-200 selection:bg-opacity-20 dark:selection:bg-opacity-20;
 }

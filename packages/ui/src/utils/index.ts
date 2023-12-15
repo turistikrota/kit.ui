@@ -23,7 +23,7 @@ export const deepEqual = (obj1: any, obj2: any): boolean => {
 
 type AnyObject = Record<string, any>
 
-export const deepMerge = <T extends AnyObject, S extends AnyObject>(target: T, source: S): T & S => {
+export const deepMerge = <T extends AnyObject, S extends AnyObject>(target: T, source: S, arrayPush = true): T & S => {
   if (typeof source !== 'object' || source === null) {
     return source as any
   }
@@ -34,9 +34,13 @@ export const deepMerge = <T extends AnyObject, S extends AnyObject>(target: T, s
     if (Object.prototype.hasOwnProperty.call(source, key)) {
       if (typeof source[key] === 'object' && source[key] !== null) {
         if (Array.isArray(source[key])) {
-          merged[key] = [...(merged[key] || []), ...source[key]]
+          if (arrayPush) {
+            merged[key] = [...(merged[key] || []), ...source[key]]
+          } else {
+            merged[key] = source[key]
+          }
         } else {
-          merged[key] = deepMerge(merged[key] || {}, source[key])
+          merged[key] = deepMerge(merged[key] || {}, source[key], arrayPush)
         }
       } else {
         merged[key] = source[key]

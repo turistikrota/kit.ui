@@ -1,0 +1,21 @@
+{
+    "name": "@turistikrota/fonts",
+    "version": "1.0.0",
+    "description": "Turistik Rota Font Library",
+    "files": [
+        "./verdana",
+        "LICENSE"
+    ],
+    "author": "Sami Salih İbrahimbaş <salih@turistikrota.com> (9ssi7)",
+    "license": "Apache-2.0",
+    "bugs": "https://github.com/turistikrota/kit.ui/issues",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/turistikrota/kit.ui.git"
+    },
+    "homepage": "https://ui.tech.turistikrota.com",
+    "keywords": [
+      "turistikrota",
+      "font"
+    ]
+}

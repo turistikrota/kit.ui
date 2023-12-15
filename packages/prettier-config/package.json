@@ -1,12 +1,12 @@
 {
   "name": "@turistikrota/prettier-config",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "The Turistikrota Prettier config",
   "main": "index.json",
   "repository": "git@github.com:turistikrota/kit.ui.git",
-  "author": "Sami Salih İbrahimbaş <info@ssibrahimbas.com> (ssibrahimbas)",
+  "author": "Sami Salih İbrahimbaş <salih@turistikrota.com> (9ssi7)",
   "homepage": "https://github.com/turistikrota/kit.ui/tree/main/packages/prettier-config",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "keywords": [
     "prettier",
     "config",

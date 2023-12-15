@@ -1,24 +1,30 @@
 {
-  "compilerOptions": {
-    "target": "es2016",
-    "lib": ["dom", "esnext"],
-    "jsx": "react",
-    "module": "esnext",
-    "rootDir": "./src",
-    "declaration": true,
-    "sourceMap": true,
-    "outDir": "./dist",
-    "importHelpers": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "moduleResolution": "node",
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "skipLibCheck": true,
-  },
-  "include": ["src", "src/assets/tailwind.config.ts"],
-  "exclude": ["node_modules", "dist", "docs", "postcss.config.js"]
-}
+    "compilerOptions": {
+      "target": "es2016",
+      "lib": ["dom", "esnext"],
+      "jsx": "react",
+      "module": "esnext",
+      "outDir": "./dist",
+      "rootDir": "./src",
+      "declaration": true,
+      "sourceMap": true,
+      "importHelpers": true,
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "strict": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "moduleResolution": "node",
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+      "skipLibCheck": true,
+      "plugins": [
+        {
+          "name": "typescript-plugin-css-modules"
+        }
+      ]
+    },
+    "include": ["src", "src/assets/tailwind.config.ts", "declarations.d.ts"],
+    "exclude": ["node_modules", "dist", "docs", "postcss.config.js", "scripts"]
+  }
+  
