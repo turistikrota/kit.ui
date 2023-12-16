@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Verdana';
-  src: url('./verdana.woff2') format('woff2'), url('./verdana.woff') format('woff');
+  src: url('./assets/verdana.woff2') format('woff2'), url('./assets/verdana.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
