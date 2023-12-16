@@ -1,9 +1,10 @@
 {
     "name": "@turistikrota/fonts",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Turistik Rota Font Library",
     "files": [
-        "./verdana",
+        "./assets",
+        "verdana.css",
         "LICENSE"
     ],
     "author": "Sami Salih İbrahimbaş <salih@turistikrota.com> (9ssi7)",
