@@ -40,8 +40,8 @@ const sizes: Record<Size, string> = {
   normal: 'text-base',
   xs: 'py-0.5 px-1 text-xs',
   sm: 'py-1 px-2 text-sm',
-  md: 'py-2 px-4 text-base',
-  lg: 'py-3 px-6 text-lg',
+  md: 'py-1.5 px-2.5 text-base',
+  lg: 'py-2 px-4 text-lg',
 }
 
 const DefaultTextVariants: ButtonVariant[] = ['gray-text', 'transparent', 'opacity', 'glass']

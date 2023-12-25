@@ -28,31 +28,31 @@ type Sizes = {
 
 const variants: Record<Variant, Variants> = {
   primary: {
-    default: 'bg-gray-100 dark:bg-default',
+    default: 'bg-second',
     checked: 'bg-primary-500 bg-opacity-20 dark:bg-primary-500 dark:bg-opacity-20',
     circleChecked: 'bg-primary-500 dark:bg-primary-500',
     circle: 'bg-gray-400 dark:bg-gray-700',
   },
   secondary: {
-    default: 'bg-gray-100 dark:bg-default',
+    default: 'bg-second',
     checked: 'bg-secondary-500 bg-opacity-20 dark:bg-secondary-500 dark:bg-opacity-20',
     circleChecked: 'bg-secondary-500 dark:bg-secondary-500',
     circle: 'bg-gray-400 dark:bg-gray-700',
   },
   success: {
-    default: 'bg-gray-100 dark:bg-default',
+    default: 'bg-second',
     checked: 'bg-green-500 bg-opacity-20 dark:bg-green-500 dark:bg-opacity-20',
     circleChecked: 'bg-green-500 dark:bg-green-500',
     circle: 'bg-gray-400 dark:bg-gray-700',
   },
   error: {
-    default: 'bg-gray-100 dark:bg-default',
+    default: 'bg-second',
     checked: 'bg-red-500 bg-opacity-20 dark:bg-red-500 dark:bg-opacity-20',
     circleChecked: 'bg-red-500 dark:bg-red-500',
     circle: 'bg-gray-400 dark:bg-gray-700',
   },
   warning: {
-    default: 'bg-gray-100 dark:bg-default',
+    default: 'bg-second',
     checked: 'bg-orange-500 bg-opacity-20 dark:bg-orange-500 dark:bg-opacity-20',
     circleChecked: 'bg-orange-500 dark:bg-orange-500',
     circle: 'bg-gray-400 dark:bg-gray-700',

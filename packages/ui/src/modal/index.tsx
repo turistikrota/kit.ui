@@ -29,7 +29,7 @@ type HeadType = typeof Head & {
 }
 
 function Head({ children }: React.PropsWithChildren) {
-  return <div className='bg-second flex w-full flex-col rounded-t-md border-b p-4'>{children}</div>
+  return <div className='bg-default flex w-full flex-col rounded-t-md border p-2'>{children}</div>
 }
 
 function Title({ children }: React.PropsWithChildren) {
@@ -43,7 +43,7 @@ function Subtitle({ children }: React.PropsWithChildren) {
 function CloseButton({ onClose, title }: CloseableProps) {
   return (
     <button
-      className='absolute right-4 top-4 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200'
+      className='absolute right-2 top-2 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200'
       onClick={onClose}
       aria-label={title}
       title={title}
@@ -55,11 +55,15 @@ function CloseButton({ onClose, title }: CloseableProps) {
 }
 
 function Body({ children }: React.PropsWithChildren) {
-  return <div className='bg-second scrollbar w-full grow overflow-hidden overflow-y-auto p-4'>{children}</div>
+  return (
+    <div className='bg-default scrollbar w-full grow overflow-hidden overflow-y-auto border-l border-r p-2'>
+      {children}
+    </div>
+  )
 }
 
 function Footer({ children }: React.PropsWithChildren) {
-  return <div className='bg-second flex w-full items-center justify-between rounded-b-md border-t p-4'>{children}</div>
+  return <div className='bg-default flex w-full items-center justify-between rounded-b-md border p-2'>{children}</div>
 }
 
 const Modal: ModalType = ({

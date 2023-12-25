@@ -60,7 +60,7 @@ const effects: Record<Effect, EffectType> = {
       "relative before:content[''] before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:opacity-0 before:transition-opacity hover:before:opacity-10",
   },
   hover: {
-    label: 'hover:bg-third transition-colors duration-200',
+    label: 'hover:bg-second transition-colors duration-200',
     input: '',
   },
 }
@@ -100,10 +100,7 @@ const Radio: React.FC<PropsWithChildren<RadioProps>> = ({
       } ${effects[effect].label} `}
       htmlFor={id}
     >
-      <label
-        className='disable-highlight relative flex cursor-pointer items-center rounded-full p-3 lg:p-1.5'
-        htmlFor={id}
-      >
+      <label className='disable-highlight relative flex cursor-pointer items-center rounded-full p-2' htmlFor={id}>
         <input
           id={id}
           name={name}

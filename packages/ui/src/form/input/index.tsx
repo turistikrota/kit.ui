@@ -50,7 +50,7 @@ const labelSizes: Record<Size, string> = {
 
 const classes = {
   input:
-    'border-blue-gray-200 text-blue-gray-700 disabled:bg-blue-gray-50 bg-default peer h-full w-full rounded-md border px-3 py-2.5 font-sans text-sm font-normal outline-0 transition-colors duration-200 placeholder-shown:!border-t focus:border-2 focus:border-t-transparent focus:outline-0 focus-visible:outline-none focus-visible:outline-0 disabled:border-0',
+    'bg-inherit border-blue-gray-200 text-blue-gray-700 disabled:bg-blue-gray-50 peer h-full w-full rounded-md border p-2 font-sans text-sm font-normal outline-0 transition-colors duration-200 placeholder-shown:!border-t focus:border-2 focus:border-t-transparent focus:outline-0 focus-visible:outline-none focus-visible:outline-0 disabled:border-0',
   inputError:
     'invalid !border-2 border-red-500 border-t-transparent text-red-500 caret-red-500 placeholder-shown:!border-t-2 placeholder-shown:border-t-red-500 focus:border-red-500 focus:border-t-transparent focus-visible:border-t-transparent',
   inputValid: 'caret-secondary focus:border-secondary-500 !border-t-0',

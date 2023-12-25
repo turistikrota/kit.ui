@@ -46,7 +46,7 @@ const DefaultOption: React.FC<React.PropsWithChildren> = ({ children }) => {
 
 const classes = {
   select:
-    'border-blue-gray-200 text-blue-gray-700 disabled:bg-blue-gray-50 bg-default peer h-full w-full rounded-[7px] border px-3 py-2.5 font-sans text-sm font-normal outline-0 transition-colors  focus:border-2 focus:border-t-transparent focus:outline-0 focus-visible:outline-none focus-visible:outline-0 disabled:border-0',
+    'border-blue-gray-200 text-blue-gray-700 disabled:bg-blue-gray-50 bg-inherit peer h-full w-full rounded-[7px] border p-2 font-sans text-sm font-normal outline-0 transition-colors  focus:border-2 focus:border-t-transparent focus:outline-0 focus-visible:outline-none focus-visible:outline-0 disabled:border-0',
   selectError:
     'invalid border-2 border-red-500 border-t-transparent text-red-500 placeholder-shown:border-t-red-500 focus:border-red-500 focus:border-t-transparent focus-visible:border-t-transparent',
   selectValid: 'caret-secondary focus:border-secondary-500 !border-t-0',

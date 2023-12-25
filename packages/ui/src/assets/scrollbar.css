@@ -1,13 +1,13 @@
 ::-webkit-scrollbar,
 .scrollbar::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 3px;
+  height: 3px;
 }
 
 ::-webkit-scrollbar-thumb,
 .scrollbar::-webkit-scrollbar-thumb {
   background-color: var(--scroll-bar-bg);
-  border-radius: 20px;
+  border-radius: 5px;
   transition: background-color 0.2s ease-in-out;
 }
 

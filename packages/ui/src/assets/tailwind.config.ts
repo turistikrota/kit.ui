@@ -169,9 +169,7 @@ export const TailwindConfiguration: Config = {
         popup: 'var(--popup-background-color)',
         header: 'var(--header-background-color)',
         second: 'var(--second-background-color)',
-        third: 'var(--third-background-color)',
         input: 'var(--default-background)',
-        default: 'var(--default-background)',
       },
       transitionDuration: {
         DEFAULT: '200ms',
@@ -219,11 +217,6 @@ export const TailwindConfiguration: Config = {
         'fade-out-to-right': 'fadeOut 0.2s ease-out, outToRight 0.2s ease-out',
         'slide-down': 'inFromTop 0.2s ease-out, fadeIn 0.2s ease-out',
         'slide-up': 'outToTop 0.2s ease-out, fadeOut 0.2s ease-out',
-        'cube-effect-top-left': 'cubeEffectTopLeft alternate ease-in-out infinite 6s',
-        'cube-effect-top-right': 'cubeEffectTopRight alternate ease-in-out infinite 6s',
-        'cube-effect-bottom-left': 'CubeEffectBottomLeft alternate ease-in-out infinite 6s',
-        'cube-effect-bottom-right': 'CubeEffectBottomRight alternate ease-in-out infinite 6s',
-        'cube-effect-center': 'cubeEffectCenter alternate ease-in-out infinite 6s',
       },
       blur: {
         '3xs': '1px',
@@ -251,66 +244,6 @@ export const TailwindConfiguration: Config = {
         95: '0.95',
       },
       keyframes: {
-        cubeEffectTopLeft: {
-          '0%': {
-            transform: 'rotate(0deg)',
-            top: '10%',
-            left: '5%',
-          },
-          to: {
-            transform: 'rotate(360deg)',
-            top: '60%',
-            left: '15%',
-          },
-        },
-        cubeEffectTopRight: {
-          '0%': {
-            transform: 'rotate(0deg)',
-            top: '10%',
-            right: '5%',
-          },
-          to: {
-            transform: 'rotate(360deg)',
-            top: '60%',
-            right: '15%',
-          },
-        },
-        CubeEffectBottomLeft: {
-          '0%': {
-            transform: 'rotate(0deg)',
-            bottom: '10%',
-            left: '5%',
-          },
-          to: {
-            transform: 'rotate(360deg)',
-            bottom: '70%',
-            left: '15%',
-          },
-        },
-        CubeEffectBottomRight: {
-          '0%': {
-            transform: 'rotate(0deg)',
-            bottom: '10%',
-            right: '5%',
-          },
-          to: {
-            transform: 'rotate(360deg)',
-            bottom: '68%',
-            right: '15%',
-          },
-        },
-        cubeEffectCenter: {
-          '0%': {
-            transform: 'rotate(0deg)',
-            top: '10%',
-            right: '10%',
-          },
-          to: {
-            transform: 'rotate(360deg)',
-            top: '80%',
-            right: '30%',
-          },
-        },
         inFromTop: {
           '0%': {
             transform: 'translateY(-100%)',

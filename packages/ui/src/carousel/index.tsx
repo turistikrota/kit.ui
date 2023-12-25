@@ -34,7 +34,7 @@ const CarouselButton: React.FC<ButtonProps> = ({ position, onClick }) => {
     <button
       className={`${
         !isMobile ? 'flex' : 'hidden'
-      } invisible absolute top-1/2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-90 group-hover:hover:opacity-100 ${left} shadow-xs bg-third h-8 w-8 -translate-y-1/2 transform items-center justify-center rounded-full border bg-opacity-95 text-gray-600 dark:bg-opacity-10 dark:text-white`}
+      } invisible absolute top-1/2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-90 group-hover:hover:opacity-100 ${left} shadow-xs bg-second h-8 w-8 -translate-y-1/2 transform items-center justify-center rounded-full border bg-opacity-95 text-gray-600 dark:bg-opacity-10 dark:text-white`}
       onClick={onClick}
     >
       <i className={`bx bx-sm ${icon}`} />

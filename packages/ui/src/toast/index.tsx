@@ -248,7 +248,7 @@ const TextToast: React.FC<TextToastProps> = ({ toast, onClose, onAnimateEnd }) =
   return (
     <div
       id={toast.id}
-      className={`flex w-full max-w-xs items-center rounded-lg p-4 shadow ${
+      className={`flex w-full max-w-xs items-center rounded-lg p-2 shadow ${
         ToastStyles[toast.type].card
       } transition-opacity duration-200 ${
         toast.closing ? 'animate-fade-out-to-right opacity-0' : 'animate-fade-in-from-right'
@@ -293,7 +293,7 @@ const InteractiveToast: React.FC<InteractiveToastProps> = ({ toast, onClose, onA
   return (
     <div
       id={toast.id}
-      className={`w-full rounded-lg p-4 shadow transition-opacity duration-200 lg:max-w-xs ${
+      className={`24 w-full rounded-lg shadow transition-opacity duration-200 lg:max-w-xs ${
         ToastStyles[toast.type].card
       } ${toast.closing ? 'animate-fade-out-to-right opacity-0' : 'animate-fade-in-from-right'}`}
       role='alert'
@@ -480,7 +480,7 @@ export const ToastProvider = ({ children }: Props) => {
       }}
     >
       {children}
-      <div className='md:min-w-none z-9999 fixed bottom-0 right-1/2 flex min-w-[100vw] max-w-[100vw] translate-x-1/2 transform flex-col items-center gap-5 p-4 md:max-w-none lg:right-0 lg:translate-x-0 lg:transform-none lg:items-end lg:gap-3'>
+      <div className='md:min-w-none z-9999 fixed bottom-0 right-1/2 flex min-w-[100vw] max-w-[100vw] translate-x-1/2 transform flex-col items-center gap-4 p-2 md:max-w-none lg:right-0 lg:translate-x-0 lg:transform-none lg:items-end lg:gap-3'>
         {toasts.map((toast) =>
           toast.interactive ? (
             <InteractiveToast

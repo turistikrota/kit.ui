@@ -3,15 +3,12 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-color-start: rgb(239, 244, 245);
-  --background-color-end: rgb(255, 255, 255);
   --popup-background-color: #fff;
   --header-background-color: #fff;
-  --default-background: rgb(239, 244, 245);
+  --default-background: #fff;
   --loading-backdrop: brightness(0.9) blur(1px);
 
-  --second-background-color: #fff;
-  --third-background-color: #e7edef;
+  --second-background-color: #f8f9fa;
   --border-color: #f2f0f0;
 
   --shadow-color-start: rgba(0, 0, 0, 0.1);
@@ -126,13 +123,11 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-color-start: #141414;
-    --background-color-end: #121212;
-    --popup-background-color: #121212;
-    --header-background-color: #050505;
-    --default-background: #0f0e0e;
+    --popup-background-color: #090909;
+    --header-background-color: #090909;
+    --default-background: #090909;
     --second-background-color: #121212;
-    --third-background-color: #191919;
+    --border-color: #2a2a2a;
 
     --skeleton-default-color: 43, 42, 42;
     --skeleton-color-50: 33, 33, 33;
@@ -159,8 +154,6 @@
     --shadow-color-start: rgba(255, 255, 255, 0.1);
     --shadow-color-end: rgba(255, 255, 255, 0.6);
     --preview-border-color: rgba(255, 255, 255, 0.25);
-
-    --border-color: #353535;
 
     --autofill-background-color: rgb(var(--primary-color-1000));
     --autofill-color: rgb(var(--primary-color-50));

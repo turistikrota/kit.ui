@@ -15,7 +15,7 @@ const Right = ({ children }: React.PropsWithChildren) => {
 function TopHeader({ children, className }: React.PropsWithChildren<Props>) {
   return (
     <section className={`flex h-8 w-full items-center justify-between dark:border-gray-800 ${className}`}>
-      <div className='mx-auto flex w-full max-w-7xl items-center justify-between px-4'>{children}</div>
+      <div className='mx-auto flex w-full max-w-7xl items-center justify-between px-2'>{children}</div>
     </section>
   )
 }

@@ -45,7 +45,7 @@ const Button = ({ children, onClick, ...props }: React.PropsWithChildren<ButtonP
   return (
     <button
       onClick={onClick}
-      className='flex h-9 w-9 items-center justify-center rounded-full bg-gray-200 p-2 text-center text-gray-600 transition-colors duration-200 hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700'
+      className='bg-second flex h-9 w-9 items-center justify-center rounded-full p-2 text-center text-gray-600 transition-colors duration-200 dark:text-gray-300'
       aria-label={props.ariaLabel}
       title={props.title}
     >
@@ -58,7 +58,7 @@ const Avatar = ({ children, onClick }: React.PropsWithChildren<ClickableProps>) 
   return (
     <button
       onClick={onClick}
-      className='flex h-9 w-9 items-center justify-center rounded-md bg-gray-200 text-center text-gray-600 transition-colors duration-200 dark:bg-gray-700 dark:text-gray-300'
+      className='bg-second flex h-9 w-9 items-center justify-center rounded-md text-center text-gray-600 transition-colors duration-200 dark:bg-gray-700 dark:text-gray-300'
     >
       {children}
     </button>
@@ -78,11 +78,11 @@ function MobileHeader({
   return (
     <>
       <header
-        className={`transition-top fixed left-0 h-16 w-full border-b border-gray-200 backdrop-blur-md duration-200 dark:border-gray-800 ${
+        className={`transition-top fixed left-0 h-16 w-full border-b backdrop-blur-md duration-200 ${
           isFixed ? 'top-0' : 'top-8'
         } ${zIndex ? zIndex : 'z-30'}`}
       >
-        <div className={`mx-auto flex h-full max-w-7xl items-center px-4 ${className ? className : 'justify-between'}`}>
+        <div className={`mx-auto flex h-full max-w-7xl items-center px-2 ${className ? className : 'justify-between'}`}>
           {children}
         </div>
       </header>

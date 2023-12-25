@@ -56,10 +56,10 @@ const Alert: Alert = ({
     <>
       {show && (
         <div
-          className={`relative flex items-center rounded border-l-4 p-4 ${Styles[type]} ${className ? className : ''}`}
+          className={`relative flex items-center rounded border-l-4 p-2 ${Styles[type]} ${className ? className : ''}`}
           role='alert'
         >
-          {showIcon && <i className='bx bx-info-circle mr-4 text-2xl'></i>}
+          {showIcon && <i className='bx bx-info-circle mr-2 text-2xl'></i>}
           <div className={`w-full ${innerClassName ? innerClassName : ''}`}>{children}</div>
           {closable && (
             <button

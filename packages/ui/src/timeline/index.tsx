@@ -44,7 +44,7 @@ const Item: FC<PropsWithChildren<ItemProps>> = ({ avatar, date, children }) => {
       <span className='bg-second absolute -start-4 flex h-8 w-8 items-center justify-center rounded-full ring-8 ring-transparent'>
         {avatar}
       </span>
-      <Card className='items-center justify-between rounded-md p-4 sm:flex'>
+      <Card className='items-center justify-between rounded-md p-2 sm:flex'>
         <time className='mb-1 min-w-max text-xs font-normal text-gray-400 sm:order-last sm:mb-0'>{date}</time>
         <div className='text-sm font-normal text-gray-500 dark:text-gray-300'>{children}</div>
       </Card>
