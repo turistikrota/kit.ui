@@ -21,7 +21,7 @@ const Head: React.FC<HeadProps> = ({ title, subtitle, className = 'text-center' 
 
 const LandingSection: SectionType = ({ children }) => {
   return (
-    <section className='px-4 py-20 xl:px-0'>
+    <section className='px-2 py-20 xl:px-0'>
       <div className='mx-auto max-w-7xl'>{children}</div>
     </section>
   )

@@ -39,15 +39,15 @@ function Subtitle({ children, className }: React.PropsWithChildren<Props>) {
 }
 
 function Head({ children, className }: React.PropsWithChildren<Props>) {
-  return <div className={`bg-second rounded-t-md border-b p-4 ${className ? className : ''}`}>{children}</div>
+  return <div className={`rounded-t-md border-b p-4 ${className ? className : ''}`}>{children}</div>
 }
 
 function Body({ children, className }: React.PropsWithChildren<Props>) {
-  return <div className={`bg-second p-4 ${className ? className : ''}`}>{children}</div>
+  return <div className={`p-4 ${className ? className : ''}`}>{children}</div>
 }
 
 function Footer({ children, className }: React.PropsWithChildren<Props>) {
-  return <div className={`bg-second rounded-b-md border-t p-4 ${className ? className : ''}`}>{children}</div>
+  return <div className={`rounded-b-md border-t p-4 ${className ? className : ''}`}>{children}</div>
 }
 
 Head.Title = Title

@@ -12,11 +12,7 @@ const DefaultCard: React.FC<React.PropsWithChildren<Props>> = ({
   noRound = false,
 }) => {
   return (
-    <div
-      className={`bg-gray-400/5 dark:bg-white/5 ${!noPadding ? 'p-4' : ''} ${!noRound ? 'rounded-md' : ''} ${
-        className ? className : ''
-      }`}
-    >
+    <div className={`border ${!noPadding ? 'p-2' : ''} ${!noRound ? 'rounded-md' : ''} ${className ? className : ''}`}>
       {children}
     </div>
   )

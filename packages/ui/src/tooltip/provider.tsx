@@ -127,7 +127,7 @@ const TooltipProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
             <CSSTransition key={el.key} timeout={200} classNames='tooltip' unmountOnExit>
               <>
                 <div
-                  className={`bg-third fixed rounded-md p-2 text-sm font-normal  shadow-lg transition-opacity`}
+                  className={`bg-second fixed rounded-md p-2 text-sm font-normal  shadow-lg transition-opacity`}
                   style={{
                     ...PositionGetters[el.position]({
                       x: el.x,

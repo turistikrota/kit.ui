@@ -1,6 +1,6 @@
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(90deg, var(--default-background), var(--header-background-color));
+  background: var(--default-background);
   height: 100%;
   min-height: 100vh;
 }

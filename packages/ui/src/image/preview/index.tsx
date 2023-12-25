@@ -32,17 +32,17 @@ const ImagePreviewContent: React.FC<ContentProps> = ({
 }) => {
   return (
     <Modal onClose={() => {}} open={open} shadow={false}>
-      <div className='fixed bottom-4 left-1/2 -translate-x-1/2 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 md:left-auto md:right-4 md:top-4 md:translate-x-0'>
+      <div className='fixed bottom-2 left-1/2 -translate-x-1/2 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 md:left-auto md:right-2 md:top-2 md:translate-x-0'>
         <button title='Close' onClick={onHide}>
           <i className='bx bx-lg bx-x'></i>
         </button>
       </div>
-      <div className='fixed left-4 top-4 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 md:top-1/2'>
+      <div className='fixed left-2 top-2 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 md:top-1/2'>
         <button title='Prev' onClick={onPrev}>
           <i className='bx bx-lg bx-chevron-left'></i>
         </button>
       </div>
-      <div className='fixed right-4 top-4 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 md:top-1/2'>
+      <div className='fixed right-2 top-2 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 md:top-1/2'>
         <button title='Next' onClick={onNext}>
           <i className='bx bx-lg bx-chevron-right'></i>
         </button>
@@ -64,7 +64,7 @@ const ImagePreviewContent: React.FC<ContentProps> = ({
           ))}
         </div>
       </div>
-      <div className='fixed left-1/2 top-4 -translate-x-1/2 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 md:bottom-4 md:left-4 md:top-auto md:translate-x-0'>
+      <div className='fixed left-1/2 top-2 -translate-x-1/2 text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 md:bottom-2 md:left-2 md:top-auto md:translate-x-0'>
         <div className='text-xl'>
           {current + 1} / {list.length}
         </div>

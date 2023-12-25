@@ -34,16 +34,16 @@ type SizeType = {
 
 const Sizes: Record<Size, SizeType> = {
   sm: {
-    content: 'p-3 gap-3',
-    stick: 'pl-3',
+    content: 'p-2 gap-2',
+    stick: 'pl-2',
     icon: 'bx-md',
     title: 'text-sm',
     description: 'text-xs',
     mobileMargin: 'pt-[150px] md:pt-[120px]',
   },
   md: {
-    content: 'p-4 gap-4',
-    stick: 'pl-4',
+    content: 'p-3 gap-3',
+    stick: 'pl-3',
     icon: 'bx-2xl',
     title: 'text-base',
     description: 'text-sm',
@@ -97,7 +97,7 @@ export default function DisabledSection({
         <div className={`w-full ${blur ? 'blur-3xs' : ''} ${brightness ? 'brightness-80' : ''}`}>{children}</div>
         <span
           className={`
-      absolute left-0 top-0 flex h-full w-full flex-col items-center bg-opacity-20 p-4 dark:bg-opacity-20 lg:justify-center
+      absolute left-0 top-0 flex h-full w-full flex-col items-center bg-opacity-20 p-2 dark:bg-opacity-20 lg:justify-center
       ${rounded ? 'rounded-md' : ''}
         ${Variants[variant].content}
       `}

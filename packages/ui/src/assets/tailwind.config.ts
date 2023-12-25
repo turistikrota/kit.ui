@@ -169,9 +169,7 @@ export const TailwindConfiguration: Config = {
         popup: 'var(--popup-background-color)',
         header: 'var(--header-background-color)',
         second: 'var(--second-background-color)',
-        third: 'var(--third-background-color)',
         input: 'var(--default-background)',
-        default: 'var(--default-background)',
       },
       transitionDuration: {
         DEFAULT: '200ms',

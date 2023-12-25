@@ -37,7 +37,7 @@ export default function Textarea({
     <>
       <div className={`relative w-full min-w-[200px] ${sizes[size]}`}>
         <textarea
-          className={` border-blue-gray-200 text-blue-gray-700 disabled:bg-blue-gray-50 bg-default peer h-full w-full rounded-[7px] border px-3 py-2.5 font-sans text-sm font-normal outline-0 transition-colors   focus:border-2 focus:border-t-transparent focus:outline-0 focus-visible:outline-none focus-visible:outline-0 disabled:border-0 ${
+          className={`border-blue-gray-200 text-blue-gray-700 disabled:bg-blue-gray-50 peer h-full w-full rounded-[7px] border bg-inherit p-2 font-sans text-sm font-normal outline-0 transition-colors placeholder-shown:!border-t   focus:border-2 focus:border-t-transparent focus:outline-0 focus-visible:outline-none focus-visible:outline-0 disabled:border-0 ${
             error
               ? 'invalid border-2 border-red-500 border-t-transparent text-red-500 placeholder-shown:border-t-red-500 focus:border-red-500 focus:border-t-transparent focus-visible:border-t-transparent'
               : 'caret-secondary focus:border-secondary-500 !border-t-0'

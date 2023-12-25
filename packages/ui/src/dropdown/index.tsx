@@ -33,7 +33,7 @@ const Button: React.FC<React.PropsWithChildren<PropsWithActive>> = ({ active, ch
   return (
     <button
       type='button'
-      className={`dark:bg-third dark:hover:bg-second group peer inline-flex w-full items-center justify-center rounded-md border bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-50 focus:outline-none focus:ring-0 focus:ring-transparent focus-visible:outline-none
+      className={`group peer inline-flex w-full items-center justify-center rounded-md border p-2 text-sm font-medium transition-colors focus:outline-none focus:ring-0 focus:ring-transparent focus-visible:outline-none
         ${active ? 'text-primary' : 'text-gray-700 dark:text-gray-300'}
       `}
       onClick={() => setActive(!activeContext)}
@@ -56,16 +56,18 @@ const Overlay: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
     <div
       className={`
-    dark:bg-third absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white p-1 shadow-lg ring-1 ring-black ring-opacity-5 transition-opacity
+    absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md border p-2 ring-0 ring-black ring-opacity-5 transition-opacity
     ${active ? 'visible opacity-100' : 'invisible opacity-0'}
     `}
     >
-      <div className='py-1' role='menu' aria-orientation='vertical' aria-labelledby='options-menu'>
+      <div className='space-y-1' role='menu' aria-orientation='vertical' aria-labelledby='options-menu'>
         {children}
       </div>
     </div>
   )
 }
+
+//f8f9fa
 
 const OverlayItem: React.FC<React.PropsWithChildren<PropsWithActive<OverlayItemProps>>> = ({
   active,
@@ -75,10 +77,10 @@ const OverlayItem: React.FC<React.PropsWithChildren<PropsWithActive<OverlayItemP
   return (
     <a
       href='#'
-      className={`flex items-center justify-between rounded-md px-4 py-2 text-sm transition-colors ${
+      className={`flex items-center justify-between rounded-md p-2 text-sm transition-colors ${
         active
-          ? 'text-primary bg-primary-200 dark:bg-primary-700 cursor-auto bg-opacity-5 dark:bg-opacity-10'
-          : 'hover:text-primary dark:bg-third dark:hover:bg-second text-gray-700 hover:bg-gray-100 dark:text-gray-300'
+          ? 'text-primary bg-primary-200 dark:bg-primary-700 cursor-auto bg-opacity-10 dark:bg-opacity-10'
+          : 'hover:bg-second text-gray-700 dark:text-gray-300'
       }`}
       role='menuitem'
       onClick={onClick}
