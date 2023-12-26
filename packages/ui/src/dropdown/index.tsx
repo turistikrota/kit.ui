@@ -56,7 +56,7 @@ const Overlay: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
     <div
       className={`
-    absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md border p-2 ring-0 ring-black ring-opacity-5 transition-opacity
+    bg-default absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md border p-2 ring-0 transition-opacity
     ${active ? 'visible opacity-100' : 'invisible opacity-0'}
     `}
     >
@@ -66,8 +66,6 @@ const Overlay: React.FC<React.PropsWithChildren> = ({ children }) => {
     </div>
   )
 }
-
-//f8f9fa
 
 const OverlayItem: React.FC<React.PropsWithChildren<PropsWithActive<OverlayItemProps>>> = ({
   active,
