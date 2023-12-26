@@ -170,6 +170,7 @@ export const TailwindConfiguration: Config = {
         header: 'var(--header-background-color)',
         second: 'var(--second-background-color)',
         input: 'var(--default-background)',
+        default: 'var(--default-background)',
       },
       transitionDuration: {
         DEFAULT: '200ms',
