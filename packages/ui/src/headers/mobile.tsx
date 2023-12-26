@@ -78,7 +78,7 @@ function MobileHeader({
   return (
     <>
       <header
-        className={`transition-top fixed left-0 h-16 w-full border-b backdrop-blur-md duration-200 ${
+        className={`transition-top bg-blured fixed left-0 h-16 w-full border-b backdrop-blur-md duration-200 ${
           isFixed ? 'top-0' : 'top-8'
         } ${zIndex ? zIndex : 'z-30'}`}
       >

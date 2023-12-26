@@ -5,6 +5,7 @@
   --foreground-rgb: 0, 0, 0;
   --popup-background-color: #fff;
   --header-background-color: #fff;
+  --blured-background-color: rgba(255,255,255,.7);
   --default-background: #fff;
   --loading-backdrop: brightness(0.9) blur(1px);
 
@@ -127,6 +128,7 @@
     --header-background-color: #090909;
     --default-background: #090909;
     --second-background-color: #121212;
+    --blured-background-color: rgba(9, 9, 9, 0.7);
     --border-color: #2a2a2a;
 
     --skeleton-default-color: 43, 42, 42;

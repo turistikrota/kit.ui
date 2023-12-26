@@ -171,6 +171,7 @@ export const TailwindConfiguration: Config = {
         second: 'var(--second-background-color)',
         input: 'var(--default-background)',
         default: 'var(--default-background)',
+        blured: 'var(--blured-background-color)',
       },
       transitionDuration: {
         DEFAULT: '200ms',
