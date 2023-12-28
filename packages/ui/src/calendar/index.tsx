@@ -157,7 +157,7 @@ function Day<T = any>({
 }
 
 function Head({ year, month, locale }: HeadProps) {
-  const monthNames = useLocalizedMonthNames(locale)
+  const monthNames = useLocalizedMonthNames(locale, true)
   return (
     <div className='flex items-center justify-between'>
       <div className='flex items-center'>
