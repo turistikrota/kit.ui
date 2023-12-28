@@ -1,6 +1,6 @@
 {
   "name": "@turistikrota/ui",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "the turistikrota ui library for React",
   "main": "./index.js",
   "module": "./index.js",
