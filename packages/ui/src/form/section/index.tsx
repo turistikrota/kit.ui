@@ -43,7 +43,11 @@ function Head({ children, className }: React.PropsWithChildren<Props>) {
 }
 
 function Body({ children, className }: React.PropsWithChildren<Props>) {
-  return <div className={`border-l border-r p-2 ${className ? className : ''}`}>{children}</div>
+  return (
+    <div className={`border-l border-r p-2 first-of-type:border-t last-of-type:border-b ${className ? className : ''}`}>
+      {children}
+    </div>
+  )
 }
 
 function Footer({ children, className }: React.PropsWithChildren<Props>) {
