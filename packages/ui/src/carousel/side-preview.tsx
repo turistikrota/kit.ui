@@ -1,4 +1,5 @@
 import React, { FC, useMemo } from 'react'
+import { useIsDesktop } from '../hooks/dom'
 import PerfectImage from '../image/perfect'
 import { PreviewProps } from './carousel.types'
 
@@ -10,15 +11,17 @@ const CarouselSidePreview: FC<PreviewProps> = ({
   setCurrentIndex,
   onClick,
 }) => {
+  const isDesktop = useIsDesktop()
+  const max = useMemo<number>(() => (isDesktop ? 6 : 4), [isDesktop])
   const [firstImages, totalCount] = useMemo(() => {
-    if (images.length > 6) return [images.slice(0, 5), images.length]
+    if (images.length > max) return [images.slice(0, max - 1), images.length]
     return [images, images.length]
-  }, [images])
+  }, [images, max])
 
   return (
-    <div className={`col-span-2 grid grid-cols-12 gap-2 ${styles ? styles.provider : ''}`}>
+    <div className={`grid grid-cols-12 gap-2 ${styles ? styles.provider : ''}`}>
       {firstImages.map((img, idx) => (
-        <div key={idx} className={`col-span-6 ${styles ? styles.item : ''}`}>
+        <div key={idx} className={`${styles ? styles.item : ''}`}>
           <PerfectImage
             src={img}
             full={false}
@@ -36,13 +39,13 @@ const CarouselSidePreview: FC<PreviewProps> = ({
           />
         </div>
       ))}
-      {totalCount > 6 && (
-        <div className={`relative col-span-6 ${styles ? styles.item : ''}`}>
+      {totalCount > max && (
+        <div className={`relative ${styles ? styles.item : ''}`}>
           <div className='absolute inset-0 flex items-center justify-center bg-white bg-opacity-100 dark:bg-black'>
-            <span className='text-4xl font-bold text-black dark:text-white'>{totalCount - 5}+</span>
+            <span className='text-2xl font-bold text-black dark:text-white lg:text-4xl'>{totalCount - max}+</span>
           </div>
           <PerfectImage
-            src={images[5]}
+            src={images[max - 1]}
             full={false}
             alt={``}
             title={imageTitlePrefix ? `${imageTitlePrefix}-${5}` : undefined}
@@ -50,7 +53,7 @@ const CarouselSidePreview: FC<PreviewProps> = ({
             loadingClassName='rounded-md w-full h-full'
             className={`cursor-pointer rounded-md object-cover opacity-20 transition-opacity duration-200`}
             onClick={(e) => {
-              if (onClick) onClick(images[5], 5)
+              if (onClick) onClick(images[max - 1], max - 1)
               else setCurrentIndex(5)
               e.stopPropagation()
             }}

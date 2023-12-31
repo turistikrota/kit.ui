@@ -47,12 +47,12 @@ export const CarouselVariants: Record<CarouselVariant, CarouselStyles> = {
   },
   [CarouselVariant.DetailHorizontal]: {
     container: 'grid grid-cols-12 gap-2',
-    provider: 'h-104 col-span-9',
+    provider: 'h-104 col-span-12 lg:col-span-9',
     item: '',
     itemLoading: '',
     preview: {
-      provider: 'col-span-3',
-      item: '',
+      provider: 'col-span-12 lg:col-span-3 grid-rows-1 lg:grid-rows-3',
+      item: 'col-span-3 lg:col-span-6 row-span-1 lg:row-span-1',
     },
     Preview: CarouselSidePreview,
   },
