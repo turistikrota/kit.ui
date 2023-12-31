@@ -33,7 +33,7 @@ const Button: React.FC<React.PropsWithChildren<PropsWithActive>> = ({ active, ch
   return (
     <button
       type='button'
-      className={`group peer inline-flex w-full items-center justify-center rounded-md border p-2 text-sm font-medium transition-colors focus:outline-none focus:ring-0 focus:ring-transparent focus-visible:outline-none
+      className={`bg-default group peer inline-flex w-full items-center justify-center rounded-md border p-2 text-sm font-medium transition-colors focus:outline-none focus:ring-0 focus:ring-transparent focus-visible:outline-none
         ${active ? 'text-primary' : 'text-gray-700 dark:text-gray-300'}
       `}
       onClick={() => setActive(!activeContext)}
