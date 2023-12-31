@@ -1,65 +1,27 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { useInterval } from '../hooks/async'
-import { useAgentMobile } from '../hooks/dom'
 import PerfectImage from '../image/perfect'
+import CarouselButton from './button'
+import { CarouselStyles, CarouselVariant, CarouselVariants } from './carousel.design'
+import { CarouselComponent } from './carousel.types'
 import DotRenderer from './dot-renderer'
 
-type Props = {
-  images: string[]
-  imageAltPrefix: string
-  imageTitlePrefix?: string
-  imageClassName?: string
-  imgLoadingClassName?: string
-  pictureClassName?: string
-  sizeClassName: string
-  activeIndex?: number
-  className?: string
-  onClick?: (image: string, idx: number) => void
-  autoPlay?: boolean
-  autoPlayInterval?: number
-  showDots?: boolean
-  showSubImages?: boolean
-}
-
-type ButtonProps = {
-  position: 'left' | 'right'
-  onClick: () => void
-}
-
-const CarouselButton: React.FC<ButtonProps> = ({ position, onClick }) => {
-  const isMobile = useAgentMobile()
-  const icon = position === 'left' ? 'bx-chevron-left' : 'bx-chevron-right'
-  const left = position === 'left' ? 'left-2' : 'right-2'
-  return (
-    <button
-      className={`${
-        !isMobile ? 'flex' : 'hidden'
-      } invisible absolute top-1/2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-90 group-hover:hover:opacity-100 ${left} shadow-xs bg-second h-8 w-8 -translate-y-1/2 transform items-center justify-center rounded-full border bg-opacity-95 text-gray-600 dark:bg-opacity-10 dark:text-white`}
-      onClick={onClick}
-    >
-      <i className={`bx bx-sm ${icon}`} />
-    </button>
-  )
-}
-
-const Carousel: React.FC<Props> = ({
+const Carousel: CarouselComponent = ({
   images,
   imageTitlePrefix,
   imageAltPrefix,
-  sizeClassName,
-  imageClassName,
-  pictureClassName,
-  imgLoadingClassName = 'rounded-md',
-  className,
+  variant = CarouselVariant.List,
   onClick,
   showDots = true,
-  showSubImages = false,
+  showPreview = false,
   autoPlay = false,
   autoPlayInterval = 5000,
   activeIndex = 0,
 }) => {
   const [indexes, setIndexes] = useState([0, 0, 2])
   const [currentIndex, setCurrentIndex] = useState(activeIndex)
+
+  const styles = useMemo<CarouselStyles>(() => CarouselVariants[variant], [variant])
 
   useInterval(
     () => {
@@ -113,8 +75,8 @@ const Carousel: React.FC<Props> = ({
   }
 
   return (
-    <div className={`group w-full ${className ? className : ''}`} onClick={checkImageClick}>
-      <div className={`relative ${sizeClassName}`}>
+    <div className={`group w-full ${styles.container}`} onClick={checkImageClick}>
+      <div className={`relative col-span-10 ${styles.provider}`}>
         {images.map((img, idx) => (
           <PerfectImage
             key={idx}
@@ -124,9 +86,9 @@ const Carousel: React.FC<Props> = ({
             isActive={idx === currentIndex}
             className={`absolute left-0 top-0 h-full w-full object-cover transition-opacity duration-200 ${
               idx === currentIndex ? 'opacity-100' : 'cursor-pointer opacity-0'
-            } ${pictureClassName ? pictureClassName : ''}`}
-            imgClassName={`rounded-md ${imageClassName ? imageClassName : ''}`}
-            loadingClassName={imgLoadingClassName}
+            }`}
+            imgClassName={`rounded-md ${styles.item}`}
+            loadingClassName={styles.itemLoading}
             onLeftSwipe={checkLeftSwipe}
             onRightSwipe={checkRightSwipe}
           />
@@ -135,31 +97,28 @@ const Carousel: React.FC<Props> = ({
         {currentIndex !== 0 && <CarouselButton position='left' onClick={goToPreviousSlide} />}
         {currentIndex !== images.length - 1 && <CarouselButton position='right' onClick={goToNextSlide} />}
       </div>
-      {showSubImages && (
-        <div className='mt-2 flex justify-start gap-1 overflow-x-auto pb-2'>
-          {images.map((img, idx) => (
-            <div key={idx} className='max-w-12 relative h-12 max-h-12 min-h-[3rem] w-12 min-w-[3rem]'>
-              <PerfectImage
-                src={img}
-                full={false}
-                alt={``}
-                title={imageTitlePrefix ? `${imageTitlePrefix}-${idx}` : undefined}
-                imgClassName='rounded-md w-full h-full'
-                loadingClassName='rounded-md w-full h-full'
-                className={`max-w-12 h-12 max-h-12 min-h-[3rem] w-12 min-w-[3rem] rounded-md object-cover transition-opacity duration-200 ${
-                  idx === currentIndex ? 'opacity-100' : 'cursor-pointer opacity-50'
-                }`}
-                onClick={(e) => {
-                  setCurrentIndex(idx)
-                  e.stopPropagation()
-                }}
-              />
-            </div>
-          ))}
-        </div>
+      {showPreview && styles.Preview && (
+        <styles.Preview
+          currentIndex={currentIndex}
+          imageTitlePrefix={imageTitlePrefix}
+          images={images}
+          styles={styles.preview}
+          onClick={onClick}
+          setCurrentIndex={(idx) => {
+            setIndexes(([fromIndex, currentIndex, toIndex]) => {
+              if (idx === currentIndex) return [idx - 1, idx, idx + 1]
+              if (idx === fromIndex) return [idx - 1, idx, idx + 1]
+              if (idx === toIndex) return [idx - 1, idx, idx + 1]
+              return [idx - 1, idx, idx + 1]
+            })
+            setCurrentIndex(idx)
+          }}
+        />
       )}
     </div>
   )
 }
+
+Carousel.Variants = CarouselVariant
 
 export default Carousel
