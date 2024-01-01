@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useEffect, useState } from 'react'
+import React, { PropsWithChildren } from 'react'
 
 type Variant = 'primary' | 'secondary' | 'success' | 'error' | 'warning'
 type Effect = 'hover' | 'ring'
@@ -7,12 +7,14 @@ type Size = 'sm' | 'md' | 'lg'
 interface RadioProps {
   id: string
   name: string
-  checked?: boolean
+  value?: boolean
   variant?: Variant
   effect?: Effect
   reverse?: boolean
   size?: Size
   onChange?: (value: boolean) => void
+  onBlur?: (value: boolean) => void
+  onClick?: (value: boolean) => void
 }
 
 const variants: Record<Variant, string> = {
@@ -72,27 +74,12 @@ const Radio: React.FC<PropsWithChildren<RadioProps>> = ({
   size = 'md',
   variant = 'primary',
   effect = 'ring',
-  checked = false,
+  value = false,
   reverse = false,
   onChange,
+  onBlur,
+  onClick,
 }) => {
-  const [isChecked, setIsChecked] = useState(checked)
-
-  useEffect(() => {
-    if (checked !== isChecked) {
-      setIsChecked(checked)
-    }
-  }, [checked])
-
-  const handleChange = () => {
-    const newVal = !isChecked
-    setIsChecked(newVal)
-
-    if (onChange) {
-      onChange(newVal)
-    }
-  }
-
   return (
     <label
       className={`disable-highlight flex cursor-pointer items-center rounded-md ${
@@ -106,9 +93,10 @@ const Radio: React.FC<PropsWithChildren<RadioProps>> = ({
           name={name}
           type='radio'
           className={`disable-highlight peer cursor-pointer appearance-none rounded-full border bg-white transition-all dark:bg-inherit ${variants[variant]} ${sizes[size]} ${effects[effect].input}`}
-          value={id}
-          checked={isChecked}
-          onChange={handleChange}
+          checked={value}
+          onChange={(e) => onChange?.(e.target.checked)}
+          onBlur={(e) => onBlur?.(e.target.checked)}
+          onClick={() => onClick?.(!value)}
         />
         <div
           className={`pointer-events-none absolute left-2/4 top-2/4 flex -translate-x-2/4 -translate-y-2/4 items-center justify-center opacity-0 transition-opacity peer-checked:opacity-100 ${svgVariants[variant]}`}

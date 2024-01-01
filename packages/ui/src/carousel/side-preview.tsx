@@ -19,7 +19,7 @@ const CarouselSidePreview: FC<PreviewProps> = ({
   }, [images, max])
 
   return (
-    <div className={`grid grid-cols-12 gap-2 ${styles ? styles.provider : ''}`}>
+    <div className={`relative grid grid-cols-12 gap-2 ${styles ? styles.provider : ''}`}>
       {firstImages.map((img, idx) => (
         <div key={idx} className={`${styles ? styles.item : ''}`}>
           <PerfectImage

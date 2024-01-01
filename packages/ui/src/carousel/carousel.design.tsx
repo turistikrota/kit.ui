@@ -52,7 +52,7 @@ export const CarouselVariants: Record<CarouselVariant, CarouselStyles> = {
     itemLoading: '',
     preview: {
       provider: 'col-span-12 lg:col-span-3 grid-rows-1 lg:grid-rows-3',
-      item: 'col-span-3 lg:col-span-6 row-span-1 lg:row-span-1',
+      item: 'col-span-3 lg:col-span-6 row-span-1 lg:row-span-1 max-h-36',
     },
     Preview: CarouselSidePreview,
   },
