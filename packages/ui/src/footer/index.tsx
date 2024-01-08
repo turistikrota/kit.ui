@@ -48,7 +48,7 @@ const CopyrightRow: CopyRightRowType = ({ children }) => {
 
 const CopyrightRowItem: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <div className='flex w-full min-w-max justify-center text-sm text-gray-600 dark:text-gray-300 lg:first:justify-start lg:last:justify-end'>
+    <div className='flex w-full min-w-max justify-center gap-2 text-sm text-gray-600 dark:text-gray-300 lg:first:justify-start lg:last:justify-end'>
       {children}
     </div>
   )
