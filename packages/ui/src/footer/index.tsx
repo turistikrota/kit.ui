@@ -4,6 +4,7 @@ type FooterType = FC<PropsWithChildren> & {
   Grid: GridType
   Social: FC<PropsWithChildren>
   Copyright: CopyRightRowType
+  Mobile: FC<PropsWithChildren>
 }
 
 type GridType = FC<PropsWithChildren> & {
@@ -23,11 +24,11 @@ type ColProps = {
 }
 
 const Grid: GridType = ({ children }) => {
-  return <div className='grid grid-cols-6 gap-2 lg:grid-cols-5'>{children}</div>
+  return <div className='hidden grid-cols-6 gap-2 md:grid md:grid-cols-4'>{children}</div>
 }
 const GridCol: GridColType = ({ children, title }) => {
   return (
-    <div className='col-span-6 sm:col-span-3 lg:col-span-1'>
+    <div className='col-span-6 md:col-span-1'>
       <p className='mb-4'>{title}</p>
       <ul className='space-y-2'>{children}</ul>
     </div>
@@ -39,23 +40,27 @@ const GridColItem: FC<PropsWithChildren> = ({ children }) => {
 }
 
 const SocialRow: FC<PropsWithChildren> = ({ children }) => {
-  return <div className='flex w-full items-center justify-center gap-x-2 lg:justify-end'>{children}</div>
+  return <div className='flex w-full items-center justify-center gap-x-2 md:justify-end'>{children}</div>
 }
 
 const CopyrightRow: CopyRightRowType = ({ children }) => {
-  return <div className='flex flex-col items-center lg:flex-row lg:justify-between'>{children}</div>
+  return <div className='flex flex-col items-center gap-4 md:flex-row lg:justify-between lg:gap-0'>{children}</div>
 }
 
 const CopyrightRowItem: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <div className='flex w-full min-w-max justify-center gap-2 text-sm text-gray-600 dark:text-gray-300 lg:first:justify-start lg:last:justify-end'>
+    <div className='flex w-full min-w-max justify-center gap-2 text-sm text-gray-600 dark:text-gray-300 md:first:justify-start md:last:justify-end'>
       {children}
     </div>
   )
 }
 
+const Mobile: FC<PropsWithChildren> = ({ children }) => {
+  return <div className='flex flex-col items-center gap-x-2 gap-y-4 md:hidden'>{children}</div>
+}
+
 const Footer: FooterType = ({ children }) => {
-  return <footer className='mx-auto flex max-w-7xl flex-col gap-2 p-2'>{children}</footer>
+  return <footer className='mx-auto flex max-w-7xl flex-col gap-x-2 gap-y-4 p-2 md:gap-y-2'>{children}</footer>
 }
 
 GridCol.Item = GridColItem
@@ -66,5 +71,6 @@ CopyrightRow.Item = CopyrightRowItem
 Footer.Grid = Grid
 Footer.Social = SocialRow
 Footer.Copyright = CopyrightRow
+Footer.Mobile = Mobile
 
 export default Footer
