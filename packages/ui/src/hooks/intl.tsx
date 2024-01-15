@@ -18,6 +18,6 @@ export const useLocalizedWeekDayNames = (locale: Locales, long = false): string[
   return days
 }
 
-export const useLocalizedCurrencyFormatter = (locale: Locales, currency = 'TRY'): Intl.NumberFormat => {
+export const useLocalizedCurrencyFormatter = (locale: Locales, currency = 'USD'): Intl.NumberFormat => {
   return new Intl.NumberFormat(locale, { style: 'currency', currency })
 }
