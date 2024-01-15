@@ -16,6 +16,7 @@ type Props<T = any> = {
   textToday: string
   textSelected: string
   locale?: Locales
+  currency?: string
   onDayClick?: () => void
   variantCalc?: (data: T[]) => Variant
   availableCalc?: (date: Date, data: T[]) => boolean
@@ -25,11 +26,13 @@ type DetailRendererType<T> = React.FC<{
   day: number
   data: T[]
   locale?: Locales
+  currency?: string
 }>
 
 type DayProps<T> = {
   day: number
   locale: Locales
+  currency?: string
   textToday: string
   textSelected: string
   DetailRender: DetailRendererType<T>
@@ -49,6 +52,8 @@ type HeadProps = {
   locale: Locales
   year: number
   month: number
+  onPrevMonth?: () => void
+  onNextMonth?: () => void
 }
 
 type DayLabelProps = {
@@ -103,6 +108,7 @@ function Day<T = any>({
   day,
   data,
   locale,
+  currency,
   textSelected,
   textToday,
   variant = 'default',
@@ -141,7 +147,7 @@ function Day<T = any>({
             <span className={`h-2 w-2 rounded-full ${DayVariants[variant].badge}`} />
           </div>
           <div className='h-full w-full px-1 pt-4 opacity-0 md:opacity-100'>
-            <DetailRender day={day} data={data} locale={locale} />
+            <DetailRender day={day} data={data} locale={locale} currency={currency} />
           </div>
         </>
       )}
@@ -156,12 +162,24 @@ function Day<T = any>({
   )
 }
 
-function Head({ year, month, locale }: HeadProps) {
+function Head({ year, month, locale, onPrevMonth, onNextMonth }: HeadProps) {
   const monthNames = useLocalizedMonthNames(locale, true)
   return (
     <div className='flex items-center justify-between'>
-      <div className='flex items-center'>
+      <div className='flex items-center gap-2'>
+        {onPrevMonth && (
+          <button className='flex items-center justify-center text-sm' onClick={onPrevMonth}>
+            <i className='bx bx-chevron-left cursor-pointer text-xl' />
+            {monthNames[month - 1 < 0 ? 11 : month - 1]}
+          </button>
+        )}
         <div className='text-lg font-bold'>{monthNames[month]}</div>
+        {onNextMonth && (
+          <button className='flex items-center justify-center text-sm' onClick={onNextMonth}>
+            {monthNames[month + 1 > 11 ? 0 : month + 1]}
+            <i className='bx bx-chevron-right cursor-pointer text-xl' />
+          </button>
+        )}
       </div>
       <div className='text-lg font-bold'>{year}</div>
     </div>
@@ -171,6 +189,7 @@ function Head({ year, month, locale }: HeadProps) {
 function Calendar<T = any>({
   locale = Locales.tr,
   data,
+  currency,
   textSelected,
   textToday,
   DetailRender,
@@ -212,7 +231,13 @@ function Calendar<T = any>({
 
   return (
     <div className='flex w-full flex-col gap-y-2'>
-      <Head year={year} month={month} locale={locale} />
+      <Head
+        year={year}
+        month={month}
+        locale={locale}
+        onNextMonth={() => onNextMonth(day)}
+        onPrevMonth={() => onPrevMonth(day)}
+      />
       <div className='w-full'>
         <div className='grid grid-cols-7 gap-x-1'>
           {dayNames.map((label) => (
@@ -230,6 +255,7 @@ function Calendar<T = any>({
                 textSelected={textSelected}
                 textToday={textToday}
                 day={day.value}
+                currency={currency}
                 DetailRender={DetailRender}
                 data={month === day.month ? data[calendar.makeDateStr(day.value, month, year)] : []}
                 onClick={() => onDayDetailClick(day.value)}
@@ -261,8 +287,8 @@ function Calendar<T = any>({
   )
 }
 
-export const PriceRenderer: DetailRendererType<number> = ({ data, locale = Locales.tr }) => {
-  const formatter = useLocalizedCurrencyFormatter(locale)
+export const PriceRenderer: DetailRendererType<number> = ({ data, locale = Locales.tr, currency }) => {
+  const formatter = useLocalizedCurrencyFormatter(locale, currency)
 
   return (
     <div className='flex h-full w-full flex-col items-center justify-center gap-1'>

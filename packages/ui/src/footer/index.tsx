@@ -44,7 +44,11 @@ const SocialRow: FC<PropsWithChildren> = ({ children }) => {
 }
 
 const CopyrightRow: CopyRightRowType = ({ children }) => {
-  return <div className='flex flex-col items-center gap-4 md:flex-row lg:justify-between lg:gap-0'>{children}</div>
+  return (
+    <div className='flex flex-col items-center gap-4 p-2 md:flex-row lg:justify-between lg:gap-0 lg:px-0'>
+      {children}
+    </div>
+  )
 }
 
 const CopyrightRowItem: FC<PropsWithChildren> = ({ children }) => {

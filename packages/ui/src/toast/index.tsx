@@ -293,7 +293,7 @@ const InteractiveToast: React.FC<InteractiveToastProps> = ({ toast, onClose, onA
   return (
     <div
       id={toast.id}
-      className={`24 w-full rounded-lg shadow transition-opacity duration-200 lg:max-w-xs ${
+      className={`24 w-full rounded-lg p-2 shadow transition-opacity duration-200 lg:max-w-xs ${
         ToastStyles[toast.type].card
       } ${toast.closing ? 'animate-fade-out-to-right opacity-0' : 'animate-fade-in-from-right'}`}
       role='alert'
