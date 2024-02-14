@@ -12,6 +12,7 @@ type Props = {
 
 const floorNumber = 14.915
 const floorHeightNumber = 26.92
+const subAppMargin = 9.02
 
 const calculateTextLength = (text: string) => {
   return text.length * floorNumber
@@ -78,11 +79,11 @@ const Logo: React.FC<React.PropsWithChildren<Props>> = ({
         {subApp && (
           <text
             style={{
-              fontSize: '28px',
+              fontSize: '30px',
               fontFamily: 'Verdana, Verdana',
             }}
             className={Variants[variant]}
-            transform={`translate(${vertical ? 0 : textLength - calculateTextLength(subApp) + floorNumber / 2}, ${
+            transform={`translate(${vertical ? 0 : textLength - calculateTextLength(subApp) + subAppMargin}, ${
               vertical ? 2 * floorHeightNumber + floorNumber / 3 : floorHeightNumber
             })`}
           >
