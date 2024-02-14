@@ -51,6 +51,7 @@ const Logo: React.FC<React.PropsWithChildren<Props>> = ({
         viewBox={`0 0 ${textLength} ${fixedHeight}`}
         width={textLength}
         height={fixedHeight}
+        overflow={'initial'}
       >
         <text
           style={{
