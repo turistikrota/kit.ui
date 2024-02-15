@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 
 type Variant = 'primary' | 'secondary'
 
-type LinkComponent = FC<{ href: string; target?: string; children: React.ReactNode }>
+export type LinkComponent = FC<{ href: string; target?: string; children: React.ReactNode }>
 
 type LogoItem = {
   text: string
