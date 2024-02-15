@@ -35,32 +35,32 @@ const Logo: React.FC<React.PropsWithChildren<Props>> = ({
   return (
     <div className={`${!vertical ? 'flex' : ''} ${className ? className : ''}`}>
       <div className='flex'>
-        <text
+        <span
           style={{
             fontFamily: 'Verdana, Verdana',
           }}
           className='text-secondary text-3xl'
         >
           turistik
-        </text>
-        <text
+        </span>
+        <span
           style={{
             fontFamily: 'Verdana, Verdana',
           }}
           className='text-primary text-3xl'
         >
           rota
-        </text>
+        </span>
       </div>
       {subApp && (
-        <text
+        <span
           style={{
             fontFamily: 'Verdana, Verdana',
           }}
           className={`${Variants[variant]} text-3xl ${vertical ? 'mx-auto' : ''}`}
         >
           {subApp}
-        </text>
+        </span>
       )}
     </div>
   )
