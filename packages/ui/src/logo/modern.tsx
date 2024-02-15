@@ -23,13 +23,14 @@ type LogoProps = {
   items: LogoItem[]
   active?: boolean
   main?: boolean
+  openNewTab?: boolean
   link: string
   LinkComponent: LinkComponent
 }
 
-const ModernLogo: FC<LogoProps> = ({ items, active, main, link, LinkComponent }) => {
+const ModernLogo: FC<LogoProps> = ({ items, active, main, link, openNewTab, LinkComponent }) => {
   return (
-    <LinkComponent href={link}>
+    <LinkComponent href={link} target={openNewTab ? '_blank' : '_self'}>
       <span
         style={{
           fontFamily: 'Verdana, Verdana',
