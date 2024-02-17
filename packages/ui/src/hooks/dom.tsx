@@ -76,16 +76,21 @@ export const useAgentMobile = (): boolean => {
 
 type Scroll = {
   handle: () => void
+  customCondition?: (el: HTMLElement | Window, offset: number) => boolean
   loading: boolean
   offset?: number
   element?: HTMLElement
 }
 
-export const useInfiniteScroll = ({ handle, loading, offset = 0, element }: Scroll) => {
+export const useInfiniteScroll = ({ handle, customCondition, loading, offset = 0, element }: Scroll) => {
   useListener(
     'scroll',
     () => {
       if (loading) return
+      if (customCondition && customCondition(element || window, offset)) {
+        handle()
+        return
+      }
       if (element && element.clientHeight + element.scrollTop + offset >= element.scrollHeight) {
         handle()
       } else if (window.innerHeight + window.scrollY + offset >= document.body.scrollHeight) {
