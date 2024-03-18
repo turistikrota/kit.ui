@@ -118,7 +118,7 @@ export const FullSolidVariantClasses: Record<FullVariant, string> = {
   danger: 'bg-red-500 text-white',
   primary: 'bg-blue-500 text-white',
   default: 'bg-second text-white',
-  secondary: 'bg-second text-white',
+  secondary: 'bg-secondary-500 text-white',
   yellow: 'bg-yellow-500 text-white',
   blue: 'bg-blue-500 text-white',
   green: 'bg-green-500 text-white',
