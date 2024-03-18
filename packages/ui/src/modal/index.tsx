@@ -56,7 +56,7 @@ function CloseButton({ onClose, title }: CloseableProps) {
 
 function Body({ children }: React.PropsWithChildren) {
   return (
-    <div className='bg-default scrollbar w-full grow overflow-hidden overflow-y-auto border-l border-r p-2'>
+    <div className='bg-default scrollbar w-full grow overflow-hidden overflow-y-auto border-l border-r p-2  last-of-type:rounded-b-md'>
       {children}
     </div>
   )
