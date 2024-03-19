@@ -112,6 +112,22 @@ export const FullVariantClasses: Record<FullVariant, string> = {
   teal: 'bg-teal-100 bg-opacity-50 text-teal-500 dark:bg-teal-500 dark:bg-opacity-10 dark:text-teal-100',
 }
 
+export const FullSolidVariantClasses: Record<FullVariant, string> = {
+  success: 'bg-green-500 text-white',
+  warning: 'bg-yellow-500 text-white',
+  danger: 'bg-red-500 text-white',
+  primary: 'bg-blue-500 text-white',
+  default: 'bg-second text-white',
+  secondary: 'bg-secondary-500 text-white',
+  yellow: 'bg-yellow-500 text-white',
+  blue: 'bg-blue-500 text-white',
+  green: 'bg-green-500 text-white',
+  purple: 'bg-purple-500 text-white',
+  orange: 'bg-orange-500 text-white',
+  indigo: 'bg-indigo-500 text-white',
+  teal: 'bg-teal-500 text-white',
+}
+
 export function isSize(size: string): size is Size {
   return Object.keys(TextSize).includes(size)
 }
