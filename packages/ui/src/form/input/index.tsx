@@ -28,6 +28,8 @@ export type InputProps<Value extends InputValue = string> = {
   hideText?: string
   min?: string | number
   max?: string | number
+  minlength?: number
+  maxlength?: number
   size?: Size
   error?: string
   ariaLabel?: string
